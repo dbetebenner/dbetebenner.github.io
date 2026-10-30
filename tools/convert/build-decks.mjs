@@ -21,8 +21,9 @@ const SHARD = opt('--shard');
 const DIR = opt('--dir');
 const ONLY = opt('--only', '') ? new Set(opt('--only').split(',')) : null;
 const FORCE = args.includes('--force');
+const RETEXT = args.includes('--retext');
 if (!SHARD || !DIR) {
-  console.error('usage: build-decks.mjs --shard <repo> --dir <checkout> [--only ids] [--force]');
+  console.error('usage: build-decks.mjs --shard <repo> --dir <checkout> [--only ids] [--force | --retext]');
   process.exit(2);
 }
 
@@ -109,7 +110,15 @@ function stageOriginal(t) {
   return name;
 }
 
-const clean = (s) => s.replace(/[ \t]+/g, ' ').replace(/\n{3,}/g, '\n\n').trim();
+// Text extracted from vector charts arrives as one line per marker glyph or tick label; keep only lines with a word.
+const clean = (s) =>
+  s
+    .split('\n')
+    .map((l) => l.replace(/[ \t]+/g, ' ').trim())
+    .filter((l) => !l || /\p{L}{2}/u.test(l))
+    .join('\n')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
 
 function deckQmd(t, slides, text, notes, pdfName, originalName) {
   const front = {
@@ -148,6 +157,21 @@ for (const t of talks) {
   }
   const deckDir = path.join(DIR, t.slug);
   const prev = state[t.id];
+  if (RETEXT) {
+    if (prev?.status !== 'ok' || !fs.existsSync(path.join(deckDir, 'index.qmd'))) {
+      skipped++;
+      continue;
+    }
+    const slides = fs.readdirSync(path.join(deckDir, 'slides')).filter((f) => f.endsWith('.webp')).sort();
+    const text = pdfPages(ex.pdf);
+    let notes = ex.notes && fs.existsSync(ex.notes) ? JSON.parse(fs.readFileSync(ex.notes, 'utf8')) : null;
+    if (notes && notes.length !== slides.length) notes = null;
+    const originalName = prev.assets.find((a) => a !== `${t.slug}.pdf`) || null;
+    fs.writeFileSync(path.join(deckDir, 'index.qmd'), deckQmd(t, slides, text, notes, `${t.slug}.pdf`, originalName));
+    fs.writeFileSync(`catalog/text/${t.id}.json`, `${JSON.stringify(text.slice(0, slides.length).map(clean))}\n`);
+    built++;
+    continue;
+  }
   if (!FORCE && prev?.status === 'ok' && prev.sha1 === t.source.sha1 && prev.slug === t.slug && fs.existsSync(path.join(deckDir, 'index.qmd'))) {
     skipped++;
     continue;
