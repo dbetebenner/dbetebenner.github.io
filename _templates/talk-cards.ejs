@@ -1,0 +1,16 @@
+```{=html}
+<ul class="talk-cards">
+<% for (const item of items) { %>
+<li class="talk-card">
+<span class="thumb">
+<% if (item.thumb) { %><img src="<%- item.thumb %>" alt="" loading="lazy"><% } else { %><span class="thumb-text" aria-hidden="true"><%= item.venue %></span><% } %>
+</span>
+<span class="body">
+<a class="stretched" href="<%- item.path %>"><%= item.title %></a>
+<span class="meta"><%= item.venue %> · <%= item.date_label %></span>
+<span><span class="badge-format format-<%= item.format %>"><%= item.format_label %></span></span>
+</span>
+</li>
+<% } %>
+</ul>
+```

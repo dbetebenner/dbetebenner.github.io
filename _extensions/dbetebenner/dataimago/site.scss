@@ -1,0 +1,311 @@
+/*-- scss:rules --*/
+// Hub layout for dbetebenner.github.io. Colours come only from the token custom properties
+// so the light/dark pair switches at runtime.
+
+.navbar {
+  border-bottom: 1px solid var(--color-border-subtle);
+  .navbar-title {
+    font-family: var(--font-family-display);
+    font-weight: var(--font-weight-normal);
+    letter-spacing: 0.02em;
+  }
+}
+
+h1, h2, h3, .title {
+  font-family: var(--font-family-display);
+  font-feature-settings: var(--font-feature-settings-display);
+}
+
+h1.title, .quarto-title h1 {
+  font-weight: var(--font-weight-light);
+  letter-spacing: -0.01em;
+}
+
+// ── Kicker labels above sections ────────────────────────────────────────
+.kicker {
+  font-family: var(--font-family-display);
+  font-size: 0.8rem;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-content-secondary);
+  border-top: 2px solid var(--color-interactive-primary);
+  padding-top: var(--spacing-sm);
+  margin: var(--spacing-3xl) 0 var(--spacing-lg);
+}
+
+// ── Home hero ───────────────────────────────────────────────────────────
+.hero {
+  display: grid;
+  grid-template-columns: 9rem 1fr;
+  gap: var(--spacing-xl);
+  align-items: center;
+  margin: var(--spacing-2xl) 0 var(--spacing-xl);
+
+  img {
+    width: 9rem;
+    height: 9rem;
+    border-radius: var(--radius-full);
+    object-fit: cover;
+    border: 1px solid var(--color-border-subtle);
+  }
+  .hero-name {
+    font-family: var(--font-family-display);
+    font-weight: var(--font-weight-light);
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    line-height: var(--font-lineHeight-tight);
+    margin: 0;
+  }
+  .hero-role {
+    color: var(--color-content-secondary);
+    font-size: 1.1rem;
+    margin: var(--spacing-xs) 0 var(--spacing-md);
+  }
+  p { max-width: 42rem; }
+}
+
+@media (max-width: 575.98px) {
+  .hero { grid-template-columns: 1fr; }
+}
+
+.stat-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xl);
+  margin: var(--spacing-lg) 0;
+  .stat {
+    display: flex;
+    flex-direction: column;
+    strong {
+      font-family: var(--font-family-display);
+      font-size: 2rem;
+      font-weight: var(--font-weight-light);
+      line-height: 1;
+    }
+    span { color: var(--color-content-secondary); font-size: 0.9rem; }
+  }
+}
+
+// ── Pill links and buttons ──────────────────────────────────────────────
+.pill-links, .talk-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  padding: 0;
+  margin: var(--spacing-md) 0;
+  list-style: none;
+}
+
+.pill-links a, .talk-actions a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0.35rem 0.9rem;
+  border: 1px solid var(--color-border-moderate);
+  border-radius: var(--radius-full);
+  color: var(--color-content-primary);
+  text-decoration: none !important;
+  font-size: 0.92rem;
+  transition: background-color var(--transition-quick), border-color var(--transition-quick);
+  &:hover { background-color: var(--navigation-hover-background); border-color: var(--color-interactive-primary); }
+  &:focus-visible { outline: 2px solid var(--color-interactive-focus); outline-offset: 2px; }
+}
+
+.talk-actions a.primary {
+  background-color: var(--color-interactive-primary);
+  border-color: var(--color-interactive-primary);
+  color: var(--color-content-inverse);
+  &:hover { background-color: var(--color-interactive-hover); }
+}
+
+body.quarto-dark .talk-actions a.primary { color: #14140f; }
+
+// ── Format badges ───────────────────────────────────────────────────────
+.badge-format {
+  display: inline-block;
+  padding: 0.1rem 0.55rem;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--color-content-secondary);
+  &.format-quarto {
+    border-color: var(--color-interactive-primary);
+    color: var(--color-content-primary);
+    background-color: var(--navigation-hover-background);
+  }
+  &.badge-signature { border-style: dashed; }
+}
+
+// ── Talk listing ────────────────────────────────────────────────────────
+.talk-filters {
+  display: grid;
+  grid-template-columns: 2fr repeat(3, 1fr);
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+
+  .field { display: block; }
+  label { display: block; font-size: 0.78rem; color: var(--color-content-secondary); margin-bottom: 0.15rem; }
+  select, input {
+    width: 100%;
+    padding: 0.4rem 0.6rem;
+    border: 1px solid var(--color-border-moderate);
+    border-radius: var(--radius-sm);
+    background-color: var(--color-surface-elevated);
+    color: var(--color-content-primary);
+    font: inherit;
+    font-size: 0.95rem;
+    &:focus-visible { outline: 2px solid var(--color-interactive-focus); outline-offset: 1px; }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .talk-filters { grid-template-columns: 1fr 1fr; }
+}
+
+.talk-count { color: var(--color-content-secondary); font-size: 0.9rem; margin: 0 0 var(--spacing-sm); }
+
+.talk-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.talk-row[hidden] { display: none; }
+
+.talk-row {
+  display: grid;
+  grid-template-columns: 6.5rem 1fr auto;
+  gap: var(--spacing-md);
+  align-items: baseline;
+  padding: 0.7rem 0.25rem;
+  border-bottom: 1px solid var(--color-border-subtle);
+  time { color: var(--color-content-secondary); font-variant-numeric: tabular-nums; font-size: 0.9rem; }
+  .talk-title {
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-content-primary);
+    text-decoration: none;
+    &:hover { text-decoration: underline; text-underline-offset: 0.15em; }
+  }
+  .talk-venue { display: block; color: var(--color-content-secondary); font-size: 0.9rem; }
+}
+
+@media (max-width: 575.98px) {
+  .talk-row { grid-template-columns: 1fr; gap: 0.2rem; }
+}
+
+.year-jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.75rem;
+  margin: 0 0 var(--spacing-lg);
+  font-size: 0.9rem;
+  button {
+    border: 0;
+    background: none;
+    padding: 0.1rem 0.2rem;
+    color: var(--color-content-secondary);
+    font-variant-numeric: tabular-nums;
+    cursor: pointer;
+    &[aria-pressed="true"] { color: var(--color-content-primary); font-weight: var(--font-weight-semibold); text-decoration: underline; text-underline-offset: 0.2em; }
+    &:focus-visible { outline: 2px solid var(--color-interactive-focus); }
+  }
+}
+
+// ── Cards (home page) ───────────────────────────────────────────────────
+.talk-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+  gap: var(--spacing-lg);
+  list-style: none;
+  padding: 0;
+}
+
+.talk-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background-color: var(--color-surface-elevated);
+  transition: border-color var(--transition-quick), box-shadow var(--transition-quick);
+  &:hover { border-color: var(--color-interactive-primary); box-shadow: var(--shadow-moderate); }
+  position: relative;
+  &:focus-within { outline: 2px solid var(--color-interactive-focus); outline-offset: 2px; }
+
+  .thumb {
+    aspect-ratio: 16 / 9;
+    background-color: var(--color-surface-sunken);
+    border-bottom: 1px solid var(--color-border-subtle);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img { width: 100%; height: 100%; object-fit: contain; }
+    .thumb-text {
+      font-family: var(--font-family-display);
+      font-size: 1.3rem;
+      font-weight: var(--font-weight-light);
+      padding: var(--spacing-md);
+      text-align: center;
+      color: var(--color-content-secondary);
+    }
+  }
+  .body { padding: var(--spacing-md); display: flex; flex-direction: column; gap: 0.3rem; flex: 1; }
+  a.stretched {
+    color: var(--color-content-primary);
+    font-weight: var(--font-weight-semibold);
+    text-decoration: none;
+    &::after { content: ""; position: absolute; inset: 0; }
+  }
+  .meta { color: var(--color-content-secondary); font-size: 0.88rem; margin-top: auto; }
+}
+
+// ── Talk landing page ───────────────────────────────────────────────────
+.deck-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  margin: var(--spacing-lg) 0 var(--spacing-md);
+  border: 1px solid var(--color-border-moderate);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background-color: #0c0a09;
+  iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+}
+
+dl.talk-facts {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.35rem var(--spacing-lg);
+  margin: var(--spacing-lg) 0;
+  dt { font-weight: var(--font-weight-semibold); color: var(--color-content-secondary); font-size: 0.9rem; }
+  dd { margin: 0; }
+}
+
+details.slide-text {
+  margin-top: var(--spacing-2xl);
+  border-top: 1px solid var(--color-border-subtle);
+  padding-top: var(--spacing-md);
+  summary { cursor: pointer; font-weight: var(--font-weight-semibold); }
+  ol { padding-left: 1.6rem; }
+  li { margin: 0.6rem 0; white-space: pre-line; color: var(--color-content-secondary); font-size: 0.92rem; }
+}
+
+// ── Papers and link lists ───────────────────────────────────────────────
+.paper-list, .link-list { list-style: none; padding: 0; }
+
+.paper-item, .link-item {
+  padding: var(--spacing-md) 0;
+  border-bottom: 1px solid var(--color-border-subtle);
+  .paper-title, .link-title { font-weight: var(--font-weight-semibold); color: var(--color-content-primary); }
+  .paper-cite, .link-desc { color: var(--color-content-secondary); font-size: 0.92rem; margin: 0.2rem 0 0; }
+}
+
+.bibtex pre { font-size: 0.8rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+}

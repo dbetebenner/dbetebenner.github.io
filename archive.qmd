@@ -1,0 +1,14 @@
+---
+title: Archive & experiments
+description: Older web experiments — D3 sketches and Idyll explorables.
+listing:
+  id: experiments
+  contents: listings/experiments.yml
+  template: _templates/link-list.ejs
+  sort: false
+---
+
+Sketches and explorables from learning new tools. They are kept online as they were made.
+
+::: {#experiments}
+:::

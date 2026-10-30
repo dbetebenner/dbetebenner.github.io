@@ -8,3 +8,8 @@ node_modules/
 /work/
 /review/axe/
 **/*.quarto_ipynb
+/review/private/
+# Written by tools/site/generate.mjs from the catalog.
+/listings/
+/talks/*/
+/papers/*/index.qmd

@@ -4,22 +4,28 @@
 //
 // Inputs:  catalog/generated/legacy.yml   (scan-legacy.mjs)
 //          catalog/generated/repos.yml    (scan-repos.mjs)
-//          catalog/generated/converted.yml (tools/convert, optional)
+//          catalog/generated/titles.yml (tools/convert/titles.mjs, optional)
+//          catalog/generated/converted/<shard>.yml (tools/convert/build-decks.mjs, optional)
 //          catalog/shards.yml, catalog/overrides.yml
 // Output:  catalog/talks.yml (published only), catalog/generated/catalog.full.yml
 
 import fs from 'node:fs';
 import path from 'node:path';
 import yaml from 'js-yaml';
+import { slugify } from '../lib/talk-meta.mjs';
 
 const read = (p, dflt = {}) => (fs.existsSync(p) ? yaml.load(fs.readFileSync(p, 'utf8'), { schema: yaml.CORE_SCHEMA }) || dflt : dflt);
 
 const legacy = read('catalog/generated/legacy.yml').talks || [];
 const repos = read('catalog/generated/repos.yml');
-const converted = read('catalog/generated/converted.yml').decks || {};
+const titles = read('catalog/generated/titles.yml');
+const converted = {};
+const CONVERTED = 'catalog/generated/converted';
+if (fs.existsSync(CONVERTED)) for (const f of fs.readdirSync(CONVERTED)) Object.assign(converted, read(path.join(CONVERTED, f)));
 const shards = read('catalog/shards.yml');
 const overrides = read('catalog/overrides.yml').talks || {};
 
+const legacySlug = (t) => slugify(`${t.date}-${t.venue_short}-${t.title}`).slice(0, 90).replace(/-+$/, '');
 const shardFor = (year) => shards.shards.find((s) => year >= s.from && year <= s.to);
 
 const talks = [];
@@ -42,11 +48,20 @@ for (const t of legacy) {
       entry.related_repo = r.github?.repo_url;
     }
   }
+  if (titles[entry.id] && entry.title_source === 'filename') {
+    entry.title = titles[entry.id];
+    entry.title_source = 'slide-1';
+  }
+  const titlePatch = overrides[entry.id]?.title;
+  if (titlePatch) entry.title = titlePatch;
+  entry.slug = legacySlug(entry);
+  const conv = converted[entry.id];
+  // Once a deck is published its slug is its URL; it never changes after that.
+  if (conv?.slug) entry.slug = conv.slug;
   const shard = shardFor(entry.year);
   entry.shard = shard.repo;
   entry.deck_url = `${shards.pages_base}/${shard.repo}/${entry.slug}/`;
   entry.originals_url = `https://github.com/${shards.owner}/${shard.repo}/releases/tag/${shards.release_tag}`;
-  const conv = converted[entry.id];
   if (conv) Object.assign(entry, { converted: conv, slides: conv.slides ?? entry.slides });
   talks.push(entry);
 }
@@ -57,6 +72,18 @@ for (const r of repos.talks || []) {
     ...r,
     deck_url: r.decks?.[0]?.url || null,
   });
+}
+
+// Slugs are URLs: published decks keep theirs, everything else takes the next free suffix.
+{
+  const taken = new Set(talks.filter((t) => t.converted?.slug).map((t) => t.slug));
+  const pending = talks.filter((t) => !t.converted?.slug).sort((a, b) => a.date.localeCompare(b.date) || a.id.localeCompare(b.id));
+  for (const t of pending) {
+    const base = t.slug;
+    for (let n = 2; taken.has(t.slug); n++) t.slug = `${base}-${n}`;
+    taken.add(t.slug);
+    if (t.shard) t.deck_url = `${shards.pages_base}/${t.shard}/${t.slug}/`;
+  }
 }
 
 // Apply overrides by id or slug.

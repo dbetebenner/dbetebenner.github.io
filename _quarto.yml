@@ -1,0 +1,59 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - index.qmd
+    - talks/**/*.qmd
+    - papers/**/*.qmd
+    - code.qmd
+    - archive.qmd
+    - about.qmd
+    - 404.qmd
+  resources:
+    - public/**
+    - assets/**
+    - papers/**/*.pdf
+    - .nojekyll
+
+website:
+  title: Damian Betebenner
+  description: Talks, papers and code on student growth, educational assessment and accountability.
+  site-url: https://dbetebenner.github.io
+  repo-url: https://github.com/dbetebenner/dbetebenner.github.io
+  favicon: public/favicon.png
+  open-graph: true
+  page-navigation: false
+  search:
+    location: navbar
+    type: overlay
+  navbar:
+    title: Damian Betebenner
+    left:
+      - href: talks/index.qmd
+        text: Talks
+      - href: papers/index.qmd
+        text: Papers
+      - href: code.qmd
+        text: Code
+      - href: archive.qmd
+        text: Archive
+      - href: about.qmd
+        text: About
+    right:
+      - icon: github
+        href: https://github.com/dbetebenner
+        aria-label: Damian Betebenner on GitHub
+  page-footer:
+    left: "© Damian Betebenner · Slides and papers are shared for scholarly use"
+    right:
+      - text: Source
+        href: https://github.com/dbetebenner/dbetebenner.github.io
+      - text: Design system
+        href: https://github.com/dataimago/dataimago-design
+
+format:
+  dataimago-html:
+    toc: false
+    page-layout: article
+    title-block-banner: false
+    lang: en

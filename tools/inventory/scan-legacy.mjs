@@ -272,6 +272,7 @@ const talks = decks.map(({ dir, primary, pdf, originals, superseded, slides }) =
     date_precision: date ? 'day' : (mtime.getFullYear() === Number(primary.year) ? 'mtime' : 'year'),
     year: Number(primary.year),
     venue: venue.name,
+    venue_short: venue.short,
     event_type: venue.type,
     folder: path.join(primary.year, folder),
     ...(sub ? { session: sub.replace(/_/g, ' ') } : {}),

@@ -1,0 +1,10 @@
+```{=html}
+<ul class="paper-list">
+<% for (const item of items) { %>
+<li class="paper-item">
+<a class="paper-title" href="<%- item.path %>"><%= item.title %></a>
+<p class="paper-cite"><%= item.cite %></p>
+</li>
+<% } %>
+</ul>
+```

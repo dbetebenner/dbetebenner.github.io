@@ -1,0 +1,25 @@
+---
+title: Code & packages
+description: Open-source R packages for student growth percentiles and related analyses.
+listing:
+  - id: packages
+    contents: listings/packages.yml
+    template: _templates/link-list.ejs
+    sort: false
+  - id: sites
+    contents: listings/sites.yml
+    template: _templates/link-list.ejs
+    sort: "date desc"
+---
+
+The analyses in the talks run on these packages. Each links to its own documentation site.
+
+::: {#packages}
+:::
+
+::: {.kicker}
+Project sites
+:::
+
+::: {#sites}
+:::
