@@ -1,0 +1,21 @@
+Fonts in this directory are licensed under the SIL Open Font License, Version 1.1.
+Full license text: https://openfontlicense.org/open-font-license-official-text/
+
+Josefin Sans    JosefinSans-{300,400,500,600,700}.woff2
+                Copyright 2010 The Josefin Sans Project Authors
+                (https://github.com/ThomasJockin/JosefinSansFont-master),
+                with Reserved Font Name "Josefin Sans".
+Noto Sans       NotoSans-{400,600}.woff2
+                Copyright 2022 The Noto Project Authors
+                (https://github.com/notofonts/latin-greek-cyrillic)
+Noto Sans Mono  NotoSansMono-400.woff2
+                Copyright 2022 The Noto Project Authors
+                (https://github.com/notofonts/latin-greek-cyrillic)
+Noto Sans Math  NotoSansMath-400.woff2
+                Copyright 2022 Google LLC.
+
+Josefin Sans, Noto Sans and Noto Sans Mono are Latin subsets (static
+instances of the variable fonts) built by DoWEA_Presentation_102626
+tools/subset_fonts.py. Subsetting is a permitted modification under the OFL.
+Noto Sans Math is the full font. The copyright and license notice is
+preserved in each file's name table.

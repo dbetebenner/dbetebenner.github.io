@@ -26,9 +26,10 @@ if (!SHARD || !DIR) {
   process.exit(2);
 }
 
-const DECK_FORMAT = 'dataimago/deck-revealjs';
+const DECK_FORMAT = 'deck-revealjs';
 const WIDTH = 1920;
 const HEIGHT = 1080;
+// Reveal background attributes need a literal colour: color.palette.stone.900, the deck's ink.
 const LETTERBOX = '#14140f';
 
 const load = (p) => (fs.existsSync(p) ? yaml.load(fs.readFileSync(p, 'utf8'), { schema: yaml.CORE_SCHEMA }) || {} : {});
@@ -121,7 +122,7 @@ function deckQmd(t, slides, text, notes, pdfName, originalName) {
   for (const [i, s] of slides.entries()) {
     out += `## {.archive-slide background-image="slides/${s}" background-size="contain" background-color="${LETTERBOX}"}\n\n`;
     const txt = clean(text[i] || '');
-    if (txt) out += `\`\`\`{=html}\n<div class="visually-hidden">${esc(txt)}</div>\n\`\`\`\n\n`;
+    if (txt) out += `\`\`\`{=html}\n<div class="archive-text">${esc(txt)}</div>\n\`\`\`\n\n`;
     const note = clean(notes?.[i] || '');
     if (note) out += `::: notes\n\`\`\`{=html}\n${esc(note).replace(/\n/g, '<br>\n')}\n\`\`\`\n:::\n\n`;
   }

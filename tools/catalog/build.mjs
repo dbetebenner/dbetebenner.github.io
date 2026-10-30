@@ -25,7 +25,8 @@ if (fs.existsSync(CONVERTED)) for (const f of fs.readdirSync(CONVERTED)) Object.
 const shards = read('catalog/shards.yml');
 const overrides = read('catalog/overrides.yml').talks || {};
 
-const legacySlug = (t) => slugify(`${t.date}-${t.venue_short}-${t.title}`).slice(0, 90).replace(/-+$/, '');
+const legacySlug = (t) =>
+  slugify(`${t.date_precision === 'year' ? t.year : t.date}-${t.venue_short}-${t.title}`).slice(0, 90).replace(/-+$/, '');
 const shardFor = (year) => shards.shards.find((s) => year >= s.from && year <= s.to);
 
 const talks = [];
@@ -52,8 +53,16 @@ for (const t of legacy) {
     entry.title = titles[entry.id];
     entry.title_source = 'slide-1';
   }
-  const titlePatch = overrides[entry.id]?.title;
-  if (titlePatch) entry.title = titlePatch;
+  // File-name dates (MMDDYY) beat the folder year when they are within a year of it; further
+  // apart they come from a reused template, so the folder year stands.
+  const dateYear = Number(entry.date.slice(0, 4));
+  if (dateYear !== entry.year) {
+    if (Math.abs(dateYear - entry.year) <= 1) entry.year = dateYear;
+    else Object.assign(entry, { date: `${entry.year}-01-01`, date_precision: 'year' });
+  }
+  const patch = overrides[entry.id] || {};
+  if (patch.title) entry.title = patch.title;
+  if (patch.date) Object.assign(entry, { date: patch.date, date_precision: patch.date_precision || 'day', year: Number(patch.date.slice(0, 4)) });
   entry.slug = legacySlug(entry);
   const conv = converted[entry.id];
   // Once a deck is published its slug is its URL; it never changes after that.

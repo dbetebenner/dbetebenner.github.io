@@ -57,8 +57,11 @@ function slideText(t) {
   return pages.some((s) => s.trim()) ? pages : null;
 }
 
+const rebuilt = (t) => fs.existsSync(`decks/${t.slug}/index.qmd`);
+
 function talkPage(t) {
   const fmt = formatOf(t);
+  const native = rebuilt(t);
   const front = {
     title: t.title,
     subtitle: [t.venue, displayDate(t)].filter(Boolean).join(' · '),
@@ -73,12 +76,14 @@ function talkPage(t) {
     ['Event', EVENT[t.event_type] || t.event_type],
     ...(t.coauthors?.length ? [['With', t.coauthors.join(', ')]] : []),
     ...(t.slides ? [['Slides', String(t.slides)]] : []),
-    ['Format', fmt.key === 'quarto' ? 'Quarto RevealJS' : fmt.key === 'github' ? 'Materials on GitHub' : `Converted from ${fmt.label}`],
+    ['Format', native ? `Quarto RevealJS, rebuilt from ${fmt.label}` : fmt.key === 'quarto' ? 'Quarto RevealJS' : fmt.key === 'github' ? 'Materials on GitHub' : `Converted from ${fmt.label}`],
     ...(t.also_presented?.length ? [['Also given', t.also_presented.map((a) => a.venue || a).join('; ')]] : []),
   ];
 
   const actions = [];
-  const decks = t.decks?.length ? t.decks : t.deck_url ? [{ label: 'Slides', url: t.deck_url }] : [];
+  const decks = native
+    ? [{ label: 'Open slides full screen', url: `/decks/${t.slug}/` }, ...(converted(t) ? [{ label: 'Image copy of the original slides', url: t.deck_url }] : [])]
+    : t.decks?.length ? t.decks : t.deck_url ? [{ label: 'Slides', url: t.deck_url }] : [];
   if (t.delivery === 'repo') {
     actions.push(`<a class="primary" href="${esc(t.github.repo_url)}">Materials on GitHub</a>`);
   } else {
@@ -93,7 +98,7 @@ function talkPage(t) {
   if (t.delivery === 'link' && t.github?.repo_url) actions.push(`<a href="${esc(t.github.repo_url)}">Source on GitHub</a>`);
   if (t.related_repo) actions.push(`<a href="${esc(t.related_repo)}">Materials on GitHub</a>`);
 
-  const embed = t.delivery !== 'repo' && decks[0] && (t.delivery === 'link' || converted(t));
+  const embed = t.delivery !== 'repo' && decks[0] && (native || t.delivery === 'link' || converted(t));
 
   let body = '';
   body += '```{=html}\n';
@@ -105,7 +110,9 @@ function talkPage(t) {
   body += '```\n\n';
 
   if (t.subtitle && t.delivery !== 'convert') body += `${t.subtitle}\n\n`;
-  if (t.delivery === 'convert') {
+  if (native) {
+    body += `::: {.callout-note appearance="minimal"}\nThese slides were rebuilt as a native Quarto deck from the original ${fmt.label} source, so the text is selectable and the figures scale.${converted(t) ? ' The image copy of the original slides is linked above.' : ''}\n:::\n\n`;
+  } else if (t.delivery === 'convert') {
     body += '::: {.callout-note appearance="minimal"}\nThis deck is an image-based copy of the original slides. Builds and animations are flattened; the slide text is reproduced below for search and screen readers.\n:::\n\n';
   }
 
@@ -117,7 +124,7 @@ function talkPage(t) {
     body += '\n';
   }
 
-  const text = slideText(t);
+  const text = native ? null : slideText(t);
   if (text) {
     body += '```{=html}\n<details class="slide-text"><summary>Slide text</summary><ol>\n';
     body += text.map((p) => `<li>${esc(p.replace(/[ \t]+/g, ' ').replace(/\n{3,}/g, '\n\n').trim())}</li>`).join('\n');

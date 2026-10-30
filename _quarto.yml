@@ -5,6 +5,7 @@ project:
     - index.qmd
     - talks/**/*.qmd
     - papers/**/*.qmd
+    - decks/*/index.qmd
     - code.qmd
     - archive.qmd
     - about.qmd

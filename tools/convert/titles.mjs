@@ -17,6 +17,8 @@ const NOT_TITLE = /(betebenner|damian|national center|center for assessment|ncie
 
 // A line like this ends the title: venue, place or date lines set in the same size type.
 const VENUE_LINE = /(\b(19|20)\d{2}\b|\d(st|nd|rd|th)\b|,\s*[A-Z]{2}\b|\b(conference|meeting|sessions?|symposium|webinar|department|office of|fellows|seminar|lecture series|annual|throwdown|providence|albuquerque|chestnut hill|needham|indianapolis|reno|richmond|baltimore|salt lake|cambridge|wisconsin rapids|portsmouth|denver|albany|new orleans|lawrence)\b|henry braun|karantonis|— )/i;
+// Venue lines that carry no year or place.
+const VENUE_NAME = /(committee|planning call|work group|council on|^ncme presentation$|^a joint exploration|^growth models – a joint)/i;
 
 // Slide 1 of these decks is not a title slide (a sample report, a committee name, ligature-damaged text).
 const SKIP = new Set(['legacy-66c94011', 'legacy-8aa17ef0', 'legacy-1e23b0ef', 'legacy-bbdad77d', 'legacy-314110fa']);
@@ -66,12 +68,13 @@ function slideOneTitle(pdf) {
   for (const l of lines.filter((x) => x.h >= big * 0.8 && /[A-Za-z]{3}/.test(x.text)).sort((a, b) => a.y - b.y)) {
     const text = l.text.replace(/^bg=\w+\s*/, '');
     if (NOT_TITLE.test(text)) continue;
-    if (kept.length && VENUE_LINE.test(text)) break;
-    kept.push(text);
+    if (kept.length && (VENUE_LINE.test(text) || VENUE_NAME.test(text))) break;
+    kept.push({ text, h: l.h });
   }
+  // A line in smaller type than the one above it is a subtitle.
+  const joined = kept.map((k, i) => (i && (kept[i - 1].h - k.h) / big > 0.06 && !/[:?!.]$/.test(kept[i - 1].text) ? `: ${k.text}` : ` ${k.text}`)).join('');
   const title = fixCase(
-    kept
-      .join(' ')
+    joined
       .replace(/\s+([:,])/g, '$1')
       .replace(/COVID-\s+/gi, 'COVID-')
       .replace(/\s+draft paper available$/i, '')
@@ -87,7 +90,7 @@ function slideOneTitle(pdf) {
 const out = {};
 const rows = [];
 for (const t of full.talks) {
-  if (!t.publish || t.delivery !== 'convert' || t.title_source !== 'filename' || SKIP.has(t.id)) continue;
+  if (!t.publish || t.delivery !== 'convert' || !['filename', 'slide-1'].includes(t.title_source) || SKIP.has(t.id)) continue;
   const ex = exported[t.id];
   if (ex?.status !== 'ok') continue;
   let title = '';
@@ -96,7 +99,7 @@ for (const t of full.talks) {
   } catch {
     continue;
   }
-  if (!title || title.toLowerCase() === t.title.toLowerCase()) continue;
+  if (!title || (t.title_source === 'filename' && title.toLowerCase() === t.title.toLowerCase())) continue;
   out[t.id] = title;
   rows.push(`${t.id}  ${t.title}  →  ${title}`);
 }

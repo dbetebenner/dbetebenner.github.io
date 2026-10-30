@@ -1,20 +1,20 @@
 # Built by tools/catalog/build.mjs — edit catalog/overrides.yml or catalog/repos.yml, not this file
 summary:
-  generated: '2026-10-30T16:27:19.069Z'
+  generated: '2026-10-30T16:43:45.913Z'
   published: 411
   by_delivery:
     link: 25
     convert: 383
     repo: 3
-  converted: 0
+  converted: 9
   signature:
     - legacy-b9d52504
     - legacy-8b883377
     - legacy-1d230713
     - legacy-632951a0
     - legacy-84df1d61
-    - legacy-5b50dc0c
     - legacy-5d49d8ba
+    - legacy-5b50dc0c
     - legacy-90fd3007
 series:
   liwld:
@@ -1210,6 +1210,20 @@ talks:
     shard: talks-archive-2020-2026
     deck_url: https://dbetebenner.github.io/talks-archive-2020-2026/2026-01-28-il-tac-sgp-calculation-and-anomalies/
     originals_url: https://github.com/dbetebenner/talks-archive-2020-2026/releases/tag/originals
+    converted:
+      status: ok
+      sha1: c858b095d6ebb73305362be0a13ced247b989cba
+      slug: 2026-01-28-il-tac-sgp-calculation-and-anomalies
+      slides: 16
+      bytes: 1220758
+      notes: true
+      pdf_url: >-
+        https://github.com/dbetebenner/talks-archive-2020-2026/releases/download/originals/2026-01-28-il-tac-sgp-calculation-and-anomalies.pdf
+      original_url: >-
+        https://github.com/dbetebenner/talks-archive-2020-2026/releases/download/originals/2026-01-28-il-tac-sgp-calculation-and-anomalies.key
+      assets:
+        - 2026-01-28-il-tac-sgp-calculation-and-anomalies.pdf
+        - 2026-01-28-il-tac-sgp-calculation-and-anomalies.key
   - id: repo-wera-conference-121025
     slug: 2025-12-10-death-to-proficiency-long-live-proficiency
     repo: WERA_Conference_121025
@@ -1271,6 +1285,18 @@ talks:
     shard: talks-archive-2020-2026
     deck_url: https://dbetebenner.github.io/talks-archive-2020-2026/2025-12-02-nm-tac-new-mexico-sgp-analyses/
     originals_url: https://github.com/dbetebenner/talks-archive-2020-2026/releases/tag/originals
+    converted:
+      status: ok
+      sha1: 5a9252d8e2e1bbcc887c46cea5dd1c9d803e8ee7
+      slug: 2025-12-02-nm-tac-new-mexico-sgp-analyses
+      slides: 18
+      bytes: 1608680
+      notes: true
+      pdf_url: https://github.com/dbetebenner/talks-archive-2020-2026/releases/download/originals/2025-12-02-nm-tac-new-mexico-sgp-analyses.pdf
+      original_url: https://github.com/dbetebenner/talks-archive-2020-2026/releases/download/originals/2025-12-02-nm-tac-new-mexico-sgp-analyses.key
+      assets:
+        - 2025-12-02-nm-tac-new-mexico-sgp-analyses.pdf
+        - 2025-12-02-nm-tac-new-mexico-sgp-analyses.key
   - id: legacy-8bfc6149
     slug: 2025-11-04-nh-tac-2025-sgp-analyses-and-results
     title: 2025 SGP Analyses and Results
@@ -1935,7 +1961,7 @@ talks:
     originals_url: https://github.com/dbetebenner/talks-archive-2020-2026/releases/tag/originals
   - id: legacy-db3d67ab
     slug: 2024-09-11-nm-new-mexico-student-growth-analyses-history-and-conceptual-overview
-    title: New Mexico Student Growth Analyses History and Conceptual Overview
+    title: 'New Mexico Student Growth Analyses: History and Conceptual Overview'
     title_source: slide-1
     date: '2024-09-11'
     date_precision: day
@@ -2054,7 +2080,7 @@ talks:
     originals_url: https://github.com/dbetebenner/talks-archive-2020-2026/releases/tag/originals
   - id: legacy-05fe199d
     slug: 2024-08-22-hi-hawaii-student-growth-analyses-history-and-conceptual-overview
-    title: Hawaii Student Growth Analyses History and Conceptual Overview
+    title: 'Hawaii Student Growth Analyses: History and Conceptual Overview'
     title_source: slide-1
     date: '2024-08-22'
     date_precision: day
@@ -2144,7 +2170,7 @@ talks:
     originals_url: https://github.com/dbetebenner/talks-archive-2020-2026/releases/tag/originals
   - id: legacy-d0f815ae
     slug: 2024-07-30-ri-tac-chronic-absenteeism-and-its-impact-on-learning-an-examination-using-rica
-    title: Chronic Absenteeism and its Impact on Learning An examination using RICAS data
+    title: 'Chronic Absenteeism and its Impact on Learning: An examination using RICAS data'
     title_source: slide-1
     date: '2024-07-30'
     date_precision: day
@@ -2809,7 +2835,7 @@ talks:
     originals_url: https://github.com/dbetebenner/talks-archive-2020-2026/releases/tag/originals
   - id: legacy-ed0a50a0
     slug: 2023-07-25-nh-new-hampshire-elp-proficiency-level-targets-overview-results-and-considerati
-    title: New Hampshire ELP Proficiency Level Targets Overview, Results & Considerations
+    title: 'New Hampshire ELP Proficiency Level Targets: Overview, Results & Considerations'
     title_source: slide-1
     date: '2023-07-25'
     date_precision: day
@@ -4122,7 +4148,7 @@ talks:
     title_source: slide-1
     date: '2022-01-27'
     date_precision: day
-    year: 2021
+    year: 2022
     venue: Indiana Department of Education
     venue_short: IN
     event_type: state
@@ -4239,7 +4265,7 @@ talks:
     originals_url: https://github.com/dbetebenner/talks-archive-2020-2026/releases/tag/originals
   - id: legacy-9882bad7
     slug: 2021-12-09-ri-pandemic-related-academic-impact-in-2021-what-do-state-summative-assessments
-    title: Pandemic Related Academic Impact in 2021 What do state summative assessments tell us
+    title: 'Pandemic Related Academic Impact in 2021: What do state summative assessments tell us'
     title_source: slide-1
     date: '2021-12-09'
     date_precision: day
@@ -4360,7 +4386,7 @@ talks:
     originals_url: https://github.com/dbetebenner/talks-archive-2020-2026/releases/tag/originals
   - id: legacy-c11fcddc
     slug: 2021-11-04-nagb-pandemic-related-academic-impact-in-2021-what-do-state-summative-assessmen
-    title: Pandemic Related Academic Impact in 2021 What do state summative assessments tell us
+    title: 'Pandemic Related Academic Impact in 2021: What do state summative assessments tell us'
     title_source: slide-1
     date: '2021-11-04'
     date_precision: day
@@ -4389,7 +4415,7 @@ talks:
     originals_url: https://github.com/dbetebenner/talks-archive-2020-2026/releases/tag/originals
   - id: legacy-9798ec83
     slug: 2021-11-03-ri-tac-pandemic-related-academic-impact-in-2021-what-do-state-summative-assessm
-    title: Pandemic Related Academic Impact in 2021 What do state summative assessments tell us
+    title: 'Pandemic Related Academic Impact in 2021: What do state summative assessments tell us'
     title_source: slide-1
     date: '2021-11-03'
     date_precision: day
@@ -4420,7 +4446,7 @@ talks:
     originals_url: https://github.com/dbetebenner/talks-archive-2020-2026/releases/tag/originals
   - id: legacy-624afb47
     slug: 2021-10-25-az-pandemic-related-academic-impact-in-2021-a-look-at-results-from-arizona
-    title: Pandemic Related Academic Impact in 2021 A look at results from Arizona
+    title: 'Pandemic Related Academic Impact in 2021: A look at results from Arizona'
     title_source: slide-1
     date: '2021-10-25'
     date_precision: day
@@ -4449,7 +4475,7 @@ talks:
     originals_url: https://github.com/dbetebenner/talks-archive-2020-2026/releases/tag/originals
   - id: legacy-3c88e93a
     slug: 2021-10-11-wera-pandemic-related-academic-impact-in-2021-what-do-state-summative-assessmen
-    title: Pandemic Related Academic Impact in 2021 What do state summative assessments tell us
+    title: 'Pandemic Related Academic Impact in 2021: What do state summative assessments tell us'
     title_source: slide-1
     date: '2021-10-11'
     date_precision: day
@@ -4564,7 +4590,7 @@ talks:
     originals_url: https://github.com/dbetebenner/talks-archive-2020-2026/releases/tag/originals
   - id: legacy-951b7fcc
     slug: 2021-09-27-az-pandemic-related-academic-impact-in-2021-a-look-at-results-from-arizona
-    title: Pandemic Related Academic Impact in 2021 A look at results from Arizona
+    title: 'Pandemic Related Academic Impact in 2021: A look at results from Arizona'
     title_source: slide-1
     date: '2021-09-27'
     date_precision: day
@@ -4597,7 +4623,7 @@ talks:
     title_source: slide-1
     date: '2021-09-23'
     date_precision: day
-    year: 2020
+    year: 2021
     venue: Indiana Department of Education
     venue_short: IN
     event_type: state
@@ -4621,7 +4647,7 @@ talks:
     originals_url: https://github.com/dbetebenner/talks-archive-2020-2026/releases/tag/originals
   - id: legacy-8fdbf04b
     slug: 2021-09-21-ccsso-assessment-pandemic-related-academic-impact-in-2021-what-do-state-summati
-    title: Pandemic Related Academic Impact in 2021 What do state summative assessments tell us
+    title: 'Pandemic Related Academic Impact in 2021: What do state summative assessments tell us'
     title_source: slide-1
     date: '2021-09-21'
     date_precision: day
@@ -4706,7 +4732,7 @@ talks:
     originals_url: https://github.com/dbetebenner/talks-archive-2020-2026/releases/tag/originals
   - id: legacy-7c5be616
     slug: 2021-08-25-az-pandemic-related-academic-impact-in-2021-what-do-state-summative-assessments
-    title: Pandemic Related Academic Impact in 2021 What do state summative assessments tell us
+    title: 'Pandemic Related Academic Impact in 2021: What do state summative assessments tell us'
     title_source: slide-1
     date: '2021-08-25'
     date_precision: day
@@ -4765,7 +4791,7 @@ talks:
     originals_url: https://github.com/dbetebenner/talks-archive-2020-2026/releases/tag/originals
   - id: legacy-59b8c62d
     slug: 2021-08-10-nh-wida-access-student-growth-in-2021-an-update-to-the-new-hampshire-tac
-    title: WIDA-ACCESS Student Growth in 2021 An Update to the New Hampshire TAC
+    title: 'WIDA-ACCESS Student Growth in 2021: An Update to the New Hampshire TAC'
     title_source: slide-1
     date: '2021-08-10'
     date_precision: day
@@ -4997,8 +5023,8 @@ talks:
       https://dbetebenner.github.io/talks-archive-2020-2026/2021-06-24-ncsa-using-interim-assessment-data-to-measure-covid-s-impact-on-learning-nation/
     originals_url: https://github.com/dbetebenner/talks-archive-2020-2026/releases/tag/originals
   - id: legacy-7276de60
-    slug: 2021-06-18-in-a-first-look-at-pandemic-related-academic-impact-wida-access-indiana-doe
-    title: 'A First Look at Pandemic Related Academic Impact: WIDA-Access Indiana DOE'
+    slug: 2021-06-18-in-a-first-look-at-pandemic-related-academic-impact-wida-access
+    title: 'A First Look at Pandemic Related Academic Impact: WIDA-ACCESS'
     title_source: slide-1
     date: '2021-06-18'
     date_precision: day
@@ -5022,8 +5048,7 @@ talks:
     delivery: convert
     publish: true
     shard: talks-archive-2020-2026
-    deck_url: >-
-      https://dbetebenner.github.io/talks-archive-2020-2026/2021-06-18-in-a-first-look-at-pandemic-related-academic-impact-wida-access-indiana-doe/
+    deck_url: https://dbetebenner.github.io/talks-archive-2020-2026/2021-06-18-in-a-first-look-at-pandemic-related-academic-impact-wida-access/
     originals_url: https://github.com/dbetebenner/talks-archive-2020-2026/releases/tag/originals
   - id: legacy-b51d3456
     slug: 2021-06-14-asr-scass-using-student-growth-to-assess-covid-related-academic-impact
@@ -5056,7 +5081,7 @@ talks:
     originals_url: https://github.com/dbetebenner/talks-archive-2020-2026/releases/tag/originals
   - id: legacy-a8d70d72
     slug: 2021-06-11-in-report-on-covid-19-academic-impact-in-indiana-executive-summary-and-communic
-    title: Report on COVID-19 Academic Impact in Indiana Executive Summary and Communications Update Weekly Planning Call
+    title: 'Report on COVID-19 Academic Impact in Indiana: Executive Summary and Communications Update'
     title_source: slide-1
     date: '2021-06-11'
     date_precision: day
@@ -5142,8 +5167,8 @@ talks:
     deck_url: https://dbetebenner.github.io/talks-archive-2020-2026/2021-05-24-co-colorado-sgp-growth-calculations-in-2021/
     originals_url: https://github.com/dbetebenner/talks-archive-2020-2026/releases/tag/originals
   - id: legacy-8ba0882c
-    slug: 2021-05-13-in-report-on-covid-19-academic-impact-in-indiana-an-overview-indiana-assessment
-    title: Report on COVID-19 Academic Impact in Indiana An Overview Indiana Assessment Technical Advisory Committee
+    slug: 2021-05-13-in-report-on-covid-19-academic-impact-in-indiana-an-overview
+    title: 'Report on COVID-19 Academic Impact in Indiana: An Overview'
     title_source: slide-1
     date: '2021-05-13'
     date_precision: day
@@ -5167,12 +5192,11 @@ talks:
     delivery: convert
     publish: true
     shard: talks-archive-2020-2026
-    deck_url: >-
-      https://dbetebenner.github.io/talks-archive-2020-2026/2021-05-13-in-report-on-covid-19-academic-impact-in-indiana-an-overview-indiana-assessment/
+    deck_url: https://dbetebenner.github.io/talks-archive-2020-2026/2021-05-13-in-report-on-covid-19-academic-impact-in-indiana-an-overview/
     originals_url: https://github.com/dbetebenner/talks-archive-2020-2026/releases/tag/originals
   - id: legacy-de074202
-    slug: 2021-05-13-in-report-on-covid-19-academic-impact-in-indiana-an-overview-indiana-assessment-2
-    title: Report on COVID-19 Academic Impact in Indiana An Overview Indiana Assessment Technical Advisory Committee
+    slug: 2021-05-13-in-report-on-covid-19-academic-impact-in-indiana-an-overview-2
+    title: 'Report on COVID-19 Academic Impact in Indiana: An Overview'
     title_source: slide-1
     date: '2021-05-13'
     date_precision: day
@@ -5196,8 +5220,7 @@ talks:
     delivery: convert
     publish: true
     shard: talks-archive-2020-2026
-    deck_url: >-
-      https://dbetebenner.github.io/talks-archive-2020-2026/2021-05-13-in-report-on-covid-19-academic-impact-in-indiana-an-overview-indiana-assessment-2/
+    deck_url: https://dbetebenner.github.io/talks-archive-2020-2026/2021-05-13-in-report-on-covid-19-academic-impact-in-indiana-an-overview-2/
     originals_url: https://github.com/dbetebenner/talks-archive-2020-2026/releases/tag/originals
   - id: legacy-c8f5c556
     slug: 2021-05-10-hi-understanding-pandemic-related-academic-impact-an-overview
@@ -5915,6 +5938,34 @@ talks:
     shard: talks-archive-2020-2026
     deck_url: https://dbetebenner.github.io/talks-archive-2020-2026/2020-02-25-mi-academic-growth-and-school-accountability/
     originals_url: https://github.com/dbetebenner/talks-archive-2020-2026/releases/tag/originals
+  - id: legacy-54a9c6d6
+    slug: 2020-az-arizona-student-growth-analyses
+    title: Arizona Student Growth Analyses
+    title_source: slide-1
+    date: '2020-01-01'
+    date_precision: year
+    year: 2020
+    venue: Arizona Department of Education
+    venue_short: AZ
+    event_type: state
+    folder: 2020/Arizona
+    source:
+      primary: 2020/Arizona/Arizona_Student_Growth_Overview_020118.pptx
+      format: powerpoint
+      pdf: null
+      originals:
+        - format: pptx
+          path: 2020/Arizona/Arizona_Student_Growth_Overview_020118.pptx
+      bytes: 2189924
+      modified: '2018-02-01'
+      sha1: 5f43d81595b818c8ba7b676d99fd093d7bd4198c
+    slides: 23
+    authorship: self
+    delivery: convert
+    publish: true
+    shard: talks-archive-2020-2026
+    deck_url: https://dbetebenner.github.io/talks-archive-2020-2026/2020-az-arizona-student-growth-analyses/
+    originals_url: https://github.com/dbetebenner/talks-archive-2020-2026/releases/tag/originals
   - id: legacy-4c42b7f6
     slug: 2019-12-12-il-tac-illinois-sgp-analyses-for-2019
     title: Illinois SGP Analyses for 2019
@@ -5943,6 +5994,20 @@ talks:
     shard: talks-archive-2015-2019
     deck_url: https://dbetebenner.github.io/talks-archive-2015-2019/2019-12-12-il-tac-illinois-sgp-analyses-for-2019/
     originals_url: https://github.com/dbetebenner/talks-archive-2015-2019/releases/tag/originals
+    converted:
+      status: ok
+      sha1: 8df0c7a3646fb1e9bf748f576ca070674fee9359
+      slug: 2019-12-12-il-tac-illinois-sgp-analyses-for-2019
+      slides: 14
+      bytes: 958134
+      notes: true
+      pdf_url: >-
+        https://github.com/dbetebenner/talks-archive-2015-2019/releases/download/originals/2019-12-12-il-tac-illinois-sgp-analyses-for-2019.pdf
+      original_url: >-
+        https://github.com/dbetebenner/talks-archive-2015-2019/releases/download/originals/2019-12-12-il-tac-illinois-sgp-analyses-for-2019.pptx
+      assets:
+        - 2019-12-12-il-tac-illinois-sgp-analyses-for-2019.pdf
+        - 2019-12-12-il-tac-illinois-sgp-analyses-for-2019.pptx
   - id: legacy-3e0d51fc
     slug: 2019-10-03-new-meridian-assessment-changes-transitions-using-sgps
     title: Assessment Changes/Transitions using SGPs
@@ -5973,6 +6038,20 @@ talks:
     shard: talks-archive-2015-2019
     deck_url: https://dbetebenner.github.io/talks-archive-2015-2019/2019-10-03-new-meridian-assessment-changes-transitions-using-sgps/
     originals_url: https://github.com/dbetebenner/talks-archive-2015-2019/releases/tag/originals
+    converted:
+      status: ok
+      sha1: 8605c81480a95e839dd7905ea876b78854a1baf0
+      slug: 2019-10-03-new-meridian-assessment-changes-transitions-using-sgps
+      slides: 7
+      bytes: 449376
+      notes: false
+      pdf_url: >-
+        https://github.com/dbetebenner/talks-archive-2015-2019/releases/download/originals/2019-10-03-new-meridian-assessment-changes-transitions-using-sgps.pdf
+      original_url: >-
+        https://github.com/dbetebenner/talks-archive-2015-2019/releases/download/originals/2019-10-03-new-meridian-assessment-changes-transitions-using-sgps.tex
+      assets:
+        - 2019-10-03-new-meridian-assessment-changes-transitions-using-sgps.pdf
+        - 2019-10-03-new-meridian-assessment-changes-transitions-using-sgps.tex
   - id: legacy-13467290
     slug: 2019-10-02-in-a-brief-introduction-to-student-growth-analyses-in-indiana
     title: A Brief Introduction to Student Growth Analyses in Indiana
@@ -6001,6 +6080,20 @@ talks:
     shard: talks-archive-2015-2019
     deck_url: https://dbetebenner.github.io/talks-archive-2015-2019/2019-10-02-in-a-brief-introduction-to-student-growth-analyses-in-indiana/
     originals_url: https://github.com/dbetebenner/talks-archive-2015-2019/releases/tag/originals
+    converted:
+      status: ok
+      sha1: 4f78048c63fcc9d53d7248373794fb60bad89a32
+      slug: 2019-10-02-in-a-brief-introduction-to-student-growth-analyses-in-indiana
+      slides: 7
+      bytes: 569250
+      notes: true
+      pdf_url: >-
+        https://github.com/dbetebenner/talks-archive-2015-2019/releases/download/originals/2019-10-02-in-a-brief-introduction-to-student-growth-analyses-in-indiana.pdf
+      original_url: >-
+        https://github.com/dbetebenner/talks-archive-2015-2019/releases/download/originals/2019-10-02-in-a-brief-introduction-to-student-growth-analyses-in-indiana.pptx
+      assets:
+        - 2019-10-02-in-a-brief-introduction-to-student-growth-analyses-in-indiana.pdf
+        - 2019-10-02-in-a-brief-introduction-to-student-growth-analyses-in-indiana.pptx
   - id: legacy-66c94011
     slug: 2019-08-15-hi-2017-sample-district-sample-school-individual-sgp-report-catalog
     title: 2017 Sample District Sample School Individual SGP Report Catalog
@@ -6289,6 +6382,34 @@ talks:
     publish: true
     shard: talks-archive-2015-2019
     deck_url: https://dbetebenner.github.io/talks-archive-2015-2019/2019-01-09-staff-sharing-mind-the-gap/
+    originals_url: https://github.com/dbetebenner/talks-archive-2015-2019/releases/tag/originals
+  - id: legacy-f6d06826
+    slug: 2019-staff-sharing-mind-the-gap
+    title: Mind the Gap
+    title_source: slide-1
+    date: '2019-01-01'
+    date_precision: year
+    year: 2019
+    venue: Center for Assessment staff meeting
+    venue_short: Staff-Sharing
+    event_type: staff
+    folder: 2019/Staff_Sharing
+    source:
+      primary: 2019/Staff_Sharing/Staff_Sharing_100317.key
+      format: keynote
+      pdf: null
+      originals:
+        - format: key
+          path: 2019/Staff_Sharing/Staff_Sharing_100317.key
+      bytes: 2701060
+      modified: '2021-11-16'
+      sha1: 1a0103d268e353718b34d1a41e199e398a211d93
+    slides: 9
+    authorship: self
+    delivery: convert
+    publish: true
+    shard: talks-archive-2015-2019
+    deck_url: https://dbetebenner.github.io/talks-archive-2015-2019/2019-staff-sharing-mind-the-gap/
     originals_url: https://github.com/dbetebenner/talks-archive-2015-2019/releases/tag/originals
   - id: legacy-d917a623
     slug: 2018-10-08-staff-sharing-staff-sharing-oct-18
@@ -6608,34 +6729,6 @@ talks:
     shard: talks-archive-2015-2019
     deck_url: https://dbetebenner.github.io/talks-archive-2015-2019/2018-02-01-az-arizona-student-growth-analyses/
     originals_url: https://github.com/dbetebenner/talks-archive-2015-2019/releases/tag/originals
-  - id: legacy-54a9c6d6
-    slug: 2018-02-01-az-arizona-student-growth-analyses-2
-    title: Arizona Student Growth Analyses
-    title_source: slide-1
-    date: '2018-02-01'
-    date_precision: day
-    year: 2020
-    venue: Arizona Department of Education
-    venue_short: AZ
-    event_type: state
-    folder: 2020/Arizona
-    source:
-      primary: 2020/Arizona/Arizona_Student_Growth_Overview_020118.pptx
-      format: powerpoint
-      pdf: null
-      originals:
-        - format: pptx
-          path: 2020/Arizona/Arizona_Student_Growth_Overview_020118.pptx
-      bytes: 2189924
-      modified: '2018-02-01'
-      sha1: 5f43d81595b818c8ba7b676d99fd093d7bd4198c
-    slides: 23
-    authorship: self
-    delivery: convert
-    publish: true
-    shard: talks-archive-2020-2026
-    deck_url: https://dbetebenner.github.io/talks-archive-2020-2026/2018-02-01-az-arizona-student-growth-analyses-2/
-    originals_url: https://github.com/dbetebenner/talks-archive-2020-2026/releases/tag/originals
   - id: legacy-8bf06c30
     slug: 2017-10-12-rli-understanding-student-growth
     title: Understanding Student Growth
@@ -6725,34 +6818,6 @@ talks:
     publish: true
     shard: talks-archive-2015-2019
     deck_url: https://dbetebenner.github.io/talks-archive-2015-2019/2017-10-03-staff-sharing-mind-the-gap/
-    originals_url: https://github.com/dbetebenner/talks-archive-2015-2019/releases/tag/originals
-  - id: legacy-f6d06826
-    slug: 2017-10-03-staff-sharing-mind-the-gap-2
-    title: Mind the Gap
-    title_source: slide-1
-    date: '2017-10-03'
-    date_precision: day
-    year: 2019
-    venue: Center for Assessment staff meeting
-    venue_short: Staff-Sharing
-    event_type: staff
-    folder: 2019/Staff_Sharing
-    source:
-      primary: 2019/Staff_Sharing/Staff_Sharing_100317.key
-      format: keynote
-      pdf: null
-      originals:
-        - format: key
-          path: 2019/Staff_Sharing/Staff_Sharing_100317.key
-      bytes: 2701060
-      modified: '2021-11-16'
-      sha1: 1a0103d268e353718b34d1a41e199e398a211d93
-    slides: 9
-    authorship: self
-    delivery: convert
-    publish: true
-    shard: talks-archive-2015-2019
-    deck_url: https://dbetebenner.github.io/talks-archive-2015-2019/2017-10-03-staff-sharing-mind-the-gap-2/
     originals_url: https://github.com/dbetebenner/talks-archive-2015-2019/releases/tag/originals
   - id: legacy-e3492e5d
     slug: 2017-08-30-growth-literacy-student-growth
@@ -7713,6 +7778,34 @@ talks:
     shard: talks-archive-2015-2019
     deck_url: https://dbetebenner.github.io/talks-archive-2015-2019/2016-01-10-ut-sufficient-growth-discussion/
     originals_url: https://github.com/dbetebenner/talks-archive-2015-2019/releases/tag/originals
+  - id: legacy-1a55864e
+    slug: 2016-01-05-january-staff-file-under-comparability
+    title: File Under Comparability
+    title_source: slide-1
+    date: '2016-01-05'
+    date_precision: day
+    year: 2016
+    venue: Center for Assessment staff meeting
+    venue_short: January-Staff
+    event_type: staff
+    folder: 2016/January_Staff_Meeting
+    source:
+      primary: 2016/January_Staff_Meeting/Staff_Sharing_010515.key
+      format: keynote
+      pdf: null
+      originals:
+        - format: key
+          path: 2016/January_Staff_Meeting/Staff_Sharing_010515.key
+      bytes: 3849318
+      modified: '2016-01-06'
+      sha1: 31d2ec181d4ab696479a719c471ff50978e12f5d
+    slides: 10
+    authorship: self
+    delivery: convert
+    publish: true
+    shard: talks-archive-2015-2019
+    deck_url: https://dbetebenner.github.io/talks-archive-2015-2019/2016-01-05-january-staff-file-under-comparability/
+    originals_url: https://github.com/dbetebenner/talks-archive-2015-2019/releases/tag/originals
   - id: legacy-6be96128
     slug: 2015-12-08-hi-student-growth-percentiles
     title: Student Growth Percentiles
@@ -7796,6 +7889,36 @@ talks:
     publish: true
     shard: talks-archive-2015-2019
     deck_url: https://dbetebenner.github.io/talks-archive-2015-2019/2015-11-10-in-indiana-student-growth-analyses/
+    originals_url: https://github.com/dbetebenner/talks-archive-2015-2019/releases/tag/originals
+  - id: legacy-049121f3
+    slug: 2015-10-01-rel-west-understanding-the-west-virginia-growth-model
+    title: Understanding the West Virginia Growth Model
+    title_source: slide-1
+    date: '2015-10-01'
+    date_precision: day
+    year: 2015
+    venue: REL West Virginia
+    venue_short: REL-West
+    event_type: invited
+    folder: 2015/REL_West_Virginia
+    source:
+      primary: 2015/REL_West_Virginia/REL AP 5.3.12 Event Slides 1.13 October 1 2015.key
+      format: keynote
+      pdf: 2015/REL_West_Virginia/REL AP 5.3.12 Event Slides 1.13 October 1 2015.pdf
+      originals:
+        - format: key
+          path: 2015/REL_West_Virginia/REL AP 5.3.12 Event Slides 1.13 October 1 2015.key
+        - format: pdf
+          path: 2015/REL_West_Virginia/REL AP 5.3.12 Event Slides 1.13 October 1 2015.pdf
+      bytes: 3188599
+      modified: '2016-09-16'
+      sha1: b0dd0826a42e955fddaf6e6a3f2c1fa2444e1d98
+    slides: 84
+    authorship: self
+    delivery: convert
+    publish: true
+    shard: talks-archive-2015-2019
+    deck_url: https://dbetebenner.github.io/talks-archive-2015-2019/2015-10-01-rel-west-understanding-the-west-virginia-growth-model/
     originals_url: https://github.com/dbetebenner/talks-archive-2015-2019/releases/tag/originals
   - id: legacy-988ccdf0
     slug: 2015-09-01-staff-sharing-the-irrelevance-of-vertical-scales-to-understanding-student-growt
@@ -7970,7 +8093,7 @@ talks:
     originals_url: https://github.com/dbetebenner/talks-archive-2015-2019/releases/tag/originals
   - id: legacy-76ff5d12
     slug: 2015-01-15-rli-uk-an-introduction-to-student-growth-percentiles-rli-uk
-    title: An Introduction to Student Growth Percentiles RLI UK
+    title: 'An Introduction to Student Growth Percentiles: RLI UK'
     title_source: slide-1
     date: '2015-01-15'
     date_precision: day
@@ -8026,33 +8149,35 @@ talks:
     shard: talks-archive-2015-2019
     deck_url: https://dbetebenner.github.io/talks-archive-2015-2019/2015-01-06-rel-west-betebenner-rel-feb-20-2015/
     originals_url: https://github.com/dbetebenner/talks-archive-2015-2019/releases/tag/originals
-  - id: legacy-1a55864e
-    slug: 2015-01-05-january-staff-file-under-comparability
-    title: File Under Comparability
+  - id: legacy-02d0d975
+    slug: 2015-rel-west-understanding-the-west-virginia-growth-model
+    title: Understanding the West Virginia Growth Model
     title_source: slide-1
-    date: '2015-01-05'
-    date_precision: day
-    year: 2016
-    venue: Center for Assessment staff meeting
-    venue_short: January-Staff
-    event_type: staff
-    folder: 2016/January_Staff_Meeting
+    date: '2015-01-01'
+    date_precision: year
+    year: 2015
+    venue: REL West Virginia
+    venue_short: REL-West
+    event_type: invited
+    folder: 2015/REL_West_Virginia
     source:
-      primary: 2016/January_Staff_Meeting/Staff_Sharing_010515.key
+      primary: 2015/REL_West_Virginia/REL AP 5.3.12 Event Slides 1.13.key
       format: keynote
       pdf: null
       originals:
         - format: key
-          path: 2016/January_Staff_Meeting/Staff_Sharing_010515.key
-      bytes: 3849318
-      modified: '2016-01-06'
-      sha1: 31d2ec181d4ab696479a719c471ff50978e12f5d
-    slides: 10
+          path: 2015/REL_West_Virginia/REL AP 5.3.12 Event Slides 1.13.key
+        - format: pptx
+          path: 2015/REL_West_Virginia/REL AP 5.3.12 Event Slides 1.13.pptx
+      bytes: 5206515
+      modified: '2015-01-15'
+      sha1: b3ad655005c92c2d1db5f755f56151a90ca601f2
+    slides: 85
     authorship: self
     delivery: convert
     publish: true
     shard: talks-archive-2015-2019
-    deck_url: https://dbetebenner.github.io/talks-archive-2015-2019/2015-01-05-january-staff-file-under-comparability/
+    deck_url: https://dbetebenner.github.io/talks-archive-2015-2019/2015-rel-west-understanding-the-west-virginia-growth-model/
     originals_url: https://github.com/dbetebenner/talks-archive-2015-2019/releases/tag/originals
   - id: legacy-467ac59d
     slug: 2014-12-16-ccsso-growth-during-assessment-transition
@@ -8083,6 +8208,20 @@ talks:
     shard: talks-archive-2010-2014
     deck_url: https://dbetebenner.github.io/talks-archive-2010-2014/2014-12-16-ccsso-growth-during-assessment-transition/
     originals_url: https://github.com/dbetebenner/talks-archive-2010-2014/releases/tag/originals
+    converted:
+      status: ok
+      sha1: 283084ffade5fe792bfee2fc0389f3aa63dfae00
+      slug: 2014-12-16-ccsso-growth-during-assessment-transition
+      slides: 9
+      bytes: 394870
+      notes: true
+      pdf_url: >-
+        https://github.com/dbetebenner/talks-archive-2010-2014/releases/download/originals/2014-12-16-ccsso-growth-during-assessment-transition.pdf
+      original_url: >-
+        https://github.com/dbetebenner/talks-archive-2010-2014/releases/download/originals/2014-12-16-ccsso-growth-during-assessment-transition.key
+      assets:
+        - 2014-12-16-ccsso-growth-during-assessment-transition.pdf
+        - 2014-12-16-ccsso-growth-during-assessment-transition.key
   - id: legacy-7d201c93
     slug: 2014-07-22-ccsso-assessment-transition-and-implications-for-accountability-systems
     title: Assessment Transition and Implications for Accountability Systems
@@ -8113,6 +8252,20 @@ talks:
     deck_url: >-
       https://dbetebenner.github.io/talks-archive-2010-2014/2014-07-22-ccsso-assessment-transition-and-implications-for-accountability-systems/
     originals_url: https://github.com/dbetebenner/talks-archive-2010-2014/releases/tag/originals
+    converted:
+      status: ok
+      sha1: caffeb0a791a79c251b809db9fc45f34aba34d5e
+      slug: 2014-07-22-ccsso-assessment-transition-and-implications-for-accountability-systems
+      slides: 9
+      bytes: 965248
+      notes: true
+      pdf_url: >-
+        https://github.com/dbetebenner/talks-archive-2010-2014/releases/download/originals/2014-07-22-ccsso-assessment-transition-and-implications-for-accountability-systems.pdf
+      original_url: >-
+        https://github.com/dbetebenner/talks-archive-2010-2014/releases/download/originals/2014-07-22-ccsso-assessment-transition-and-implications-for-accountability-systems.pptx
+      assets:
+        - 2014-07-22-ccsso-assessment-transition-and-implications-for-accountability-systems.pdf
+        - 2014-07-22-ccsso-assessment-transition-and-implications-for-accountability-systems.pptx
   - id: legacy-d1fbd028
     slug: 2014-06-30-ms-an-introduction-to-student-growth-percentiles-and-the-sgp-package
     title: An Introduction to Student Growth Percentiles and the SGP Package
@@ -8178,7 +8331,7 @@ talks:
     originals_url: https://github.com/dbetebenner/talks-archive-2010-2014/releases/tag/originals
   - id: legacy-74ecc7dc
     slug: 2014-06-30-ms-student-growth-percentiles-introduction-to-r-and-the-sgp-software-package
-    title: 'Student Growth Percentiles: Introduction to R & the SGP Software Package.'
+    title: 'Student Growth Percentiles: Introduction to R & the SGP Software Package'
     title_source: slide-1
     date: '2014-06-30'
     date_precision: day
@@ -8297,12 +8450,12 @@ talks:
     deck_url: https://dbetebenner.github.io/talks-archive-2010-2014/2014-05-02-ma-mcas-to-parcc/
     originals_url: https://github.com/dbetebenner/talks-archive-2010-2014/releases/tag/originals
   - id: legacy-a7ed6cc1
-    slug: 2014-04-17-ccsso-parcc-pba-parcc-eoy-field-testing-field-testing-mcas-pba-eoy-standard-win
-    title: PARCC PBA PARCC EOY Field Testing Field Testing MCAS PBA EOY Standard Window Window Setting MCAS
+    slug: 2014-04-17-ccsso-assessment-transition-timeline-parcc-and-mcas
+    title: 'Assessment Transition Timeline: PARCC and MCAS'
     title_source: slide-1
     date: '2014-04-17'
     date_precision: day
-    year: 2013
+    year: 2014
     venue: CCSSO
     venue_short: CCSSO
     event_type: conference
@@ -8323,8 +8476,7 @@ talks:
     delivery: convert
     publish: true
     shard: talks-archive-2010-2014
-    deck_url: >-
-      https://dbetebenner.github.io/talks-archive-2010-2014/2014-04-17-ccsso-parcc-pba-parcc-eoy-field-testing-field-testing-mcas-pba-eoy-standard-win/
+    deck_url: https://dbetebenner.github.io/talks-archive-2010-2014/2014-04-17-ccsso-assessment-transition-timeline-parcc-and-mcas/
     originals_url: https://github.com/dbetebenner/talks-archive-2010-2014/releases/tag/originals
   - id: legacy-03364158
     slug: 2014-04-11-me-update-on-student-growth-in-maine
@@ -8386,8 +8538,8 @@ talks:
     deck_url: https://dbetebenner.github.io/talks-archive-2010-2014/2014-03-27-hi-three-examples-using-mgps-in-educator-evaluations/
     originals_url: https://github.com/dbetebenner/talks-archive-2010-2014/releases/tag/originals
   - id: legacy-f46940e3
-    slug: 2014-03-10-hi-on-student-growth-percentiles-and-accountability-in-hawaii-teacher-leader-wo
-    title: On Student Growth Percentiles & Accountability in Hawaii Teacher Leader Work Group
+    slug: 2014-03-10-hi-on-student-growth-percentiles-and-accountability-in-hawaii
+    title: On Student Growth Percentiles & Accountability in Hawaii
     title_source: slide-1
     date: '2014-03-10'
     date_precision: day
@@ -8414,8 +8566,7 @@ talks:
     delivery: convert
     publish: true
     shard: talks-archive-2010-2014
-    deck_url: >-
-      https://dbetebenner.github.io/talks-archive-2010-2014/2014-03-10-hi-on-student-growth-percentiles-and-accountability-in-hawaii-teacher-leader-wo/
+    deck_url: https://dbetebenner.github.io/talks-archive-2010-2014/2014-03-10-hi-on-student-growth-percentiles-and-accountability-in-hawaii/
     originals_url: https://github.com/dbetebenner/talks-archive-2010-2014/releases/tag/originals
   - id: legacy-9e21df85
     slug: 2014-02-14-hi-hawaii-doe-sgp-training-session
@@ -8512,7 +8663,7 @@ talks:
     deck_url: https://dbetebenner.github.io/talks-archive-2010-2014/2014-02-05-tilsa-growth-during-transition/
     originals_url: https://github.com/dbetebenner/talks-archive-2010-2014/releases/tag/originals
   - id: legacy-70d0f87d
-    slug: 2014-01-01-ccsso-growth-during-transition
+    slug: 2014-ccsso-growth-during-transition
     title: Growth During Transition
     title_source: slide-1
     date: '2014-01-01'
@@ -8540,7 +8691,7 @@ talks:
     delivery: convert
     publish: true
     shard: talks-archive-2010-2014
-    deck_url: https://dbetebenner.github.io/talks-archive-2010-2014/2014-01-01-ccsso-growth-during-transition/
+    deck_url: https://dbetebenner.github.io/talks-archive-2010-2014/2014-ccsso-growth-during-transition/
     originals_url: https://github.com/dbetebenner/talks-archive-2010-2014/releases/tag/originals
   - id: legacy-18ee5f00
     slug: 2013-12-17-ccsso-growth-during-transition
@@ -8574,8 +8725,8 @@ talks:
     deck_url: https://dbetebenner.github.io/talks-archive-2010-2014/2013-12-17-ccsso-growth-during-transition/
     originals_url: https://github.com/dbetebenner/talks-archive-2010-2014/releases/tag/originals
   - id: legacy-5eb4f575
-    slug: 2013-12-16-ccsso-parcc-pba-parcc-eoy-field-testing-field-testing-pba-eoy-standard-window-w
-    title: PARCC PBA PARCC EOY Field Testing Field Testing PBA EOY Standard Window Window Setting
+    slug: 2013-12-16-ccsso-assessment-transition-timeline-parcc
+    title: 'Assessment Transition Timeline: PARCC'
     title_source: slide-1
     date: '2013-12-16'
     date_precision: day
@@ -8600,8 +8751,7 @@ talks:
     delivery: convert
     publish: true
     shard: talks-archive-2010-2014
-    deck_url: >-
-      https://dbetebenner.github.io/talks-archive-2010-2014/2013-12-16-ccsso-parcc-pba-parcc-eoy-field-testing-field-testing-pba-eoy-standard-window-w/
+    deck_url: https://dbetebenner.github.io/talks-archive-2010-2014/2013-12-16-ccsso-assessment-transition-timeline-parcc/
     originals_url: https://github.com/dbetebenner/talks-archive-2010-2014/releases/tag/originals
   - id: legacy-6b90121d
     slug: 2013-11-13-albuquerque-growth-models-student-growth-percentiles-student-growth-projections
@@ -8973,7 +9123,7 @@ talks:
     originals_url: https://github.com/dbetebenner/talks-archive-2010-2014/releases/tag/originals
   - id: legacy-f68de64b
     slug: 2013-05-02-sd-the-colorado-growth-model-changing-conversations-about-education
-    title: The Colorado Growth Model Changing Conversations about Education
+    title: 'The Colorado Growth Model: Changing Conversations about Education'
     title_source: slide-1
     date: '2013-05-02'
     date_precision: mtime
@@ -9065,7 +9215,7 @@ talks:
     originals_url: https://github.com/dbetebenner/talks-archive-2010-2014/releases/tag/originals
   - id: legacy-d8970843
     slug: 2013-04-09-ma-on-the-precision-of-mcas-sgps-massachusetts-tac
-    title: On the Precision of MCAS SGPs Massachusetts TAC
+    title: 'On the Precision of MCAS SGPs: Massachusetts TAC'
     title_source: slide-1
     date: '2013-04-09'
     date_precision: day
@@ -9124,7 +9274,7 @@ talks:
     deck_url: https://dbetebenner.github.io/talks-archive-2010-2014/2013-02-28-ms-student-growth-percentiles-an-overview/
     originals_url: https://github.com/dbetebenner/talks-archive-2010-2014/releases/tag/originals
   - id: legacy-5071618e
-    slug: 2013-01-01-rli-cultivating-growth-mindsets-using-student-growth-percentiles
+    slug: 2013-rli-cultivating-growth-mindsets-using-student-growth-percentiles
     title: Cultivating Growth Mindsets using Student Growth Percentiles
     title_source: slide-1
     date: '2013-01-01'
@@ -9151,7 +9301,7 @@ talks:
     delivery: convert
     publish: true
     shard: talks-archive-2010-2014
-    deck_url: https://dbetebenner.github.io/talks-archive-2010-2014/2013-01-01-rli-cultivating-growth-mindsets-using-student-growth-percentiles/
+    deck_url: https://dbetebenner.github.io/talks-archive-2010-2014/2013-rli-cultivating-growth-mindsets-using-student-growth-percentiles/
     originals_url: https://github.com/dbetebenner/talks-archive-2010-2014/releases/tag/originals
   - id: legacy-b40153c6
     slug: 2012-11-13-boston-college-student-growth-percentiles
@@ -9185,7 +9335,7 @@ talks:
     originals_url: https://github.com/dbetebenner/talks-archive-2010-2014/releases/tag/originals
   - id: legacy-3aba0651
     slug: 2012-10-25-ma-tac-an-overview-of-student-growth-percentile-methodology-massachusetts-tac
-    title: An Overview of Student Growth Percentile Methodology Massachusetts TAC
+    title: 'An Overview of Student Growth Percentile Methodology: Massachusetts TAC'
     title_source: slide-1
     date: '2012-10-25'
     date_precision: day
@@ -9505,66 +9655,6 @@ talks:
     shard: talks-archive-2010-2014
     deck_url: https://dbetebenner.github.io/talks-archive-2010-2014/2012-05-15-harvard-strategic-student-growth-percentiles/
     originals_url: https://github.com/dbetebenner/talks-archive-2010-2014/releases/tag/originals
-  - id: legacy-02d0d975
-    slug: 2012-05-03-rel-west-understanding-the-west-virginia-growth-model
-    title: Understanding the West Virginia Growth Model
-    title_source: slide-1
-    date: '2012-05-03'
-    date_precision: day
-    year: 2015
-    venue: REL West Virginia
-    venue_short: REL-West
-    event_type: invited
-    folder: 2015/REL_West_Virginia
-    source:
-      primary: 2015/REL_West_Virginia/REL AP 5.3.12 Event Slides 1.13.key
-      format: keynote
-      pdf: null
-      originals:
-        - format: key
-          path: 2015/REL_West_Virginia/REL AP 5.3.12 Event Slides 1.13.key
-        - format: pptx
-          path: 2015/REL_West_Virginia/REL AP 5.3.12 Event Slides 1.13.pptx
-      bytes: 5206515
-      modified: '2015-01-15'
-      sha1: b3ad655005c92c2d1db5f755f56151a90ca601f2
-    slides: 85
-    authorship: self
-    delivery: convert
-    publish: true
-    shard: talks-archive-2015-2019
-    deck_url: https://dbetebenner.github.io/talks-archive-2015-2019/2012-05-03-rel-west-understanding-the-west-virginia-growth-model/
-    originals_url: https://github.com/dbetebenner/talks-archive-2015-2019/releases/tag/originals
-  - id: legacy-049121f3
-    slug: 2012-05-03-rel-west-understanding-the-west-virginia-growth-model-2
-    title: Understanding the West Virginia Growth Model
-    title_source: slide-1
-    date: '2012-05-03'
-    date_precision: day
-    year: 2015
-    venue: REL West Virginia
-    venue_short: REL-West
-    event_type: invited
-    folder: 2015/REL_West_Virginia
-    source:
-      primary: 2015/REL_West_Virginia/REL AP 5.3.12 Event Slides 1.13 October 1 2015.key
-      format: keynote
-      pdf: 2015/REL_West_Virginia/REL AP 5.3.12 Event Slides 1.13 October 1 2015.pdf
-      originals:
-        - format: key
-          path: 2015/REL_West_Virginia/REL AP 5.3.12 Event Slides 1.13 October 1 2015.key
-        - format: pdf
-          path: 2015/REL_West_Virginia/REL AP 5.3.12 Event Slides 1.13 October 1 2015.pdf
-      bytes: 3188599
-      modified: '2016-09-16'
-      sha1: b0dd0826a42e955fddaf6e6a3f2c1fa2444e1d98
-    slides: 84
-    authorship: self
-    delivery: convert
-    publish: true
-    shard: talks-archive-2015-2019
-    deck_url: https://dbetebenner.github.io/talks-archive-2015-2019/2012-05-03-rel-west-understanding-the-west-virginia-growth-model-2/
-    originals_url: https://github.com/dbetebenner/talks-archive-2015-2019/releases/tag/originals
   - id: legacy-735f4970
     slug: 2012-05-02-ets-on-student-growth-and-accountability
     title: On Student Growth & Accountability
@@ -9869,7 +9959,7 @@ talks:
     originals_url: https://github.com/dbetebenner/talks-archive-2010-2014/releases/tag/originals
   - id: legacy-510aa5db
     slug: 2011-09-11-renaissance-short-changing-conversations-about-education-using-growth-data-to-i
-    title: Changing Conversations about Education Using Growth Data to Inform Practice
+    title: 'Changing Conversations about Education: Using Growth Data to Inform Practice'
     title_source: slide-1
     date: '2011-09-11'
     date_precision: day
@@ -9900,7 +9990,7 @@ talks:
     originals_url: https://github.com/dbetebenner/talks-archive-2010-2014/releases/tag/originals
   - id: legacy-0fb8be82
     slug: 2011-08-02-id-the-idaho-growth-model-changing-conversations-about-education
-    title: The Idaho Growth Model Changing Conversations about Education
+    title: 'The Idaho Growth Model: Changing Conversations about Education'
     title_source: slide-1
     date: '2011-08-02'
     date_precision: day
@@ -9931,7 +10021,7 @@ talks:
     originals_url: https://github.com/dbetebenner/talks-archive-2010-2014/releases/tag/originals
   - id: legacy-c550ecdc
     slug: 2011-08-02-id-the-idaho-growth-model-changing-conversations-about-education-2
-    title: The Idaho Growth Model Changing Conversations about Education
+    title: 'The Idaho Growth Model: Changing Conversations about Education'
     title_source: slide-1
     date: '2011-08-02'
     date_precision: day
@@ -10017,7 +10107,7 @@ talks:
     originals_url: https://github.com/dbetebenner/talks-archive-2010-2014/releases/tag/originals
   - id: legacy-ee1fd951
     slug: 2011-07-28-wi-accountability-and-student-growth-a-national-perspective
-    title: Accountability and Student Growth A National Perspective
+    title: 'Accountability and Student Growth: A National Perspective'
     title_source: slide-1
     date: '2011-07-28'
     date_precision: mtime
@@ -10386,7 +10476,7 @@ talks:
     originals_url: https://github.com/dbetebenner/talks-archive-2010-2014/releases/tag/originals
   - id: legacy-cd432b07
     slug: 2011-04-18-mo-exploring-student-growth-in-missouri-changing-conversations-about-education
-    title: Exploring Student Growth in Missouri Changing Conversations about Education
+    title: 'Exploring Student Growth in Missouri: Changing Conversations about Education'
     title_source: slide-1
     date: '2011-04-18'
     date_precision: day
@@ -10725,7 +10815,7 @@ talks:
     originals_url: https://github.com/dbetebenner/talks-archive-2010-2014/releases/tag/originals
   - id: legacy-9fee4a27
     slug: 2011-01-24-ga-new-directions-for-student-growth-models-the-colorado-growth-model
-    title: New Directions for Student Growth Models The Colorado Growth Model
+    title: 'New Directions for Student Growth Models: The Colorado Growth Model'
     title_source: slide-1
     date: '2011-01-24'
     date_precision: day
@@ -10937,7 +11027,7 @@ talks:
     originals_url: https://github.com/dbetebenner/talks-archive-2010-2014/releases/tag/originals
   - id: legacy-b943726d
     slug: 2010-11-18-fera-new-directions-in-student-growth-models-changing-conversations-about-educa
-    title: New Directions in Student Growth Models Changing Conversations about Education
+    title: 'New Directions in Student Growth Models: Changing Conversations about Education'
     title_source: slide-1
     date: '2010-11-18'
     date_precision: day
@@ -10967,8 +11057,8 @@ talks:
       https://dbetebenner.github.io/talks-archive-2010-2014/2010-11-18-fera-new-directions-in-student-growth-models-changing-conversations-about-educa/
     originals_url: https://github.com/dbetebenner/talks-archive-2010-2014/releases/tag/originals
   - id: legacy-54ed2ec4
-    slug: 2010-10-29-governors-council-student-growth-and-value-added-redux-governor-s-council-on-ed
-    title: 'Student Growth and Value-Added: Redux Governor’s Council on Educator Effectiveness'
+    slug: 2010-10-29-governors-council-student-growth-and-value-added-redux
+    title: 'Student Growth and Value-Added: Redux'
     title_source: slide-1
     date: '2010-10-29'
     date_precision: day
@@ -10994,8 +11084,7 @@ talks:
     delivery: convert
     publish: true
     shard: talks-archive-2010-2014
-    deck_url: >-
-      https://dbetebenner.github.io/talks-archive-2010-2014/2010-10-29-governors-council-student-growth-and-value-added-redux-governor-s-council-on-ed/
+    deck_url: https://dbetebenner.github.io/talks-archive-2010-2014/2010-10-29-governors-council-student-growth-and-value-added-redux/
     originals_url: https://github.com/dbetebenner/talks-archive-2010-2014/releases/tag/originals
   - id: legacy-36461061
     slug: 2010-10-14-uconn-colloquium-new-directions-for-student-growth-models
@@ -11029,7 +11118,7 @@ talks:
     originals_url: https://github.com/dbetebenner/talks-archive-2010-2014/releases/tag/originals
   - id: legacy-c574fcdb
     slug: 2010-09-29-me-the-maine-growth-model-changing-conversations-about-education
-    title: The Maine Growth Model Changing Conversations about Education
+    title: 'The Maine Growth Model: Changing Conversations about Education'
     title_source: slide-1
     date: '2010-09-29'
     date_precision: day
@@ -11061,7 +11150,7 @@ talks:
     originals_url: https://github.com/dbetebenner/talks-archive-2010-2014/releases/tag/originals
   - id: legacy-57834624
     slug: 2010-09-23-ri-the-rhode-island-growth-model-using-student-growth-to-evaluate-teacher-perfo
-    title: The Rhode Island Growth Model Using Student Growth to Evaluate Teacher Performance
+    title: 'The Rhode Island Growth Model: Using Student Growth to Evaluate Teacher Performance'
     title_source: slide-1
     date: '2010-09-23'
     date_precision: mtime
@@ -11092,7 +11181,7 @@ talks:
     originals_url: https://github.com/dbetebenner/talks-archive-2010-2014/releases/tag/originals
   - id: legacy-4b95656b
     slug: 2010-09-16-mo-exploring-student-growth-in-missouri-changing-conversations-about-education
-    title: Exploring Student Growth in Missouri Changing Conversations about Education Missouri Growth Model Technical Advisory Committee
+    title: 'Exploring Student Growth in Missouri: Changing Conversations about Education'
     title_source: slide-1
     date: '2010-09-16'
     date_precision: day
@@ -11301,7 +11390,7 @@ talks:
     title_source: pdf-metadata
     date: '2010-06-21'
     date_precision: day
-    year: 2009
+    year: 2010
     venue: IES UPENN
     venue_short: IES-UPENN
     event_type: academic
@@ -11320,9 +11409,9 @@ talks:
     authorship: self
     delivery: convert
     publish: true
-    shard: talks-archive-2005-2009
-    deck_url: https://dbetebenner.github.io/talks-archive-2005-2009/2010-06-21-ies-upenn-new-directions-for-student-growth-models/
-    originals_url: https://github.com/dbetebenner/talks-archive-2005-2009/releases/tag/originals
+    shard: talks-archive-2010-2014
+    deck_url: https://dbetebenner.github.io/talks-archive-2010-2014/2010-06-21-ies-upenn-new-directions-for-student-growth-models/
+    originals_url: https://github.com/dbetebenner/talks-archive-2010-2014/releases/tag/originals
   - id: legacy-25d36054
     slug: 2010-05-01-ncme-measurement-of-growth
     title: Measurement of Growth
@@ -11507,7 +11596,7 @@ talks:
     originals_url: https://github.com/dbetebenner/talks-archive-2010-2014/releases/tag/originals
   - id: legacy-d635f688
     slug: 2009-12-11-co-the-colorado-growth-model-changing-conversations-about-education
-    title: The Colorado Growth Model Changing Conversations about Education
+    title: 'The Colorado Growth Model: Changing Conversations about Education'
     title_source: slide-1
     date: '2009-12-11'
     date_precision: day
@@ -11533,6 +11622,17 @@ talks:
     shard: talks-archive-2005-2009
     deck_url: https://dbetebenner.github.io/talks-archive-2005-2009/2009-12-11-co-the-colorado-growth-model-changing-conversations-about-education/
     originals_url: https://github.com/dbetebenner/talks-archive-2005-2009/releases/tag/originals
+    converted:
+      status: ok
+      sha1: 7b924f9de8590f45e1a52f1a94e7986e32419d59
+      slug: 2009-12-11-co-the-colorado-growth-model-changing-conversations-about-education
+      slides: 24
+      bytes: 1864608
+      notes: false
+      pdf_url: >-
+        https://github.com/dbetebenner/talks-archive-2005-2009/releases/download/originals/2009-12-11-co-the-colorado-growth-model-changing-conversations-about-education.pdf
+      assets:
+        - 2009-12-11-co-the-colorado-growth-model-changing-conversations-about-education.pdf
   - id: legacy-657a3c74
     slug: 2009-11-16-ies-upenn-new-directions-for-student-growth-models
     title: New Directions for Student Growth Models
@@ -11565,13 +11665,27 @@ talks:
     shard: talks-archive-2005-2009
     deck_url: https://dbetebenner.github.io/talks-archive-2005-2009/2009-11-16-ies-upenn-new-directions-for-student-growth-models/
     originals_url: https://github.com/dbetebenner/talks-archive-2005-2009/releases/tag/originals
+    converted:
+      status: ok
+      sha1: a10f04775e40ba3170a9022b72d85e70c0a7f00f
+      slug: 2009-11-16-ies-upenn-new-directions-for-student-growth-models
+      slides: 30
+      bytes: 2307880
+      notes: false
+      pdf_url: >-
+        https://github.com/dbetebenner/talks-archive-2005-2009/releases/download/originals/2009-11-16-ies-upenn-new-directions-for-student-growth-models.pdf
+      original_url: >-
+        https://github.com/dbetebenner/talks-archive-2005-2009/releases/download/originals/2009-11-16-ies-upenn-new-directions-for-student-growth-models.tex
+      assets:
+        - 2009-11-16-ies-upenn-new-directions-for-student-growth-models.pdf
+        - 2009-11-16-ies-upenn-new-directions-for-student-growth-models.tex
   - id: legacy-757908d0
     slug: 2009-11-16-uconn-colloquium-new-directions-for-student-growth-models
     title: New Directions for Student Growth Models
     title_source: pdf-metadata
     date: '2009-11-16'
     date_precision: day
-    year: 2010
+    year: 2009
     venue: UCONN Colloquium
     venue_short: UCONN-Colloquium
     event_type: academic
@@ -11592,9 +11706,9 @@ talks:
     authorship: self
     delivery: convert
     publish: true
-    shard: talks-archive-2010-2014
-    deck_url: https://dbetebenner.github.io/talks-archive-2010-2014/2009-11-16-uconn-colloquium-new-directions-for-student-growth-models/
-    originals_url: https://github.com/dbetebenner/talks-archive-2010-2014/releases/tag/originals
+    shard: talks-archive-2005-2009
+    deck_url: https://dbetebenner.github.io/talks-archive-2005-2009/2009-11-16-uconn-colloquium-new-directions-for-student-growth-models/
+    originals_url: https://github.com/dbetebenner/talks-archive-2005-2009/releases/tag/originals
   - id: legacy-792333d9
     slug: 2009-10-30-choice-solutions-student-growth-percentiles
     title: Student Growth Percentiles
@@ -11961,7 +12075,7 @@ talks:
     originals_url: https://github.com/dbetebenner/talks-archive-2005-2009/releases/tag/originals
   - id: legacy-eaa9a54d
     slug: 2009-04-14-ncme-the-invariance-of-measures-of-growth-and-effectiveness-to-scale-transforma-2
-    title: The Invariance of Measures of Growth & Effectiveness to Scale Transformation NCME Presentation
+    title: The Invariance of Measures of Growth & Effectiveness to Scale Transformation
     title_source: slide-1
     date: '2009-04-14'
     date_precision: mtime
@@ -11991,7 +12105,7 @@ talks:
     originals_url: https://github.com/dbetebenner/talks-archive-2005-2009/releases/tag/originals
   - id: legacy-f7a65d2a
     slug: 2009-04-14-ncme-the-invariance-of-measures-of-growth-and-effectiveness-to-scale-transforma-3
-    title: The Invariance of Measures of Growth & Effectiveness to Scale Transformation NCME Presentation
+    title: The Invariance of Measures of Growth & Effectiveness to Scale Transformation
     title_source: slide-1
     date: '2009-04-14'
     date_precision: mtime
@@ -12082,7 +12196,7 @@ talks:
     originals_url: https://github.com/dbetebenner/talks-archive-2005-2009/releases/tag/originals
   - id: legacy-26ba5107
     slug: 2009-03-10-az-the-colorado-growth-model-operationalizing-growth-to-standard-for-ayp-using
-    title: The Colorado Growth Model Operationalizing Growth−to−Standard for AYP using Growth Percentiles
+    title: 'The Colorado Growth Model: Operationalizing Growth-to-Standard for AYP using Growth Percentiles'
     title_source: slide-1
     date: '2009-03-10'
     date_precision: day
@@ -12282,7 +12396,7 @@ talks:
     originals_url: https://github.com/dbetebenner/talks-archive-2005-2009/releases/tag/originals
   - id: legacy-d3ab856e
     slug: 2008-06-17-ccsso-colorado-s-growth-model-a-harmonious-marriage-of-normative-and-standards
-    title: Colorado’s Growth Model A Harmonious Marriage of Normative and Standards-based Growth
+    title: 'Colorado’s Growth Model: A Harmonious Marriage of Normative and Standards-based Growth'
     title_source: slide-1
     date: '2008-06-17'
     date_precision: mtime
@@ -12459,7 +12573,7 @@ talks:
     originals_url: https://github.com/dbetebenner/talks-archive-2005-2009/releases/tag/originals
   - id: legacy-cc773626
     slug: 2008-05-09-ks-student-growth-percentiles-toward-a-normative-understanding-of-student-growt
-    title: 'Student Growth Percentiles: Toward a Normative Understanding of Student Growth Growth Models – A Joint Exploration'
+    title: 'Student Growth Percentiles: Toward a Normative Understanding of Student Growth'
     title_source: slide-1
     date: '2008-05-09'
     date_precision: mtime
@@ -12486,6 +12600,38 @@ talks:
     deck_url: >-
       https://dbetebenner.github.io/talks-archive-2005-2009/2008-05-09-ks-student-growth-percentiles-toward-a-normative-understanding-of-student-growt/
     originals_url: https://github.com/dbetebenner/talks-archive-2005-2009/releases/tag/originals
+  - id: legacy-5d49d8ba
+    slug: 2008-03-28-aera-on-defining-a-year-s-growth
+    title: On Defining a Year's Growth
+    title_source: pdf-metadata
+    date: '2008-03-28'
+    date_precision: day
+    year: 2008
+    venue: AERA Annual Meeting
+    venue_short: AERA
+    event_type: conference
+    folder: 2008/AERA
+    source:
+      primary: 2008/AERA/yearsgrowth_presentation.pdf
+      format: beamer
+      pdf: 2008/AERA/yearsgrowth_presentation.pdf
+      originals:
+        - format: pdf
+          path: 2008/AERA/yearsgrowth_presentation.pdf
+        - format: tex
+          path: 2008/AERA/yearsgrowth_presentation.tex
+      bytes: 67074
+      modified: '2023-05-02'
+      sha1: 7bc4326f382bc034bd6aa74d86b7b0b9d19419e3
+    slides: 7
+    authorship: self
+    delivery: convert
+    publish: true
+    shard: talks-archive-2005-2009
+    deck_url: https://dbetebenner.github.io/talks-archive-2005-2009/2008-03-28-aera-on-defining-a-year-s-growth/
+    originals_url: https://github.com/dbetebenner/talks-archive-2005-2009/releases/tag/originals
+    signature: true
+    featured: true
   - id: legacy-5b50dc0c
     slug: 2008-03-26-ncme-norm-and-criterion-referenced-student-growth
     title: Norm- and Criterion-Referenced Student Growth
@@ -12574,38 +12720,6 @@ talks:
     shard: talks-archive-2005-2009
     deck_url: https://dbetebenner.github.io/talks-archive-2005-2009/2008-03-21-ncme-the-nclb-growth-model-pilot-program-discussion/
     originals_url: https://github.com/dbetebenner/talks-archive-2005-2009/releases/tag/originals
-  - id: legacy-5d49d8ba
-    slug: 2008-01-01-aera-on-defining-a-year-s-growth
-    title: On Defining a Year's Growth
-    title_source: pdf-metadata
-    date: '2008-01-01'
-    date_precision: year
-    year: 2008
-    venue: AERA Annual Meeting
-    venue_short: AERA
-    event_type: conference
-    folder: 2008/AERA
-    source:
-      primary: 2008/AERA/yearsgrowth_presentation.pdf
-      format: beamer
-      pdf: 2008/AERA/yearsgrowth_presentation.pdf
-      originals:
-        - format: pdf
-          path: 2008/AERA/yearsgrowth_presentation.pdf
-        - format: tex
-          path: 2008/AERA/yearsgrowth_presentation.tex
-      bytes: 67074
-      modified: '2023-05-02'
-      sha1: 7bc4326f382bc034bd6aa74d86b7b0b9d19419e3
-    slides: 7
-    authorship: self
-    delivery: convert
-    publish: true
-    shard: talks-archive-2005-2009
-    deck_url: https://dbetebenner.github.io/talks-archive-2005-2009/2008-01-01-aera-on-defining-a-year-s-growth/
-    originals_url: https://github.com/dbetebenner/talks-archive-2005-2009/releases/tag/originals
-    signature: true
-    featured: true
   - id: legacy-f9216d0d
     slug: 2007-12-12-necappresentation-toward-a-normative-understanding-of-student-growth
     title: Toward a Normative Understanding of Student Growth
@@ -12728,8 +12842,8 @@ talks:
     deck_url: https://dbetebenner.github.io/talks-archive-2005-2009/2007-09-04-colonclb-standards-based-growth/
     originals_url: https://github.com/dbetebenner/talks-archive-2005-2009/releases/tag/originals
   - id: legacy-44b1c624
-    slug: 2007-06-14-ccsso-on-nclb-equal-educational-opportunity-and-closing-achievement-gaps-1
-    title: On NCLB, Equal Educational Opportunity and Closing Achievement Gaps 1
+    slug: 2007-06-14-ccsso-on-nclb-equal-educational-opportunity-and-closing-achievement-gaps
+    title: On NCLB, Equal Educational Opportunity and Closing Achievement Gaps
     title_source: slide-1
     date: '2007-06-14'
     date_precision: mtime
@@ -12754,7 +12868,7 @@ talks:
     publish: true
     shard: talks-archive-2005-2009
     deck_url: >-
-      https://dbetebenner.github.io/talks-archive-2005-2009/2007-06-14-ccsso-on-nclb-equal-educational-opportunity-and-closing-achievement-gaps-1/
+      https://dbetebenner.github.io/talks-archive-2005-2009/2007-06-14-ccsso-on-nclb-equal-educational-opportunity-and-closing-achievement-gaps/
     originals_url: https://github.com/dbetebenner/talks-archive-2005-2009/releases/tag/originals
   - id: legacy-d4e090cd
     slug: 2006-04-05-aera-lord-s-paradox-with-three-statisticians

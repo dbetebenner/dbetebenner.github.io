@@ -10,7 +10,7 @@
 talks:
   # 2026-10-30 checkpoint: signature talks (native Quarto rebuilds), also featured on the home page.
   legacy-90fd3007: { signature: true, featured: true }  # 2007-10-10 Toward a Normative Understanding of Student Growth
-  legacy-5d49d8ba: { signature: true, featured: true }  # 2008-01-01 On Defining a Year's Growth
+  legacy-5d49d8ba: { signature: true, featured: true, date: '2008-03-28' }  # On Defining a Year's Growth (date from the beamer \date)
   legacy-5b50dc0c: { signature: true, featured: true }  # 2008-03-26 Norm- and Criterion-Referenced Student Growth
   legacy-84df1d61: { signature: true, featured: true }  # 2009-04-15 Betebenner NCME Growth and Standards Presentation
   legacy-632951a0: { signature: true, featured: true }  # 2012-10-18 MARCES Presentation Betebenner
@@ -57,3 +57,22 @@ talks:
   legacy-35c8965c: { publish: false, hold_reason: sensitivity }
   legacy-88af50f3: { publish: false, hold_reason: sensitivity }
 
+
+  # Dates the file names get wrong.
+  legacy-1a55864e: { date: '2016-01-05' }  # January staff meeting filed under 2016; the file name says 2015
+  legacy-049121f3: { date: '2015-10-01' }  # file name ends "October 1 2015"
+
+  # Slide-1 titles the extractor cannot split or read.
+  legacy-a7ed6cc1: { title: 'Assessment Transition Timeline: PARCC and MCAS' }
+  legacy-5eb4f575: { title: 'Assessment Transition Timeline: PARCC' }
+  legacy-f68de64b: { title: 'The Colorado Growth Model: Changing Conversations about Education' }
+  legacy-c550ecdc: { title: 'The Idaho Growth Model: Changing Conversations about Education' }
+  legacy-510aa5db: { title: 'Changing Conversations about Education: Using Growth Data to Inform Practice' }
+  legacy-9fee4a27: { title: 'New Directions for Student Growth Models: The Colorado Growth Model' }
+  legacy-26ba5107: { title: 'The Colorado Growth Model: Operationalizing Growth-to-Standard for AYP using Growth Percentiles' }
+  legacy-d3ab856e: { title: 'Colorado’s Growth Model: A Harmonious Marriage of Normative and Standards-based Growth' }
+  legacy-44b1c624: { title: 'On NCLB, Equal Educational Opportunity and Closing Achievement Gaps' }
+  legacy-74ecc7dc: { title: 'Student Growth Percentiles: Introduction to R & the SGP Software Package' }
+  legacy-db3d67ab: { title: 'New Mexico Student Growth Analyses: History and Conceptual Overview' }
+  legacy-05fe199d: { title: 'Hawaii Student Growth Analyses: History and Conceptual Overview' }
+  legacy-7276de60: { title: 'A First Look at Pandemic Related Academic Impact: WIDA-ACCESS' }

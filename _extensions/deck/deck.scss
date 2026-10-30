@@ -1,0 +1,746 @@
+/*-- scss:defaults --*/
+
+// generated-from: @dataimago/css@0.1.0-alpha.18 (token values in tokens.scss, a later theme layer)
+// Every variable is !default so a deck's own theme layer (styles/custom.scss) can override it.
+
+// Surfaces and text
+$body-bg: $di-surface-page !default;
+$body-color: $di-content-primary !default;
+$presentation-heading-color: $di-content-primary !default;
+$text-muted: $di-content-secondary !default;
+
+// Links: accent-500 is the AA-safe accent on stone-100; presentation-blue fails AA as text.
+$link-color: $di-interactive-accent !default;
+$link-color-hover: $di-accent-600 !default;
+$selection-bg: rgba($di-presentation-blue-500, 0.3) !default;
+$selection-color: $di-content-primary !default;
+
+// Typography
+$presentation-font-size-root: 40px !default;
+$font-family-sans-serif: $di-font-sans !default;
+$font-family-monospace: $di-font-mono !default;
+$presentation-heading-font: $di-font-display !default;
+$presentation-heading-font-weight: 600 !default;
+$presentation-h1-font-size: 1.8em !default;
+$presentation-h2-font-size: 1.4em !default;
+$presentation-h3-font-size: 1.1em !default;
+
+// Code
+$code-bg: $di-surface-code !default;
+$code-block-bg: $di-surface-code !default;
+$code-block-border-color: $di-border-code !default;
+
+/*-- scss:rules --*/
+
+// ── Semantic custom properties ──────────────────────────────────
+// --color-primary stays presentation-blue for decks' own decorative CSS;
+// anything that is text uses --color-primary-ink.
+:root {
+  --color-primary: #{$di-presentation-accent};
+  --color-primary-ink: #{$di-interactive-accent};
+  --color-accent: #ff69b4;
+  --color-accent-ink: #b0235f;
+  --color-surface: #{$di-surface-page};
+  --color-text: #{$di-content-primary};
+  --color-secondary: #{$di-content-secondary};
+  --color-border: #{$di-stone-200};
+  --color-surface-subtle: rgba(225, 225, 223, 0.5);
+  --color-focus: #{$di-interactive-focus};
+}
+
+@mixin visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  clip-path: inset(50%) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+// ── Global slide styles ─────────────────────────────────────────
+.reveal .slides {
+  text-align: left;
+}
+
+.reveal .slides section {
+  line-height: 1.5;
+}
+
+// ── Links and focus ─────────────────────────────────────────────
+// Accent-500 is only ~2.8:1 against body text, so colour alone cannot mark a
+// link in running text (WCAG 1.4.1): underline it.
+.reveal .slides section :is(p, li, dd, td, blockquote, figcaption) a {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  text-decoration-thickness: 0.06em;
+}
+
+.reveal a:focus-visible,
+.reveal button:focus-visible,
+.reveal [tabindex]:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+// ── Heading hierarchy ───────────────────────────────────────────
+.reveal h1 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.reveal h2 {
+  font-weight: 500;
+  border-bottom: 2px solid var(--color-primary);
+  padding-bottom: 0.3em;
+  margin-bottom: 0.6em;
+}
+
+// Pandoc/Quarto emits `<h2></h2>` for titleless `## {.center}` divider slides;
+// without this the border-bottom above draws a stray strip across them.
+.reveal h2:empty {
+  display: none;
+}
+
+.reveal h3 {
+  font-weight: 400;
+  color: var(--color-secondary);
+}
+
+// ── Title slide ─────────────────────────────────────────────────
+#title-slide {
+  text-align: center;
+
+  h1.title {
+    font-size: 2.0em;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 0.2em;
+    letter-spacing: -0.03em;
+  }
+
+  p.subtitle {
+    font-family: $di-font-display;
+    font-size: 0.85em;
+    font-weight: 300;
+    color: var(--color-secondary);
+    margin-top: 0;
+    margin-bottom: 1.2em;
+  }
+
+  p.author {
+    font-size: 0.65em;
+    font-weight: 400;
+    margin: 0.15em 0;
+  }
+
+  p.date {
+    font-size: 0.55em;
+    font-weight: 300;
+    color: var(--color-secondary);
+    margin-top: 0.8em;
+  }
+}
+
+// Title-slide QR code (deck-scripts.html). Reveal positions each slide <section>
+// absolutely; giving #title-slide its own position breaks that and pushes
+// later slides down. The QR therefore sits on the 1920×1080 .slides canvas and
+// is shown only on the title slide.
+.reveal .slides > .deck-qr {
+  position: absolute;
+  right: 48px;
+  bottom: 48px;
+  width: 160px;
+  height: 160px;
+  margin: 0;
+  z-index: 30;
+  display: none;
+  line-height: 0;
+}
+
+.reveal .slides > .deck-qr.is-visible {
+  display: block;
+}
+
+.reveal .slides > .deck-qr img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: #fff;
+  border-radius: 4px;
+}
+
+// ── List styling ────────────────────────────────────────────────
+.reveal ul {
+  margin-left: 0;
+
+  li {
+    margin-bottom: 0.35em;
+    font-size: 0.95em;
+    line-height: 1.45;
+  }
+}
+
+.reveal ol li {
+  margin-bottom: 0.4em;
+}
+
+// ── Blockquote / callout ────────────────────────────────────────
+.reveal blockquote {
+  background: var(--color-surface-subtle);
+  border-left: 4px solid var(--color-primary);
+  padding: 0.6em 1em;
+  margin: 0.8em 0;
+  font-style: italic;
+  font-size: 0.9em;
+
+  p {
+    margin: 0;
+  }
+}
+
+// ── Math styling ────────────────────────────────────────────────
+.reveal math,
+.reveal .math,
+.reveal mjx-container {
+  font-family: $di-font-math !important;
+  font-size: 0.92em;
+}
+
+.math-display {
+  font-size: 1.15em;
+  text-align: center;
+  margin: 1em 0;
+}
+
+// ── Figure styling ──────────────────────────────────────────────
+.reveal figure {
+  margin: 0;
+}
+
+// A lone captioned image on a slide renders as img.r-stretch + p.caption, not <figure>.
+.reveal figcaption,
+.reveal .slide img.r-stretch + p.caption {
+  font-size: 0.55em;
+  color: var(--color-secondary);
+  font-style: italic;
+  margin-top: 0.3em;
+}
+
+.reveal img {
+  border: none;
+  box-shadow: none;
+}
+
+// "Lifted card" wash behind figure images only, so title-slide logos and bare
+// <img> elements are unaffected.
+.reveal figure img {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 6px;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+// ── Quarto layout grids (layout-ncol / layout) ──────────────────
+// Quarto strips width/height from images inside a layout grid and they would
+// otherwise render at intrinsic SVG size, leaving empty space in each cell.
+.reveal .quarto-layout-panel {
+  img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .quarto-layout-row {
+    margin: 0;
+    gap: 0.4em;
+
+    + .quarto-layout-row {
+      margin-top: 0.4em;
+    }
+  }
+
+  .quarto-layout-cell {
+    padding: 0;
+
+    > p {
+      margin: 0;
+    }
+  }
+}
+
+// Box class for figures (bordered card)
+.reveal .box img {
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 4px;
+  background: white;
+}
+
+// ── Goodness-of-fit grids ───────────────────────────────────────
+// Portrait GoF SVGs (612×792 pt) blow past slide height when only one or two
+// panels share a row at full column width — cap height and center horizontally.
+// `min_col` on gof_grid is a *width* floor (CSS minmax); it cannot shrink
+// height. Use these classes (or gof_figure(max_height=...)) to leave room
+// for a .key-insight / notes block beneath the row.
+.reveal .gof-grid-compact figure img {
+  max-height: 63vh;
+  width: auto;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+// 3-up row with a callout under it. Use slide-coordinate px (not vh):
+// Reveal scales the 1920×1080 slide, and vh is viewport-relative, so a
+// vh cap shrinks twice and the panels collapse to thumbnails. 620px is
+// just under the unconstrained 3-up height (~760px) and leaves room for
+// the heading + .key-insight on the 1080 canvas.
+.reveal .gof-grid-short figure img {
+  max-height: 620px;
+  width: auto;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+// ── Accessibility utilities ─────────────────────────────────────
+// Off-screen but in the accessibility tree. Use as a `::: {.visually-hidden}`
+// sibling block on titleless `## {.center}` slides rather than on the H2
+// itself: Reveal's flex centering misplaces absolutely-positioned headings.
+.visually-hidden,
+.sr-only {
+  @include visually-hidden;
+}
+
+// Image-only archive slides: the slide is its background image, and the
+// extracted slide text sits in `.archive-text` for screen readers and search.
+.reveal .slides section.archive-slide {
+  > h2,
+  .archive-text {
+    @include visually-hidden;
+  }
+}
+
+// ── Inline emphasis and text sizes ──────────────────────────────
+.accent {
+  color: var(--color-primary-ink);
+}
+
+.accent-pink {
+  color: var(--color-accent-ink);
+}
+
+.larger {
+  font-size: 1.25em;
+}
+
+.smaller {
+  font-size: 0.75em;
+}
+
+.smallest {
+  font-size: 0.6em;
+}
+
+.muted {
+  color: var(--color-secondary);
+}
+
+.kicker {
+  font-size: 0.5em;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+}
+
+.claim {
+  font-size: 1.35em;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.fine-print {
+  margin-top: 1.2em;
+  font-size: 0.65em;
+  color: var(--color-secondary);
+  line-height: 1.4;
+}
+
+.quote-hero {
+  font-family: $di-font-display;
+  font-size: 1.55em;
+  font-weight: 500;
+  line-height: 1.25;
+  text-align: center;
+  padding: 1.4em 0.2em 0;
+}
+
+// Draft marker for unresolved content; meant to be visible.
+.placeholder {
+  background: #fff3cd;
+  outline: 1px dashed #f39c12;
+  padding: 0 0.2em;
+}
+
+.conference-badge {
+  font-family: $di-font-display;
+  font-size: 0.5em;
+  font-weight: 300;
+  color: var(--color-secondary);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.illustrative-badge {
+  display: inline-block;
+  font-family: $di-font-display;
+  font-size: 0.5em;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #7a5c33;
+  background: rgba(230, 126, 34, 0.14);
+  border: 1px solid rgba(230, 126, 34, 0.35);
+  border-radius: 999px;
+  padding: 0.18em 0.7em;
+  margin-bottom: 0.4em;
+}
+
+// ── Callout boxes ───────────────────────────────────────────────
+// Key insight box (blue) — the workhorse callout
+.key-insight {
+  background: linear-gradient(135deg, rgba(52, 152, 219, 0.08), rgba(52, 152, 219, 0.03));
+  border: 1px solid rgba(52, 152, 219, 0.2);
+  border-left: 4px solid var(--color-primary);
+  border-radius: 6px;
+  padding: 0.6em 1em;
+  margin: 0.6em 0;
+
+  p {
+    margin: 0.2em 0;
+    font-size: 0.95em;
+  }
+
+  strong {
+    color: var(--color-primary-ink);
+  }
+}
+
+// Theorem / definition box with integrated title bar (orange)
+.theorem-box {
+  background: linear-gradient(135deg, rgba(230, 126, 34, 0.10), rgba(230, 126, 34, 0.04));
+  border: 1px solid rgba(230, 126, 34, 0.30);
+  border-left: 4px solid #e67e22;
+  border-radius: 6px;
+  padding: 0;
+  margin: 0.6em 0 0.8em 0;
+  overflow: hidden;
+
+  p {
+    margin: 0.2em 0;
+    font-size: 0.95em;
+  }
+
+  .theorem-box-title {
+    margin: 0;
+    padding: 0.35em 0.75em;
+    font-family: $di-font-display;
+    font-weight: 600;
+    color: $di-copper-700;
+    background: rgba(230, 126, 34, 0.18);
+    border-bottom: 1px solid rgba(230, 126, 34, 0.28);
+  }
+
+  > :not(.theorem-box-title) {
+    padding-left: 0.9em;
+    padding-right: 0.9em;
+  }
+
+  > :last-child {
+    padding-bottom: 0.55em;
+  }
+}
+
+// Emphasis box with integrated title bar (violet)
+.key-insight-box {
+  background: linear-gradient(135deg, rgba(142, 68, 173, 0.10), rgba(142, 68, 173, 0.04));
+  border: 1px solid rgba(142, 68, 173, 0.30);
+  border-left: 4px solid #8e44ad;
+  border-radius: 6px;
+  padding: 0;
+  margin: 0.6em 0 0.8em 0;
+  overflow: hidden;
+
+  p {
+    margin: 0.2em 0;
+    font-size: 0.95em;
+  }
+
+  strong {
+    color: #6c3483;
+  }
+
+  .key-insight-box-title {
+    margin: 0;
+    padding: 0.35em 0.75em;
+    font-family: $di-font-display;
+    font-weight: 600;
+    color: #4a235a;
+    background: rgba(142, 68, 173, 0.18);
+    border-bottom: 1px solid rgba(142, 68, 173, 0.28);
+  }
+
+  > :not(.key-insight-box-title) {
+    padding-left: 0.9em;
+    padding-right: 0.9em;
+  }
+
+  > :last-child {
+    padding-bottom: 0.55em;
+  }
+}
+
+// Warning / caution box with integrated title bar (red)
+.warning-box {
+  background: linear-gradient(135deg, rgba(192, 57, 43, 0.10), rgba(192, 57, 43, 0.04));
+  border: 1px solid rgba(192, 57, 43, 0.30);
+  border-left: 4px solid #c0392b;
+  border-radius: 6px;
+  padding: 0;
+  margin: 0.6em 0 0.8em 0;
+  overflow: hidden;
+
+  p {
+    margin: 0.2em 0;
+    font-size: 0.95em;
+  }
+
+  strong {
+    color: #922b21;
+  }
+
+  .warning-box-title {
+    margin: 0;
+    padding: 0.35em 0.75em;
+    font-family: $di-font-display;
+    font-weight: 600;
+    color: #922b21;
+    background: rgba(192, 57, 43, 0.18);
+    border-bottom: 1px solid rgba(192, 57, 43, 0.28);
+  }
+
+  > :not(.warning-box-title) {
+    padding-left: 0.9em;
+    padding-right: 0.9em;
+  }
+
+  > :last-child {
+    padding-bottom: 0.55em;
+  }
+}
+
+// Summary number callout. Large display text, but presentation-blue is
+// 2.7:1 on stone-100 (below even the 3:1 large-text floor), so it uses the ink.
+.stat-callout {
+  text-align: center;
+  padding: 0.5em;
+
+  .stat-number {
+    font-family: $di-font-display;
+    font-size: 2.5em;
+    font-weight: 700;
+    color: var(--color-primary-ink);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.6em;
+    color: var(--color-secondary);
+    margin-top: 0.2em;
+  }
+}
+
+// ── Layout helpers ──────────────────────────────────────────────
+// Two-column helper (non-Quarto; simple flexbox)
+.two-col {
+  display: flex;
+  gap: 2em;
+  align-items: flex-start;
+
+  .col {
+    flex: 1;
+  }
+}
+
+// Quarto revealjs columns are inline-blocks; flex lets the pair sit in the
+// middle of the space below the title.
+.reveal .v-center-cols > .columns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 760px;
+}
+
+.full-bleed-img {
+  margin: 0 !important;
+
+  img {
+    max-height: 820px;
+    width: auto;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+// ── Slide number ────────────────────────────────────────────────
+.reveal .slide-number {
+  font-family: $di-font-mono;
+  font-size: 0.5em;
+  color: var(--color-secondary);
+}
+
+// ── Fragment animation refinement ───────────────────────────────
+.reveal .fragment.fade-in-then-semi-out.visible:not(.current-fragment) {
+  opacity: 0.4;
+}
+
+// ── Figure zoom modal (deck-scripts.html) ───────────────────────
+.reveal .slides img:not(.no-modal) {
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
+.figure-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(20, 20, 16, 0.92);
+  backdrop-filter: blur(4px);
+
+  &.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: figureModalFadeIn 0.25s ease;
+  }
+
+  .modal-content {
+    position: relative;
+    max-width: 95vw;
+    max-height: 95vh;
+    animation: figureModalZoomIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    img {
+      height: 86vh;
+      width: auto;
+      max-width: 95vw;
+      object-fit: contain;
+      border: 2px solid var(--color-primary);
+      background-color: white;
+      padding: 8px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 0.35rem;
+    right: 0.35rem;
+    width: 2.1rem;
+    height: 2.1rem;
+    font-size: 1.5rem;
+    color: white;
+    background: rgba(20, 20, 16, 0.7);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+    transition: transform 0.2s ease;
+    font-family: inherit;
+
+    &:hover {
+      transform: scale(1.2);
+      color: var(--color-primary);
+    }
+
+    // Sits on the dark backdrop, where presentation-blue has ample contrast.
+    &:focus-visible {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 4px;
+      border-radius: 50%;
+    }
+  }
+
+  .modal-caption {
+    position: absolute;
+    bottom: -2.4rem;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: white;
+    font-size: 1.1rem;
+    font-style: italic;
+    padding: 0 2rem;
+    line-height: 1.4;
+  }
+}
+
+@keyframes figureModalFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes figureModalZoomIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+// ── Print / PDF adjustments ─────────────────────────────────────
+@media print {
+  .reveal .slides section {
+    page-break-inside: avoid;
+  }
+}
+
+// ── Reduced motion (WCAG 2.3.3) ─────────────────────────────────
+// Only visitors who opted in at the OS level see a static deck. deck-scripts.html
+// also sets Reveal's slide/background transitions to none for them.
+@media (prefers-reduced-motion: reduce) {
+  .reveal .slides section,
+  .reveal .slides section *,
+  .reveal .backgrounds .slide-background,
+  .reveal .progress span {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal .slides,
+  .reveal .slides img,
+  .figure-modal .modal-close {
+    transition: none !important;
+  }
+
+  .figure-modal,
+  .figure-modal .modal-content {
+    animation: none !important;
+  }
+}

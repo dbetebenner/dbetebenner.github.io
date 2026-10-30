@@ -1,0 +1,25 @@
+title: dataimago deck
+author: Damian Betebenner
+version: 1.0.0
+quarto-required: ">=1.8.0"
+generated-from: "@dataimago/css@0.1.0-alpha.18"
+contributes:
+  formats:
+    revealjs:
+      # Quarto emits later layers' scss:defaults first, so tokens.scss must follow deck.scss.
+      theme: [default, deck.scss, tokens.scss]
+      css: [fonts.css]
+      include-after-body: [deck-scripts.html]
+      width: 1920
+      height: 1080
+      margin: 0.06
+      center: false
+      slide-number: true
+      transition: fade
+      transition-speed: fast
+      hash: true
+      history: true
+      controls: true
+      progress: true
+      html-math-method: mathml
+      fig-align: center
