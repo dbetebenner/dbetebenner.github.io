@@ -1,0 +1,3 @@
+minimumReleaseAgeExclude:
+  - '@dataimago/css@0.1.0-alpha.18'
+  - '@dataimago/tokens@0.1.0-alpha.18'
