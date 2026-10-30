@@ -1,0 +1,10 @@
+```{=html}
+<ul class="link-list">
+<% for (const item of items) { %>
+<li class="link-item">
+<a class="link-title" href="<%- item.path %>"><%= item.title %></a>
+<% if (item.description) { %><p class="link-desc"><%= item.description %></p><% } %>
+</li>
+<% } %>
+</ul>
+```

@@ -1,0 +1,43 @@
+<%
+const uniq = (key, labelKey) => {
+  const seen = new Map();
+  for (const it of items) if (!seen.has(it[key])) seen.set(it[key], it[labelKey || key]);
+  return [...seen.entries()];
+};
+const years = uniq('year').sort((a, b) => b[0] - a[0]);
+const types = uniq('event_type', 'event_label').sort((a, b) => String(a[1]).localeCompare(String(b[1])));
+const formats = uniq('format', 'format_label').sort((a, b) => String(a[1]).localeCompare(String(b[1])));
+%>
+```{=html}
+<form class="talk-filters" role="search" aria-label="Filter talks" onsubmit="return false">
+<span class="field">
+<label for="talk-q">Search titles and venues</label>
+<input id="talk-q" type="search" autocomplete="off" placeholder="e.g. growth percentiles, NCME, Indiana">
+</span>
+<span class="field">
+<label for="talk-year">Year</label>
+<select id="talk-year"><option value="">All years</option><% for (const [y] of years) { %><option value="<%= y %>"><%= y %></option><% } %></select>
+</span>
+<span class="field">
+<label for="talk-type">Event</label>
+<select id="talk-type"><option value="">All events</option><% for (const [k, l] of types) { %><option value="<%= k %>"><%= l %></option><% } %></select>
+</span>
+<span class="field">
+<label for="talk-format">Format</label>
+<select id="talk-format"><option value="">All formats</option><% for (const [k, l] of formats) { %><option value="<%= k %>"><%= l %></option><% } %></select>
+</span>
+</form>
+<p class="talk-count" aria-live="polite"><span id="talk-count"><%= items.length %></span> talks</p>
+<ol class="talk-list">
+<% for (const item of items) { %>
+<li class="talk-row" data-year="<%= item.year %>" data-type="<%= item.event_type %>" data-format="<%= item.format %>" data-text="<%= `${item.title} ${item.venue} ${(item.tags || []).join(' ')}`.toLowerCase() %>">
+<time datetime="<%= item.date %>"><%= item.date_label %></time>
+<span class="field">
+<a class="talk-title" href="<%- item.path %>"><%= item.title %></a>
+<span class="talk-venue"><%= item.venue %></span>
+</span>
+<span class="badge-format format-<%= item.format %>"><%= item.format_label %></span>
+</li>
+<% } %>
+</ol>
+```

@@ -1,0 +1,18 @@
+# Converted legacy decks are published from archive repos split by year range so that no
+# GitHub Pages site approaches the 1 GB limit. Originals (PDF, .key, .pptx, .tex) are release assets.
+owner: dbetebenner
+pages_base: https://dbetebenner.github.io
+release_tag: originals
+shards:
+  - repo: talks-archive-2005-2009
+    from: 2005
+    to: 2009
+  - repo: talks-archive-2010-2014
+    from: 2010
+    to: 2014
+  - repo: talks-archive-2015-2019
+    from: 2015
+    to: 2019
+  - repo: talks-archive-2020-2026
+    from: 2020
+    to: 2026

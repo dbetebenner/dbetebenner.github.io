@@ -1,0 +1,66 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      '@dataimago/css':
+        specifier: 0.1.0-alpha.18
+        version: 0.1.0-alpha.18
+      js-yaml:
+        specifier: ^4.3.2
+        version: 4.3.2
+    devDependencies:
+      axe-core:
+        specifier: ^4.14.0
+        version: 4.14.0
+      playwright-core:
+        specifier: ^1.64.1
+        version: 1.64.1
+
+packages:
+
+  '@dataimago/css@0.1.0-alpha.18':
+    resolution: {integrity: sha512-5mTBQgEcbhtPUtO6CxaCCyp2Wump+Weq5zpoWnyETLij2wWtLOIKMPxsFkL88qqp+0TcpQWdKGmnriJthsMvkA==}
+    hasBin: true
+
+  '@dataimago/tokens@0.1.0-alpha.18':
+    resolution: {integrity: sha512-boIacCi7yarU8BVmJ5cX5FqJKBYpwEblUmv0MjgNWNU62Kz5RsK/xn3+/r7WYn81Mwcngm/kwxm0RbvW6mJ8Og==}
+
+  argparse@2.0.1:
+    resolution: {integrity: sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==}
+
+  axe-core@4.14.0:
+    resolution: {integrity: sha512-9WTZxEjsZ7b13TH8JPmbV2z8CHbl80/2hm3XPEG4JgNdQLK81IBRXmSxHfMAOkSqQeRxT/0dwNDz2GOm3zzpcQ==}
+    engines: {node: '>=4'}
+
+  js-yaml@4.3.2:
+    resolution: {integrity: sha512-SFNOvSJ+Dgf/9An904Yx+CgSlIPCkIpao4qo51lpee25TIRejdH3rhR4EZMGoNx3/TP3O+wzWuiTFl4sqbltzA==}
+    hasBin: true
+
+  playwright-core@1.64.1:
+    resolution: {integrity: sha512-BC4s8y6SEVA6Q1rSxZTto8hI1KUI3xXlHGZgvGqP4IqPdI/a6FX9H29IDNz7vKo9l21b6LfYosScPL6M3xxyDQ==}
+    engines: {node: '>=20'}
+    hasBin: true
+
+snapshots:
+
+  '@dataimago/css@0.1.0-alpha.18':
+    dependencies:
+      '@dataimago/tokens': 0.1.0-alpha.18
+
+  '@dataimago/tokens@0.1.0-alpha.18': {}
+
+  argparse@2.0.1: {}
+
+  axe-core@4.14.0: {}
+
+  js-yaml@4.3.2:
+    dependencies:
+      argparse: 2.0.1
+
+  playwright-core@1.64.1: {}

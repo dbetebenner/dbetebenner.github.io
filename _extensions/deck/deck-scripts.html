@@ -1,0 +1,315 @@
+<script>
+/* Pandoc marks every background-image slide role="img", which hides its children
+   from assistive technology. Archive slides carry their text in .archive-text, so
+   they drop the role; other image slides are named from background-alt. */
+(function () {
+  'use strict';
+  var slides = document.querySelectorAll('.reveal .slides section[role="img"]');
+  Array.prototype.forEach.call(slides, function (slide) {
+    if (slide.classList.contains('archive-slide')) {
+      slide.removeAttribute('role');
+    } else if (slide.hasAttribute('data-background-alt') && !slide.hasAttribute('aria-label')) {
+      slide.setAttribute('aria-label', slide.getAttribute('data-background-alt'));
+    }
+  });
+})();
+</script>
+<script>
+/* Reveal chrome that fails WCAG as Quarto ships it: the viewport meta blocks
+   pinch zoom, the menu button is an icon-only link, and the menu's scrolling
+   panels cannot take keyboard focus. The menu plugin builds its DOM after
+   load, so its fixes rerun as nodes appear. */
+(function () {
+  'use strict';
+  var viewport = document.querySelector('meta[name="viewport"]');
+  if (viewport) viewport.setAttribute('content', 'width=device-width, initial-scale=1.0');
+
+  function fixMenu() {
+    var button = document.querySelector('.slide-menu-button > a');
+    if (button && !button.hasAttribute('aria-label')) {
+      button.setAttribute('aria-label', 'Open the slide menu');
+      button.setAttribute('role', 'button');
+    }
+    var panels = document.querySelectorAll('.slide-menu-panel:not([tabindex])');
+    Array.prototype.forEach.call(panels, function (panel) {
+      var id = panel.getAttribute('data-panel') || '';
+      var tab = document.querySelector('.slide-menu-toolbar [data-panel="' + id + '"]');
+      var name = (tab && tab.textContent.trim()) || id || 'Menu';
+      panel.setAttribute('tabindex', '0');
+      panel.setAttribute('aria-label', name + ' panel');
+    });
+  }
+
+  function watch() {
+    fixMenu();
+    if (typeof MutationObserver === 'undefined') return;
+    var observer = new MutationObserver(fixMenu);
+    observer.observe(document.body, { childList: true, subtree: true });
+    setTimeout(function () { observer.disconnect(); }, 10000);
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', watch);
+  else watch();
+})();
+</script>
+<script>
+/* Reduced motion: Reveal's own slide and background transitions ignore CSS overrides. */
+(function () {
+  'use strict';
+  if (!window.matchMedia || typeof Reveal === 'undefined') return;
+  var query = window.matchMedia('(prefers-reduced-motion: reduce)');
+  function apply() {
+    if (query.matches) Reveal.configure({ transition: 'none', backgroundTransition: 'none' });
+  }
+  if (Reveal.isReady && Reveal.isReady()) apply(); else Reveal.on('ready', apply);
+})();
+</script>
+<script>
+/**
+ * Title-slide QR code. Lives on the .slides canvas (not inside a slide
+ * <section>) and is shown only while the title slide is current.
+ */
+(function () {
+  'use strict';
+
+  function onTitle() {
+    if (typeof Reveal !== 'undefined' && Reveal.getCurrentSlide) {
+      var slide = Reveal.getCurrentSlide();
+      if (slide) return slide.id === 'title-slide';
+    }
+    var hash = window.location.hash || '';
+    return hash === '' || hash === '#/' || hash.indexOf('#/title-slide') === 0;
+  }
+
+  function placeQr() {
+    var slides = document.querySelector('.reveal .slides');
+    var qr = document.getElementById('deck-qr-src');
+    if (!slides || !qr) return;
+    qr.hidden = false;
+    slides.appendChild(qr);
+
+    var sync = function () { qr.classList.toggle('is-visible', onTitle()); };
+    sync();
+    if (typeof Reveal !== 'undefined' && Reveal.on) {
+      Reveal.on('ready', sync);
+      Reveal.on('slidechanged', sync);
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', placeQr);
+  } else {
+    placeQr();
+  }
+})();
+</script>
+<script>
+/**
+ * Click-to-enlarge figure lightbox for Reveal.js decks.
+ *
+ * Reveal.js adaptations:
+ *   - Pauses Reveal keyboard/touch while modal is open
+ *   - Targets every slide image except .no-modal and images inside links
+ *   - No body scroll-lock (Reveal manages its own viewport)
+ *   - ESC captured at highest priority so it closes the modal, not Reveal
+ */
+(function () {
+  'use strict';
+
+  function createModal() {
+    var modal = document.createElement('div');
+    modal.className = 'figure-modal';
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    // Default accessible name; replaced per-figure on openModal() either via
+    // aria-labelledby pointing at the caption, or by aria-label set to the
+    // figure's alt text when no caption exists.
+    modal.setAttribute('aria-label', 'Enlarged figure view');
+
+    modal.innerHTML =
+      '<div class="modal-content">' +
+        '<button class="modal-close" aria-label="Close enlarged view" title="Close (ESC)">&times;</button>' +
+        '<img src="" alt="">' +
+        '<div class="modal-caption" id="figure-modal-caption"></div>' +
+      '</div>';
+
+    document.body.appendChild(modal);
+    return modal;
+  }
+
+  function initFigureModal() {
+    var modal = createModal();
+    var modalImg = modal.querySelector('img');
+    var modalCaption = modal.querySelector('.modal-caption');
+    var closeBtn = modal.querySelector('.modal-close');
+    var lastFocusedImg = null;
+
+    function openModal(imgSrc, imgAlt, caption) {
+      modalImg.src = imgSrc;
+      modalImg.alt = imgAlt;
+      modalCaption.textContent = caption || '';
+
+      // Per-figure accessible name. If a caption exists, point
+      // aria-labelledby at it (screen readers will read the caption as the
+      // dialog name). Otherwise fall back to aria-label set to the alt text
+      // so the dialog is still announced with the figure's content.
+      if (caption) {
+        modal.setAttribute('aria-labelledby', 'figure-modal-caption');
+        modal.removeAttribute('aria-label');
+      } else {
+        modal.removeAttribute('aria-labelledby');
+        modal.setAttribute(
+          'aria-label',
+          imgAlt ? 'Enlarged figure: ' + imgAlt : 'Enlarged figure view'
+        );
+      }
+
+      modal.classList.add('active');
+
+      if (typeof Reveal !== 'undefined') {
+        Reveal.configure({ keyboard: false });
+      }
+
+      closeBtn.focus();
+    }
+
+    function closeModal() {
+      modal.classList.remove('active');
+      modalImg.src = '';
+      modalCaption.textContent = '';
+      modal.removeAttribute('aria-labelledby');
+      modal.setAttribute('aria-label', 'Enlarged figure view');
+
+      if (typeof Reveal !== 'undefined') {
+        Reveal.configure({ keyboard: true });
+      }
+
+      if (lastFocusedImg) {
+        lastFocusedImg.focus();
+        lastFocusedImg = null;
+      }
+    }
+
+    function isModalOpen() {
+      return modal.classList.contains('active');
+    }
+
+    // Focus trap: confine Tab navigation to the modal while it is open so
+    // keyboard users cannot accidentally tab into background slide content
+    // (which would also defeat the inert-keyboard pause we set on Reveal).
+    // Currently the only focusable element inside the modal is the close
+    // button, so any Tab/Shift+Tab simply re-focuses it.
+    function trapFocus(e) {
+      if (e.key !== 'Tab' || !isModalOpen()) return;
+      var focusables = modal.querySelectorAll(
+        'button, [href], [tabindex]:not([tabindex="-1"])'
+      );
+      if (focusables.length === 0) return;
+      var first = focusables[0];
+      var last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+
+    // Uncaptioned Quarto images render as bare <img> (no <figure>), with the
+    // fig-alt text in aria-label rather than alt.
+    var FIGURE_SELECTOR = '.reveal .slides img:not(.no-modal)';
+
+    // Images inside links keep their link behaviour.
+    function figureImages() {
+      return Array.prototype.filter.call(
+        document.querySelectorAll(FIGURE_SELECTOR),
+        function (img) { return !img.closest('a'); }
+      );
+    }
+
+    function describe(img) {
+      return img.getAttribute('alt') || img.getAttribute('aria-label') || '';
+    }
+
+    // Reveal lazy-loads images through data-src until their slide is near.
+    function sourceOf(img) {
+      return img.currentSrc || img.getAttribute('src') || img.getAttribute('data-src') || '';
+    }
+
+    function captionFor(img) {
+      var figure = img.closest('figure');
+      if (figure && figure.querySelector('figcaption')) {
+        return figure.querySelector('figcaption').textContent;
+      }
+      var slide = img.closest('section');
+      var heading = slide && slide.querySelector('h1, h2, h3');
+      return heading ? heading.textContent : '';
+    }
+
+    figureImages().forEach(function (img) {
+      img.style.cursor = 'pointer';
+      img.setAttribute('tabindex', '0');
+      img.setAttribute('role', 'button');
+      // Use `title` (supplementary tooltip) for the affordance hint instead of
+      // `aria-label`, which would override the image's `alt` as the accessible
+      // name. We want screen readers to announce the figure's actual alt text
+      // first, with "click to enlarge" only as auxiliary description.
+      if (!img.hasAttribute('title')) {
+        img.setAttribute('title', 'Click to enlarge figure');
+      }
+
+      img.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        lastFocusedImg = this;
+        openModal(sourceOf(this), describe(this), captionFor(this));
+      });
+
+      img.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          e.stopPropagation();
+          lastFocusedImg = this;
+          openModal(sourceOf(this), describe(this), captionFor(this));
+        }
+      });
+    });
+
+    closeBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      closeModal();
+    });
+
+    modal.addEventListener('click', function (e) {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && isModalOpen()) {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        closeModal();
+        return;
+      }
+      trapFocus(e);
+    }, true);
+
+    var figureCount = figureImages().length;
+    console.log('Presentation figure modal: ' + figureCount + ' figure(s) found');
+  }
+
+  if (typeof Reveal !== 'undefined' && Reveal.isReady && Reveal.isReady()) {
+    initFigureModal();
+  } else if (typeof Reveal !== 'undefined') {
+    Reveal.on('ready', initFigureModal);
+  } else if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFigureModal);
+  } else {
+    initFigureModal();
+  }
+})();
+</script>

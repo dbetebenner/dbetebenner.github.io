@@ -1,0 +1,32 @@
+---
+title: About
+description: Damian Betebenner, Senior Associate at the Center for Assessment.
+---
+
+```{=html}
+<section class="hero" aria-label="Profile">
+  <img src="public/dbetebenner.webp" width="460" height="460" alt="Portrait of Damian Betebenner">
+  <div>
+    <p class="hero-role">Senior Associate, National Center for the Improvement of Educational Assessment</p>
+    <ul class="pill-links">
+      <li><a href="https://www.nciea.org/about-us/team/consultant/damian-betebenner">Center for Assessment profile</a></li>
+      <li><a href="https://github.com/dbetebenner">GitHub</a></li>
+    </ul>
+  </div>
+</section>
+```
+
+Damian Betebenner is a Senior Associate at the [National Center for the Improvement of Educational
+Assessment](https://www.nciea.org) (the Center for Assessment). He developed the student growth percentile (SGP)
+methodology and maintains the open-source [SGP](https://dbetebenner.github.io/SGP/) R package, which states use to
+calculate and report student growth. His work with state education agencies spans growth and accountability
+systems, technical advisory committees, and the reporting of results to educators and the public.
+
+## This site
+
+Talks are listed from a single catalog built from the original slide files and the Quarto repositories they were
+published in. Recent decks stay at their original addresses, because QR codes on the slides point there.
+
+The site uses the [dataimago](https://dataimago.ai) design system, with self-hosted fonts and
+light and dark themes. If anything here is inaccessible to you, please
+[open an issue](https://github.com/dbetebenner/dbetebenner.github.io/issues).

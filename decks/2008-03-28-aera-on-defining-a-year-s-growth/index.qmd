@@ -1,0 +1,111 @@
+---
+title: On Defining a Year's Growth
+subtitle: AERA Annual Meeting, March 28, 2008
+author:
+  - name: Damian W. Betebenner
+    affiliation: Center for Assessment
+  - name: Yi Shang
+    affiliation: Boston College
+description: On Defining a Year's Growth — AERA Annual Meeting. Rebuilt from the original beamer slides.
+format:
+  deck-revealjs:
+    slide-number: c/t
+bibliography: references.bib
+nocite: '@BeteShan:2007b, @Koenker:2005'
+---
+
+## Actual versus Aspirational Student Growth
+
+-   It seems simple enough: Establish what constitutes a year's growth in a year's time for each student.
+
+-   This simplicity belies a subtle complexity.
+
+-   To adequately address the notion of a year's growth, **[actual]{.accent}** growth must be distinguished from **[aspirational]{.accent}** growth.
+
+    Describe
+
+    :   What **[is]{.accent}** a current year's growth?
+
+    Prescribe
+
+    :   What **[should]{.accent}** a current year's growth be?
+
+-   Answering the second question establishes a threshold distinguishing adequate from inadequate growth.
+
+-   To make such a distinction requires an answer to the first question which defines a norm: What is the range of growth currently observed?
+
+-   Aspirational growth should be possible---This is Linn's existence proof applied at the individual level [@Linn:2003a].
+
+## Describing Actual Student Growth
+
+-   Measuring student growth, even with a vertical scale, is not a simple task.
+
+-   Numerous States believe that placing their tests on a vertical scale will simplify the task of measuring student growth.
+
+-   Even with an interval (or ratio) scale, growth is not easy to interpret. Consider, for example, height.
+
+    -   A child might grow 4 inches between ages 3 and 4.
+
+    -   4 inches is a well understood quantity.
+
+    -   However, the 4 inch increase becomes fully understandable only when placed in context of growth of other children between ages 3 and 4.
+
+-   In the following discussion **[student growth percentiles]{.accent}** are introduced that provide a normative context to interpret student growth.
+
+## Student Growth Percentiles
+
+-   A quantity of fundamental interest to norming student progress (i.e., conditional achievement) is:
+
+    $$
+    \Pr(Current~Achievement | Past~Achievement).
+    $$ {#eq-condprob}
+
+-   A **[student's growth percentile]{.accent}** is the conversion of @eq-condprob to a percentile.
+
+-   Estimation of the conditional density used to calculate student growth percentiles is performed using quantile regression (Betebenner & Shang, 2007; Koenker, 2005).
+
+-   Consider a low achieving student demonstrating 90th percentile growth and a high achieving student demonstrating 10th percentile growth.
+
+    -   The low achieving student grew at a rate exceeding 90 percent of similar students.
+
+    -   The high achieving student grew at a rate exceeding just 10 percent of similar students.
+
+    -   In this sense, the low achiever's growth is more *exemplary* than the high achiever's.
+
+-   Growth percentiles allow for easy understanding and comparison of student growth.
+
+-   However, judgment of whether the student's growth was **[adequate]{.accent}** requires external criteria.
+
+## Performance Standards and Growth Percentiles
+
+-   Performance standards are the most obvious external criteria needed to define a year's worth of growth.
+
+-   If proficiency within 3 years is the achievement goal, then one can examine prior growth to estimate what growth percentile is sufficient to reach the desired outcome.
+
+-   For high achieving students, modest growth percentiles are required to maintain their position above proficiency whereas for some low achieving student sustained high growth percentiles are necessary.
+
+-   The process of defining a year's growth is a **[standard setting procedure]{.accent}**.
+
+-   Clearly, defining a year's worth of growth for some students as 80th percentile or better sets a very high standard.
+
+-   And defining a year's growth for some students as 25th percentile or better sets a low standard.
+
+-   Growth standards should be **[equitable]{.accent}**, **[reasonable]{.accent}**, and **[desirable]{.accent}**.
+
+## Achievement versus Growth
+
+-   If the goal is high achievement for all students, then reaching that goal requires low achieving students to have higher growth percentiles than high achieving students.
+
+-   As a consequence, accountability systems built toward high achievement demand more of schools serving predominantly low achieving students.
+
+-   "Growth analyses" do not circumvent this reality.
+
+-   Only by considering **[what is]{.accent}**, **[what should be]{.accent}**, and **[what is possible]{.accent}** simultaneously, can growth models and their associated standards be equitable, just and truly informed.
+
+-   And only within this context can an ambiguous term like "a year's growth" be used intelligently in discussions about student progress.
+
+## References {.smaller .scrollable}
+
+::: {#refs}
+:::
+

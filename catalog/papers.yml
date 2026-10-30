@@ -1,0 +1,121 @@
+# Curated papers catalog. Human-maintained.
+# Each PDF is committed at papers/<slug>/<slug>.pdf (`source_file` records where it came from);
+# tools/site/generate.mjs writes the landing pages.
+# `version` says which version of the text the PDF is: published | accepted-manuscript | working-paper.
+
+papers:
+  - slug: norm-and-criterion-referenced-student-growth-2009
+    title: Norm- and Criterion-Referenced Student Growth
+    authors: [Damian W. Betebenner]
+    year: 2009
+    venue: "Educational Measurement: Issues and Practice"
+    volume: 28
+    issue: 4
+    pages: 42–51
+    doi: 10.1111/j.1745-3992.2009.00161.x
+    type: article
+    version: published
+    source_file: SGP_Resources/articles/Betebenner_EMIP_2009.pdf
+    featured: true
+    abstract: >-
+      Annual student achievement data derived from state assessment programs have led to widespread enthusiasm
+      for statistical models suitable for longitudinal analysis. The current policy environment's adherence to
+      high-stakes accountability vis-à-vis No Child Left Behind's universal proficiency mandate has fostered an
+      impoverished view of what an examination of student growth can provide. To address this, student growth
+      percentiles are introduced, supplying a normative description of growth capable of accommodating
+      criterion-referenced aims.
+    tags: [sgp, growth, norm-referenced, criterion-referenced]
+
+  - slug: growth-standards-and-accountability-2009
+    title: Growth, Standards and Accountability
+    authors: [Damian W. Betebenner]
+    year: 2009
+    date: 2009-04-06
+    venue: Center for Assessment
+    type: report
+    version: working-paper
+    source_file: SGP_Resources/articles/growthandStandard_DB09.pdf
+    featured: true
+    abstract: >-
+      Over the last decade, large-scale annual testing has provided states with unprecedented access to
+      longitudinal student data. Current use of this data focuses primarily upon analyses of growth directed
+      toward accountability decisions. This paper introduces analysis techniques and results showing how student
+      growth percentiles, a normative growth analysis technique, can be used to illuminate the relationship
+      between standards-based accountability systems and the performance standards on which they are based.
+    tags: [sgp, growth-projections, standard-setting, accountability]
+
+  - slug: norm-and-criterion-referenced-student-growth-2008
+    title: Norm- and Criterion-Referenced Student Growth
+    authors: [Damian W. Betebenner]
+    year: 2008
+    date: 2008-03-20
+    venue: Center for Assessment
+    type: report
+    version: working-paper
+    note: Working-paper precursor to the 2009 EMIP article.
+    source_file: SGP_Resources/articles/normative_criterion_growth_DB08.pdf
+    abstract: >-
+      Annual student achievement data derived from state assessment programs have led to widespread enthusiasm
+      for statistical models suitable for longitudinal analysis. This paper situates current growth-to-standard
+      approaches within a larger domain of statistical models, including those based solely upon achievement as
+      well as more traditional growth models, and demonstrates that growth-to-standard approaches present an
+      impoverished view of student progress. Student growth percentiles are introduced as a normative
+      alternative.
+    tags: [sgp, growth, norm-referenced, criterion-referenced]
+
+  - slug: on-defining-a-years-growth-2008
+    title: On Defining a Year's Growth
+    authors: [Damian W. Betebenner, Yi Shang]
+    year: 2008
+    date: 2008-02-25
+    venue: Center for Assessment
+    type: report
+    version: working-paper
+    related_talk: 2008/AERA
+    source_file: SGP_Resources/articles/yearsgrowth.pdf
+    abstract: >-
+      The November 2005 announcement of the Growth Model Pilot Program permitted states to use growth models as a
+      means of complying with NCLB AYP requirements. Absent from growth-to-proficiency models are analyses
+      demonstrating the attainability of individually mandated proficiency goals. To overcome this shortcoming,
+      student growth percentiles are introduced to provide a normative context for understanding student change,
+      and the paper discusses how growth percentiles can be used to define "a year's growth."
+    tags: [sgp, years-growth, growth-model-pilot]
+
+  - slug: growth-as-a-description-of-process-2006
+    title: Growth as a Description of Process
+    authors: [Damian W. Betebenner]
+    year: 2006
+    date: 2006-03-29
+    venue: Lynch School of Education, Boston College
+    type: report
+    version: working-paper
+    source_file: SGP_Resources/articles/growthandprocess.pdf
+    abstract: >-
+      Most research on the analysis of growth, particularly the family of value-added models, has focused on
+      using observational longitudinal data to estimate causal effects associated with teachers and schools.
+      Setting causal attribution aside, this paper describes how growth can be employed to better understand
+      process. A Markov transition model utilizing performance levels is employed to describe how students move
+      through the performance levels of a state assessment over time.
+    tags: [growth, markov-models, performance-levels]
+
+  - slug: performance-level-misclassification-2008
+    title: The Impact of Performance Level Misclassification on the Accuracy and Precision of Percent at Performance Level Measures
+    authors: [Damian W. Betebenner, Yi Shang, Yun Xiang, Yan Zhao, Xiaohui Yue]
+    year: 2008
+    venue: Journal of Educational Measurement
+    volume: 45
+    issue: 2
+    pages: 119–137
+    doi: 10.1111/j.1745-3984.2007.00056.x
+    type: article
+    version: working-paper
+    version_note: 2006 working-paper version; the published article is available through the DOI.
+    source_file: Research/Papers/Misclassification/misclasspaper.pdf
+    featured: true
+    abstract: >-
+      NCLB performance mandates, embedded within state accountability systems, focus school AYP/AMO compliance
+      squarely on the percentage of students at or above proficient. In this paper we challenge the received
+      orthodoxy that measurement error associated with individual students' scores is inconsequential for
+      aggregate percent proficient statistics, showing how performance level misclassification affects both the
+      accuracy and the precision of percent-at-performance-level measures.
+    tags: [measurement-error, misclassification, accountability, percent-proficient]

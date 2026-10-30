@@ -1,0 +1,17 @@
+node_modules/
+.DS_Store
+/.quarto/
+/_site/
+# Raw scans carry local file names (including excluded admin files); only the merged catalog is committed.
+/catalog/generated/
+# Conversion work area (exported PDFs, rasterized slides) — outputs are published from the shard repos.
+/work/
+/review/axe/
+**/*.quarto_ipynb
+/review/private/
+# Written by tools/site/generate.mjs from the catalog.
+/listings/
+/talks/*/
+/papers/*/index.qmd
+# Private repo names (some are hashed Pages URLs) stay local.
+/catalog/repos.private.yml

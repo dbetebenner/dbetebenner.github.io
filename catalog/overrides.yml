@@ -1,0 +1,78 @@
+# Human review decisions, applied on top of the generated scans by tools/catalog/build.mjs.
+# Key each entry by talk id (legacy-xxxxxxxx / repo-xxx) or by slug. Any field set here wins.
+#
+#   talks:
+#     legacy-1a2b3c4d: { title: "Better title", publish: true }
+#
+# `signature: true` marks a talk for a native Quarto rebuild (tools/signature).
+# `featured: true` puts a talk on the home page.
+
+talks:
+  # 2026-10-30 checkpoint: signature talks (native Quarto rebuilds), also featured on the home page.
+  legacy-90fd3007: { signature: true, featured: true }  # 2007-10-10 Toward a Normative Understanding of Student Growth
+  legacy-5d49d8ba: { signature: true, featured: true, date: '2008-03-28' }  # On Defining a Year's Growth (date from the beamer \date)
+  legacy-5b50dc0c: { signature: true, featured: true }  # 2008-03-26 Norm- and Criterion-Referenced Student Growth
+  legacy-84df1d61: { signature: true, featured: true }  # 2009-04-15 Betebenner NCME Growth and Standards Presentation
+  legacy-632951a0: { signature: true, featured: true }  # 2012-10-18 MARCES Presentation Betebenner
+  legacy-8b883377: { signature: true, featured: true, coauthors: [Charlie DePascale] }  # 2024-04-13 NCME 2024 Time Betebenner De Pascale 2
+  legacy-b9d52504: { signature: true, featured: true }  # 2025-05-20 SGP Overview Presentation Betebenner
+  legacy-1d230713: { signature: true, featured: true, date: '2024-04-12' }  # Assessment Reporting in Support of Student Learning; the title slide says April 12th
+
+  # 2026-10-30 checkpoint: pre-2013 PowerPoint decks of unclear authorship — author confirmed publish.
+  legacy-6735432a: { publish: true }  # 2012-10-25 MCAS TAC Oct2012 V6
+  legacy-c540aa91: { publish: true }  # 2012-10-22 MCAS TAC Oct2012 V5 DB
+  legacy-0c1c55a8: { publish: true }  # 2012-09-13 From Authenticity to Validity DB
+  legacy-bbdad77d: { publish: true }  # 2011-07-29 Big Data
+  legacy-b6c03523: { publish: true }  # 2010-06-23 Growth in Student Achievement: Issues of Measurement, Longitudinal Analyses & Accountability
+  legacy-e2f306ff: { publish: true }  # 2010-06-22 Discussion Points
+  legacy-81804b5a: { publish: true }  # 2010-06-21 Iowa Growth Slides
+  legacy-c1cf2c43: { publish: true }  # 2010-06-21 Massachusetts Lessons Learned (so Far)
+  legacy-7d2f05b6: { publish: true }  # 2009-10-24 Why Measure Growth
+  legacy-f50808ef: { publish: true }  # 2009-06-22 CCSSO If You Buildit
+  legacy-6fccbb9a: { publish: true }  # 2009-06-22 CCSSO June 22 AZ
+  legacy-1655d313: { publish: false, hold_reason: sensitivity }  # 2009-06-22 Growth Massachusetts CCSSO
+  legacy-0d28f919: { publish: true }  # 2009-06-19 CCSSO Presentation 2009
+  legacy-f7a65d2a: { publish: true }  # 2009-04-14 NCME VAM SGP SCALE Presentation
+  legacy-ef318837: { publish: true }  # 2008-09-24 RILS Final
+  legacy-7e9f4c3b: { publish: true }  # 2008-09-24 RILS Final Braun
+  legacy-3746bf98: { publish: true }  # 2008-09-24 Validating NAEP Preparedness Measures
+  legacy-6630f726: { publish: true }  # 2008-09-24 Validating Readiness Measures
+  legacy-2eea2f77: { publish: true }  # 2008-09-22 Algebra II NCIEA 2008
+  legacy-c0f91dcc: { publish: true }  # 2008-06-17 Application of Colorados Growth Model
+  legacy-545c6485: { publish: true }  # 2008-06-17 CCSSO 6 17 08with Bonus Material
+  legacy-ebcd8edf: { publish: true }  # 2008-06-17 Student Growth Percentiles CCSSO 6 17 08
+  # Keynote cannot open this .ppt (blocking import dialog); the folder's beamer deck legacy-660e0cc1 carries the talk.
+  legacy-404231b5: { publish: false, hold_reason: unreadable source }  # 2008-06-16 CCSSO.2008
+  legacy-be7691af: { publish: true }  # 2008-03-21 Aera'08 NCLB Growth Model Pilot Program
+  legacy-59b9c1b1: { publish: true }  # 2006-04-04 Aera.present.
+  legacy-5f1065db: { publish: true }  # 2006-03-31 Authentic Use of Software & Technology
+  legacy-7a44694a: { publish: true }  # 2006-03-31 Powerpoints
+
+  # 2026-10-30 sensitivity scan: held at the author's request (marked confidential or not for distribution).
+  legacy-f8721b99: { publish: false, hold_reason: sensitivity }
+  legacy-2c9fd03f: { publish: false, hold_reason: sensitivity }
+  legacy-379ef461: { publish: false, hold_reason: sensitivity }
+  legacy-fdf56238: { publish: false, hold_reason: sensitivity }
+  legacy-74cf57da: { publish: false, hold_reason: sensitivity }
+  legacy-35c8965c: { publish: false, hold_reason: sensitivity }
+  legacy-88af50f3: { publish: false, hold_reason: sensitivity }
+
+
+  # Dates the file names get wrong.
+  legacy-1a55864e: { date: '2016-01-05' }  # January staff meeting filed under 2016; the file name says 2015
+  legacy-049121f3: { date: '2015-10-01' }  # file name ends "October 1 2015"
+
+  # Slide-1 titles the extractor cannot split or read.
+  legacy-a7ed6cc1: { title: 'Assessment Transition Timeline: PARCC and MCAS' }
+  legacy-5eb4f575: { title: 'Assessment Transition Timeline: PARCC' }
+  legacy-f68de64b: { title: 'The Colorado Growth Model: Changing Conversations about Education' }
+  legacy-c550ecdc: { title: 'The Idaho Growth Model: Changing Conversations about Education' }
+  legacy-510aa5db: { title: 'Changing Conversations about Education: Using Growth Data to Inform Practice' }
+  legacy-9fee4a27: { title: 'New Directions for Student Growth Models: The Colorado Growth Model' }
+  legacy-26ba5107: { title: 'The Colorado Growth Model: Operationalizing Growth-to-Standard for AYP using Growth Percentiles' }
+  legacy-d3ab856e: { title: 'Colorado’s Growth Model: A Harmonious Marriage of Normative and Standards-based Growth' }
+  legacy-44b1c624: { title: 'On NCLB, Equal Educational Opportunity and Closing Achievement Gaps' }
+  legacy-74ecc7dc: { title: 'Student Growth Percentiles: Introduction to R & the SGP Software Package' }
+  legacy-db3d67ab: { title: 'New Mexico Student Growth Analyses: History and Conceptual Overview' }
+  legacy-05fe199d: { title: 'Hawaii Student Growth Analyses: History and Conceptual Overview' }
+  legacy-7276de60: { title: 'A First Look at Pandemic Related Academic Impact: WIDA-ACCESS' }

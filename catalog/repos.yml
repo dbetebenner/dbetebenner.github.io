@@ -1,0 +1,360 @@
+# Curated catalog of existing dbetebenner/* GitHub repos that hold talks, sites, packages, or experiments.
+# Human-maintained. tools/inventory/scan-repos.mjs enriches each entry from GitHub (visibility, Pages URL,
+# last push) and checks that the deck URL resolves, writing catalog/generated/repos.yml.
+#
+# kind:        talk | site | package | experiment | exclude
+# delivery:    link (deck lives in its own repo; the hub links to it — never moved: QR codes point there)
+# theme:       deck theme lineage, used by the 2026 review (see review/2026-decks.md)
+# source:      where the deck source lives when the repo holds only rendered output
+
+series:
+  liwld:
+    title: Longitudinal Inference Without Longitudinal Data
+    summary: A copula-based framework that recovers growth from cross-sectional assessment data, unifying TAMP and SGP.
+  dtp-llp:
+    title: Death to Proficiency! Long Live Proficiency!
+    summary: The case for coherence in accountability system design.
+
+talks:
+  # ── 2026 ────────────────────────────────────────────────────────────
+  - repo: WIDA_IN_Standard_Setting_Impact_Analysis
+    title: "WIDA ACCESS 2026–27 Proficiency Levels"
+    subtitle: What Changes for English Learner Exit in Indiana
+    date: 2026-11-01
+    date_precision: month
+    venue: Indiana Department of Education
+    event_type: state
+    theme: nciea-qr
+    tags: [english-learners, standard-setting, indiana]
+  - repo: DoWEA_Presentation_102626
+    title: "Student Growth: The Pulse of the Education System"
+    subtitle: DoWEA Fall Leadership Meeting · Executive Learning Session
+    date: 2026-10-26
+    venue: DoWEA Fall Leadership Meeting
+    event_type: invited
+    theme: nciea-dowea
+    deck_path: DoWEA_Presentation_Betebenner_102626.html
+    tags: [growth, sgp]
+  - repo: New_Hampshire_101926_Presentation
+    title: New Hampshire 2026 SGP Results
+    subtitle: NH SAS (Grades 3–8) and WIDA ACCESS (Grades K–12)
+    date: 2026-10-19
+    venue: New Hampshire Technical Advisory Committee
+    event_type: tac
+    theme: nciea-qr
+    tags: [sgp, new-hampshire, english-learners]
+  - repo: AIME_2026_Panel_Presentation
+    title: Educational Measurement as an AI-Native Profession
+    subtitle: AIME-Con 2026 panel (moderator deck and provocation)
+    date: 2026-10-07
+    venue: AIME-Con 2026, Pittsburgh
+    event_type: conference
+    theme: aime-panel
+    decks:
+      - { label: Moderator, path: decks/moderator.html }
+      - { label: "Provocation: AI is changing what my job is", path: decks/betebenner-provocation.html }
+    tags: [ai, measurement-profession]
+  - repo: AIME_2026_AI_Native_Dissertation_Training_Session
+    title: Writing an AI-Native Dissertation
+    subtitle: AIME-Con 2026 · Training session (4 hours, hands-on)
+    date: 2026-10-05
+    date_precision: month
+    venue: AIME-Con 2026, Pittsburgh
+    event_type: conference
+    theme: aime-training
+    deck_path: slides.html
+    tags: [ai, dissertation, training]
+  - repo: Rhode_Island_082726_Presentation
+    title: Rhode Island 2026 SGP Analyses
+    subtitle: RICAS & SAT Student Growth Percentile Results
+    date: 2026-08-27
+    venue: Rhode Island Technical Advisory Committee
+    event_type: tac
+    theme: nciea-gof
+    tags: [sgp, rhode-island]
+  - repo: IEA_TIMSS_Copula_Overview_081126
+    title: Longitudinal Insight from Cross-Sectional Assessments
+    subtitle: Unlocking Cohort Growth in TIMSS and TIMSS-L
+    date: 2026-08-18
+    venue: IEA Research & Development
+    event_type: invited
+    coauthors: [Henry I. Braun]
+    theme: paper1
+    source: Research/Papers/Betebenner_Braun/Paper_1/IEA_TIMSS_Copula_Overview.qmd
+    tags: [copula, timss, longitudinal-inference]
+  - repo: NCIEA_2026_Retreat
+    title: What Am I Actually Doing?
+    subtitle: AI-Supported Workflows in Educational Measurement
+    date: 2026-07-15
+    venue: Center for Assessment staff retreat (brown-bag)
+    event_type: staff
+    theme: nciea-baseline
+    deck_path: ai_workflows.html
+    tags: [ai, workflows]
+  - repo: Illinois_TAC_Meeting_052126
+    title: Considerations for Illinois SGP Analyses
+    subtitle: During the Transition from SAT/PSAT to ACT/PreACT
+    date: 2026-05-21
+    venue: Illinois Technical Advisory Committee
+    event_type: tac
+    theme: nciea-unknown
+    tags: [sgp, illinois, assessment-transition]
+  - repo: Renaissance_TX_Project
+    title: Understanding Student Growth Percentiles in Texas
+    date: 2026-05-27
+    date_precision: month
+    venue: Renaissance Learning
+    event_type: invited
+    theme: other
+    tags: [sgp, texas]
+  - repo: Betebenner_Braun_Discussion_051426
+    title: Longitudinal Inference Without Longitudinal Data
+    subtitle: Responding to Measurement-Theory Questions about TAMP, Copulas, and Growth
+    date: 2026-05-14
+    venue: Betebenner–Braun working session
+    event_type: academic
+    coauthors: [Henry I. Braun]
+    series: liwld
+    theme: paper1
+    source: Research/Papers/Betebenner_Braun/Paper_1/Betebenner_Braun_HB_Response_051426.qmd
+    tags: [copula, longitudinal-inference, tamp]
+  - repo: NCIEA_2026_Colloquium
+    title: Longitudinal Inference Without Longitudinal Data
+    subtitle: A Copula Based Framework for Modeling Dependence and Growth in Educational Assessment
+    date: 2026-05-05
+    venue: Center for Assessment Brian Gong Colloquium, Jackson Hole
+    event_type: colloquium
+    coauthors: [Henry I. Braun]
+    series: liwld
+    theme: paper1
+    source: Research/Papers/Betebenner_Braun/Paper_1/NCIEA_2026_Colloquium_Staff_Presentation.qmd
+    tags: [copula, longitudinal-inference]
+  - repo: NCIEA_2026_Board_Meeting
+    title: Longitudinal Inference Without Longitudinal Data
+    subtitle: A Copula Based Framework for Modeling Dependence and Growth in Educational Assessment
+    date: 2026-04-19
+    venue: Center for Assessment Board Meeting, Boston
+    event_type: invited
+    series: liwld
+    theme: paper1
+    source: Research/Papers/Betebenner_Braun/Paper_1/NCIEA_2026_Board_presentation.qmd
+    tags: [copula, longitudinal-inference]
+  - repo: NCME_2026_LIwLD
+    title: Longitudinal Inference Without Longitudinal Data
+    subtitle: A Copula Based Unification of TAMP and SGP
+    date: 2026-04-01
+    date_precision: month
+    venue: NCME Annual Meeting, Los Angeles
+    event_type: conference
+    coauthors: [Henry I. Braun]
+    series: liwld
+    theme: paper1
+    source: Research/Papers/Betebenner_Braun/Paper_1/NCME_2026_presentation.qmd
+    tags: [copula, longitudinal-inference, tamp, sgp]
+  # ── 2025 ────────────────────────────────────────────────────────────
+  - repo: WERA_Conference_121025
+    title: Death to Proficiency! Long Live Proficiency!
+    subtitle: Beyond accountability toward performance management
+    date: 2025-12-10
+    venue: Washington Educational Research Association
+    event_type: conference
+    series: dtp-llp
+    theme: legacy-2025
+    deck_path: Death_to_Proficiency_Long_Live_Proficiency.html
+    tags: [accountability, proficiency]
+  - repo: NCSA_2025_Conference_DTP-LLP
+    title: Death to Proficiency! Long Live Proficiency!
+    subtitle: The case for coherence in accountability system design
+    date: 2025-06-24
+    date_precision: month
+    venue: CCSSO National Conference on Student Assessment
+    event_type: conference
+    series: dtp-llp
+    theme: legacy-2025
+    deck_path: Death_to_Proficiency_Long_Live_Proficiency.html
+    tags: [accountability, proficiency]
+  - repo: NCSA_2025_Conference_Equity
+    title: "Beyond the Score: Reporting Equity and Justice in Educational Accountability"
+    date: 2025-06-24
+    date_precision: month
+    venue: CCSSO National Conference on Student Assessment
+    event_type: conference
+    theme: legacy-2025
+    deck_path: Equity_and_Justice_in_Educational_Accountability.html
+    tags: [accountability, equity, reporting]
+  - repo: EdFirst_Conference_022025
+    title: Death to Proficiency! Long Live Proficiency!
+    subtitle: The case for coherence in accountability system design
+    date: 2025-02-20
+    venue: EdFirst Conference
+    event_type: conference
+    series: dtp-llp
+    theme: legacy-2025
+    deck_path: Death_to_Proficiency_Long_Live_Proficiency.html
+    tags: [accountability, proficiency]
+  # ── 2016–2024 ───────────────────────────────────────────────────────
+  - repo: NCME_2024_Reporting
+    title: Assessment Reporting in Support of Student Learning
+    date: 2024-04-12
+    date_precision: month
+    venue: NCME Annual Meeting
+    event_type: conference
+    theme: none
+    tags: [reporting]
+    replaces_legacy: 2024/NCME/Reporting
+  - repo: Years_of_Learning
+    repo_name: Years_Of_Learning
+    title: "Apples by the Bushel, Learning by the Year"
+    subtitle: On the concept of a year's worth of learning
+    date: 2023-05-26
+    date_precision: month
+    venue: Center for Assessment staff sharing
+    event_type: staff
+    theme: legacy-2023
+    deck_path: content/presentations/Years_of_Learning_Staff_Sharing_May_2023.html
+    tags: [growth, years-of-learning]
+  - repo: TILSA_2022_Covid_19_Impact_Recovery
+    title: COVID-19 Academic Impact and Recovery
+    date: 2022-06-30
+    venue: CCSSO ASR-TILSA Meeting, Atlanta
+    event_type: conference
+    remote_only: true
+    deck_url: https://dbetebenner.github.io/TILSA_2022_Covid_19_Impact_Recovery/Covid_Academic_Impact_and_Recovery.html
+    tags: [covid, academic-impact]
+  - repo: NCSA_CCSSO_2022_Covid_19_Impact
+    title: COVID-19 Academic Impact and Recovery
+    date: 2022-06-28
+    venue: CCSSO National Conference on Student Assessment, Atlanta
+    event_type: conference
+    remote_only: true
+    deck_url: https://dbetebenner.github.io/TILSA_2022_Covid_19_Impact_Recovery/Covid_Academic_Impact_and_Recovery.html
+    tags: [covid, academic-impact]
+  - repo: NCME_2022_Indiana_COVID_19_Academic_Impact
+    title: The Academic Impact of the COVID-19 Pandemic in Indiana
+    date: 2022-04-21
+    date_precision: month
+    venue: NCME Annual Meeting
+    event_type: conference
+    remote_only: true
+    tags: [covid, academic-impact, indiana]
+  - repo: NCME_Ranked_SIMEX_SGP
+    title: Ranked SIMEX Measurement-Error Correction for SGPs
+    date: 2018-04-12
+    date_precision: month
+    venue: NCME Annual Meeting
+    event_type: conference
+    remote_only: true
+    tags: [sgp, measurement-error]
+  - repo: Presentation_063017
+    title: With Great Flexibility Comes Great Headaches
+    subtitle: Validating Student Growth in Accountability System Design
+    date: 2017-06-30
+    venue: CCSSO National Conference on Student Assessment
+    event_type: conference
+    remote_only: true
+    tags: [growth, accountability]
+  - repo: Presentation_062817
+    title: "Back to the Future: Growth in the Era of ESSA"
+    subtitle: Growth and Prediction — Informing Instructional Decisions in the Era of ESSA
+    date: 2017-06-28
+    venue: CCSSO National Conference on Student Assessment
+    event_type: conference
+    remote_only: true
+    tags: [growth, essa]
+  - repo: NCME_Presentation_2017
+    title: Assessment Literacy (NCME Training Session)
+    date: 2017-04-27
+    venue: NCME Annual Meeting
+    event_type: conference
+    remote_only: true
+    deck_url: https://dbetebenner.github.io/NCME_Presentation_2017/assets/player/KeynoteDHTMLPlayer.html#0
+    replaces_legacy: 2017/NCME/Training_Session
+    tags: [assessment-literacy, training]
+  - repo: Presentation_030717
+    title: Staff Sharing (March 2017)
+    date: 2017-03-03
+    venue: Center for Assessment staff sharing
+    event_type: staff
+    remote_only: true
+    tags: [staff-sharing]
+  - repo: NERA_2016
+    title: Data Visualization Training Session
+    date: 2016-10-26
+    date_precision: month
+    venue: Northeastern Educational Research Association
+    event_type: conference
+    remote_only: true
+    replaces_legacy: 2016/NERA
+    tags: [data-visualization, training]
+  - repo: NCME_Presentation_2016
+    title: Discussion — Student Growth Percentiles Session
+    date: 2016-04-10
+    venue: NCME Annual Meeting
+    event_type: conference
+    remote_only: true
+    deck_url_dead: https://view.literasee.io/dbetebenner/NCME_Presentation_2016/presentation/#/
+    tags: [sgp]
+
+sites:
+  - repo: Indiana_ILEARN_ACCESS_Analysis
+    title: Indiana ILEARN and WIDA ACCESS Analysis
+    summary: Copula-based dependence analyses of ILEARN and WIDA ACCESS for English-learner exit decisions.
+    date: 2026-08-28
+  - repo: Michigan_TAC_042326
+    title: Michigan TAC — AI-Native Meeting Corpus
+    summary: The April 2026 Michigan TAC meeting as a structured, queryable corpus, with "A Fuller Record".
+    date: 2026-09-10
+    theme: tac-site
+  - repo: Colloquium_2018
+    title: Center for Assessment Colloquium 2018
+    summary: Ketchum/Sun Valley, Idaho, May 23–24, 2018.
+    date: 2018-05-23
+    remote_only: false
+  - repo: Colloquium_2019
+    title: Center for Assessment Colloquium 2019
+    summary: Portland, Oregon, June 5–6, 2019.
+    date: 2019-06-05
+  - repo: Modules_on_Standard_Error_of_Measurement
+    title: Test Score Wiggle Room
+    summary: An assessment-literacy module on understanding your child's test score.
+    date: 2017-04-27
+    remote_only: true
+  - repo: Internship_2021
+    title: NCIEA Internship 2021
+    summary: Propensity-score weighting and multiple-imputation studies by Allie Cooperman.
+    date: 2021-06-17
+
+packages:
+  - { repo: SGP, title: SGP, summary: Student Growth Percentiles & Percentile Growth Projections/Trajectories. }
+  - { repo: SGPdata, title: SGPdata, summary: Exemplar data sets for the SGP package. }
+  - { repo: SGPmatrices, title: SGPmatrices, summary: Coefficient matrices for SGP baseline analyses. }
+  - { repo: SGPstateData, title: SGPstateData, summary: State-level metadata used by the SGP package. }
+  - { repo: sgpFlow, title: sgpFlow, summary: Growth trajectories and student flow from SGP coefficient matrices. }
+  - { repo: sgpFlowMatrices, title: sgpFlowMatrices, summary: Matrices supporting sgpFlow. }
+  - { repo: randomNames, title: randomNames, summary: Generate random gender- and ethnicity-specific names. }
+  - { repo: toOrdinal, title: toOrdinal, summary: Ordinal numbers in several languages. }
+  - { repo: cfaTools, title: cfaTools, summary: Center for Assessment analysis utilities. }
+  - { repo: Literasee, title: Literasee, summary: Assessment-literacy content development via R. }
+  - { repo: Modelling_Heteroskedasticity, title: Modelling Heteroskedasticity, summary: "Modelling non-linear, heteroskedastic data using R." }
+
+experiments:
+  - title: D3 Block-a-Day (January 2017)
+    summary: Twenty-two daily D3.js sketches.
+    repo_prefix: D3_01
+    date: 2017-01-01
+  - title: Idyll explorations (2017)
+    summary: Interactive explainers built with Idyll, including an achievement-gaps essay.
+    repos: [001_Achievement_Gaps, Idyll_070417, Idyll_070517, Idyll_070617]
+    date: 2017-07-04
+
+exclude:
+  - { repo: Quarto_Test, reason: test repo }
+  - { repo: Xaringan_Test_Site, reason: test repo }
+  - { repo: packageSkeleton, reason: template }
+  - { repo: packageSkeleton-nextjs, reason: template }
+  - { repo: NCIEA_Presentation_Template, reason: deck template (home of the shared deck theme) }
+  - { repo: GitPitch_TEST, reason: test repo }
+  - { repo: Observable_Test, reason: test repo }
+  - { repo: TEST_CFA_LANDING_PAGE, reason: test repo }
+  - { repo: customizedPackageForR, reason: package scaffold experiment }
+  - { repo: Documentation, reason: Tufte .Rmd format test }

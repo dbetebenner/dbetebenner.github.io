@@ -1,0 +1,9 @@
+{
+  "package": "@dataimago/css",
+  "version": "0.1.0-alpha.18",
+  "outputs": {
+    "quarto/dataimago-light.scss": "_extensions/dbetebenner/dataimago/",
+    "quarto/dataimago-dark.scss": "_extensions/dbetebenner/dataimago/",
+    "quarto/components.scss": "_extensions/dbetebenner/dataimago/"
+  }
+}

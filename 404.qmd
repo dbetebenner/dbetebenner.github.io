@@ -1,0 +1,9 @@
+---
+title: Page not found
+---
+
+That address doesn't match a page here. Try the [talks](/talks/), the [papers](/papers/), or search from the top of the
+page.
+
+Looking for a deck repository? Many talks live at their own address, such as
+`dbetebenner.github.io/<repository>/`.

@@ -1,0 +1,60 @@
+---
+pagetitle: Damian Betebenner — talks, papers and code
+description: Talks, papers and open-source code on student growth, educational assessment and accountability, 2005 to today.
+page-layout: article
+listing:
+  - id: recent
+    contents: listings/recent.yml
+    template: _templates/talk-cards.ejs
+    sort: false
+  - id: featured
+    contents: listings/featured.yml
+    template: _templates/talk-cards.ejs
+    sort: false
+  - id: papers
+    contents: listings/papers.yml
+    template: _templates/paper-list.ejs
+    sort: false
+---
+
+```{=html}
+<section class="hero" aria-labelledby="hero-name">
+  <img src="public/dbetebenner.webp" width="460" height="460" alt="Portrait of Damian Betebenner">
+  <div>
+    <p id="hero-name" class="hero-name" role="heading" aria-level="1">Damian Betebenner</p>
+    <p class="hero-role">Senior Associate, Center for Assessment</p>
+    <p>I work on how we describe student learning over time: student growth percentiles, growth projections, and the
+    accountability and reporting systems built on them. This site gathers the talks I have given since 2005, a few
+    papers, and the open-source R packages behind the analyses.</p>
+    <ul class="pill-links">
+      <li><a href="talks/">All talks</a></li>
+      <li><a href="papers/">Papers</a></li>
+      <li><a href="code.html">Code &amp; packages</a></li>
+      <li><a href="https://github.com/dbetebenner">GitHub</a></li>
+    </ul>
+  </div>
+</section>
+```
+
+{{< include listings/home-stats.md >}}
+
+::: {.kicker}
+Recent talks
+:::
+
+::: {#recent}
+:::
+
+::: {.kicker}
+Selected talks
+:::
+
+::: {#featured}
+:::
+
+::: {.kicker}
+Papers
+:::
+
+::: {#papers}
+:::

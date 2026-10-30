@@ -1,0 +1,25 @@
+{
+  "name": "dbetebenner-github-io",
+  "private": true,
+  "type": "module",
+  "description": "Talks and papers hub for Damian W. Betebenner — catalog, conversion tools, and Quarto site.",
+  "scripts": {
+    "inventory:legacy": "node tools/inventory/scan-legacy.mjs",
+    "inventory:repos": "node tools/inventory/scan-repos.mjs",
+    "catalog:build": "node tools/catalog/build.mjs",
+    "inventory": "pnpm inventory:legacy && pnpm inventory:repos && pnpm catalog:build",
+    "site:generate": "node tools/site/generate.mjs",
+    "site:render": "node tools/site/generate.mjs && quarto render",
+    "site:preview": "node tools/site/generate.mjs && quarto preview",
+    "design:check": "dataimago-sync --check"
+  },
+  "dependencies": {
+    "@dataimago/css": "0.1.0-alpha.18",
+    "js-yaml": "^4.3.2"
+  },
+  "packageManager": "pnpm@11.23.0",
+  "devDependencies": {
+    "axe-core": "^4.14.0",
+    "playwright-core": "^1.64.1"
+  }
+}

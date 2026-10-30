@@ -1,0 +1,15 @@
+---
+title: Papers
+description: Selected papers on student growth, growth standards and measurement error in accountability.
+listing:
+  id: papers
+  contents: ../listings/papers.yml
+  template: ../_templates/paper-list.ejs
+  sort: false
+---
+
+A short selection: the papers that introduced student growth percentiles and the ideas around them. Each page has the
+PDF, a citation and BibTeX.
+
+::: {#papers}
+:::

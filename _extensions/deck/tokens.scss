@@ -1,0 +1,37 @@
+/*-- scss:defaults --*/
+
+// generated-from: @dataimago/css@0.1.0-alpha.18 dist/tokens.scss (light mode) · deck subset, values copied by hand · re-copy on a package bump
+// Only the tokens this deck consumes. Names follow the package: palette primitives, then the semantic role they fill.
+
+// Palette primitives
+$di-stone-100: #ededeb;              // color.palette.stone.100
+$di-stone-200: #dcdcda;              // color.palette.stone.200
+$di-stone-900: #14140f;              // color.palette.stone.900
+$di-forest-700: #434739;             // color.palette.forest.700
+$di-forest-800: #363a2e;             // color.palette.forest.800
+$di-accent-500: #1f618d;             // color.palette.accent.500
+$di-accent-600: #154d6f;             // color.palette.accent.600
+$di-presentation-blue-500: #3498DB;  // color.palette.presentation-blue.500
+$di-presentation-blue-600: #2980B9;  // color.palette.presentation-blue.600
+$di-paper-200: #faf2e3;              // color.palette.paper.200
+$di-ink-200: #d6d3d1;                // color.palette.ink.200
+$di-copper-700: #913d15;             // color.palette.copper.700
+
+// Semantic roles (light)
+$di-surface-page: $di-stone-100;               // color.surface.page
+$di-surface-code: $di-paper-200;               // color.surface.code
+$di-border-code: $di-ink-200;                  // color.border.code
+$di-content-primary: $di-stone-900;            // color.content.primary
+$di-content-secondary: #6a6a6a;                // color.content.secondary
+$di-interactive-primary: $di-forest-700;       // color.interactive.primary
+$di-interactive-hover: $di-forest-800;         // color.interactive.hover
+$di-interactive-focus: $di-forest-700;         // color.interactive.focus
+$di-interactive-accent: $di-accent-500;        // color.interactive.accent
+$di-presentation-accent: $di-presentation-blue-500;        // color.presentation.accent (decorative: fails AA as text)
+$di-presentation-accent-hover: $di-presentation-blue-600;  // color.presentation.accent-hover
+
+// Type
+$di-font-display: "Josefin Sans", system-ui, sans-serif;                          // font.family.display-editorial
+$di-font-sans: "Noto Sans", "Fira Sans", system-ui, sans-serif;                   // font.family.sans
+$di-font-mono: "Noto Sans Mono", "JetBrains Mono", "SF Mono", Monaco, monospace;  // font.family.mono (shipped face first)
+$di-font-math: "Noto Sans Math", "STIX Two Math", "Cambria Math", serif;           // font.family.math

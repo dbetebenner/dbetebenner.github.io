@@ -1,0 +1,15 @@
+/* Local faces (SIL OFL 1.1, see fonts/OFL.txt); no CDN. Plain CSS, not SCSS:
+   url() must stay relative to this file, and Quarto relocates compiled themes. */
+
+@font-face { font-family: "Josefin Sans"; font-style: normal; font-weight: 300; font-display: swap; src: url("fonts/JosefinSans-300.woff2") format("woff2"); }
+@font-face { font-family: "Josefin Sans"; font-style: normal; font-weight: 400; font-display: swap; src: url("fonts/JosefinSans-400.woff2") format("woff2"); }
+@font-face { font-family: "Josefin Sans"; font-style: normal; font-weight: 500; font-display: swap; src: url("fonts/JosefinSans-500.woff2") format("woff2"); }
+@font-face { font-family: "Josefin Sans"; font-style: normal; font-weight: 600; font-display: swap; src: url("fonts/JosefinSans-600.woff2") format("woff2"); }
+@font-face { font-family: "Josefin Sans"; font-style: normal; font-weight: 700; font-display: swap; src: url("fonts/JosefinSans-700.woff2") format("woff2"); }
+
+@font-face { font-family: "Noto Sans"; font-style: normal; font-weight: 400; font-display: swap; src: url("fonts/NotoSans-400.woff2") format("woff2"); }
+@font-face { font-family: "Noto Sans"; font-style: normal; font-weight: 600; font-display: swap; src: url("fonts/NotoSans-600.woff2") format("woff2"); }
+
+@font-face { font-family: "Noto Sans Mono"; font-style: normal; font-weight: 400; font-display: swap; src: url("fonts/NotoSansMono-400.woff2") format("woff2"); }
+
+@font-face { font-family: "Noto Sans Math"; font-style: normal; font-weight: 400; font-display: swap; src: url("fonts/NotoSansMath-400.woff2") format("woff2"); }

@@ -1,0 +1,79 @@
+name: Publish site
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 6 * * 1" # weekly external link check
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+
+      - name: Design files match the pinned @dataimago/css
+        run: pnpm design:check
+
+      - uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: 1.8.24
+
+      - name: Render
+        run: pnpm site:render
+
+      - name: Size budget
+        run: node tools/qa/size-budget.mjs _site
+
+      - name: Internal links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --offline --no-progress --root-dir ${{ github.workspace }}/_site '_site/**/*.html'
+          fail: true
+
+      - name: External links
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --no-progress --max-concurrency 8 --accept 200,206,429 --root-dir ${{ github.workspace }}/_site --exclude-path _site/site_libs '_site/**/*.html'
+          fail: true
+
+      - name: Accessibility (axe)
+        run: |
+          python3 -m http.server 4321 --directory _site >/dev/null 2>&1 &
+          sleep 2
+          node tools/qa/axe.mjs http://127.0.0.1:4321
+
+      - uses: actions/upload-pages-artifact@v3
+        if: github.ref == 'refs/heads/master' && github.event_name != 'pull_request'
+        with:
+          path: _site
+
+  deploy:
+    if: github.ref == 'refs/heads/master' && github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

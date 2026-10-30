@@ -1,0 +1,19 @@
+---
+title: Talks
+description: Every talk since 2005 — conference presentations, state technical advisory committees, colloquia and invited talks.
+page-layout: full
+listing:
+  id: talks
+  contents: ../listings/talks.yml
+  template: ../_templates/talk-list.ejs
+  sort: false
+  page-size: 1000
+include-after-body:
+  text: <script src="/assets/js/talk-filter.js"></script>
+---
+
+Recent talks are Quarto decks, linked where they were first published. Older Keynote, PowerPoint and beamer decks
+have been converted to web slides; each talk page also offers the PDF and the original file.
+
+::: {#talks}
+:::

@@ -1,0 +1,19 @@
+title: dataimago site theme
+author: Damian Betebenner
+version: 1.0.0
+quarto-required: ">=1.8.0"
+# dataimago-{light,dark}.scss and components.scss are written by dataimago-sync from the
+# version pinned in .dataimago/design.json; fonts.scss and site.scss are local.
+generated-from: "@dataimago/css@0.1.0-alpha.18"
+contributes:
+  formats:
+    html:
+      theme:
+        light: [dataimago-light.scss, components.scss, fonts.scss, site.scss]
+        dark: [dataimago-dark.scss, components.scss, fonts.scss, site.scss]
+      respect-user-color-scheme: true
+      highlight-style: a11y
+      anchor-sections: true
+      smooth-scroll: false
+      link-external-icon: false
+      link-external-newwindow: false

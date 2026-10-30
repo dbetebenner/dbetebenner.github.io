@@ -1,0 +1,22 @@
+/*-- scss:rules --*/
+// Self-hosted OFL fonts; the design system forbids font CDNs. Root-absolute because the
+// compiled theme lives in site_libs/, not beside this file.
+
+@mixin di-face($family, $file, $weight) {
+  @font-face {
+    font-family: $family;
+    src: url("/assets/fonts/#{$file}.woff2") format("woff2");
+    font-weight: $weight;
+    font-style: normal;
+    font-display: swap;
+  }
+}
+
+@include di-face("Josefin Sans", "JosefinSans-300", 300);
+@include di-face("Josefin Sans", "JosefinSans-400", 400);
+@include di-face("Josefin Sans", "JosefinSans-500", 500);
+@include di-face("Josefin Sans", "JosefinSans-600", 600);
+@include di-face("Josefin Sans", "JosefinSans-700", 700);
+@include di-face("Noto Sans", "NotoSans-400", 400);
+@include di-face("Noto Sans", "NotoSans-600", 600);
+@include di-face("Noto Sans Mono", "NotoSansMono-400", 400);
