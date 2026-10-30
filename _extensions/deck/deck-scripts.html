@@ -15,6 +15,44 @@
 })();
 </script>
 <script>
+/* Reveal chrome that fails WCAG as Quarto ships it: the viewport meta blocks
+   pinch zoom, the menu button is an icon-only link, and the menu's scrolling
+   panels cannot take keyboard focus. The menu plugin builds its DOM after
+   load, so its fixes rerun as nodes appear. */
+(function () {
+  'use strict';
+  var viewport = document.querySelector('meta[name="viewport"]');
+  if (viewport) viewport.setAttribute('content', 'width=device-width, initial-scale=1.0');
+
+  function fixMenu() {
+    var button = document.querySelector('.slide-menu-button > a');
+    if (button && !button.hasAttribute('aria-label')) {
+      button.setAttribute('aria-label', 'Open the slide menu');
+      button.setAttribute('role', 'button');
+    }
+    var panels = document.querySelectorAll('.slide-menu-panel:not([tabindex])');
+    Array.prototype.forEach.call(panels, function (panel) {
+      var id = panel.getAttribute('data-panel') || '';
+      var tab = document.querySelector('.slide-menu-toolbar [data-panel="' + id + '"]');
+      var name = (tab && tab.textContent.trim()) || id || 'Menu';
+      panel.setAttribute('tabindex', '0');
+      panel.setAttribute('aria-label', name + ' panel');
+    });
+  }
+
+  function watch() {
+    fixMenu();
+    if (typeof MutationObserver === 'undefined') return;
+    var observer = new MutationObserver(fixMenu);
+    observer.observe(document.body, { childList: true, subtree: true });
+    setTimeout(function () { observer.disconnect(); }, 10000);
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', watch);
+  else watch();
+})();
+</script>
+<script>
 /* Reduced motion: Reveal's own slide and background transitions ignore CSS overrides. */
 (function () {
   'use strict';

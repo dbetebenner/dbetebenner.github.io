@@ -236,6 +236,12 @@ $code-block-border-color: $di-border-code !default;
   box-shadow: none;
 }
 
+// Quarto's left-aligned slide text would otherwise pin a lone stretched figure to the left edge.
+.reveal .slides section.figure-slide img.r-stretch {
+  display: block;
+  margin-inline: auto;
+}
+
 // "Lifted card" wash behind figure images only, so title-slide logos and bare
 // <img> elements are unaffected.
 .reveal figure img {
