@@ -16,7 +16,7 @@ talks:
   legacy-632951a0: { signature: true, featured: true }  # 2012-10-18 MARCES Presentation Betebenner
   legacy-8b883377: { signature: true, featured: true, coauthors: [Charlie DePascale] }  # 2024-04-13 NCME 2024 Time Betebenner De Pascale 2
   legacy-b9d52504: { signature: true, featured: true }  # 2025-05-20 SGP Overview Presentation Betebenner
-  legacy-1d230713: { signature: true, featured: true }  # 2024-04-11 Assessment Reporting in Support of Student Learning
+  legacy-1d230713: { signature: true, featured: true, date: '2024-04-12' }  # Assessment Reporting in Support of Student Learning; the title slide says April 12th
 
   # 2026-10-30 checkpoint: pre-2013 PowerPoint decks of unclear authorship — author confirmed publish.
   legacy-6735432a: { publish: true }  # 2012-10-25 MCAS TAC Oct2012 V6

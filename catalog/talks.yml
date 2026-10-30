@@ -1,6 +1,6 @@
 # Built by tools/catalog/build.mjs — edit catalog/overrides.yml or catalog/repos.yml, not this file
 summary:
-  generated: '2026-10-30T17:44:53.195Z'
+  generated: '2026-10-30T17:46:05.771Z'
   published: 411
   by_delivery:
     link: 25
@@ -2787,8 +2787,8 @@ talks:
     slug: 2024-04-11-ncme-assessment-reporting-in-support-of-student-learning
     title: Assessment Reporting in Support of Student Learning
     title_source: filename
-    date: '2024-04-11'
-    date_precision: mtime
+    date: '2024-04-12'
+    date_precision: day
     year: 2024
     venue: NCME Annual Meeting
     venue_short: NCME
