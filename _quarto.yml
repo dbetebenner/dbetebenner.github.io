@@ -52,7 +52,7 @@ website:
       - text: Source
         href: https://github.com/dbetebenner/dbetebenner.github.io
       - text: Design system
-        href: https://github.com/dataimago/dataimago-design
+        href: https://dataimago.ai
 
 format:
   dataimago-html:

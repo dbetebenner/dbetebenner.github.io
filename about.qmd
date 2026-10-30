@@ -27,6 +27,6 @@ systems, technical advisory committees, and the reporting of results to educator
 Talks are listed from a single catalog built from the original slide files and the Quarto repositories they were
 published in. Recent decks stay at their original addresses, because QR codes on the slides point there.
 
-The site uses the [dataimago](https://github.com/dataimago/dataimago-design) design system, with self-hosted fonts and
+The site uses the [dataimago](https://dataimago.ai) design system, with self-hosted fonts and
 light and dark themes. If anything here is inaccessible to you, please
 [open an issue](https://github.com/dbetebenner/dbetebenner.github.io/issues).
