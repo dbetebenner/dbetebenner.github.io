@@ -5,7 +5,7 @@ description: Damian Betebenner, Senior Associate at the Center for Assessment.
 
 ```{=html}
 <section class="hero" aria-label="Profile">
-  <img src="public/dbetebenner.png" alt="Portrait of Damian Betebenner">
+  <img src="public/dbetebenner.webp" width="460" height="460" alt="Portrait of Damian Betebenner">
   <div>
     <p class="hero-role">Senior Associate, National Center for the Improvement of Educational Assessment</p>
     <ul class="pill-links">

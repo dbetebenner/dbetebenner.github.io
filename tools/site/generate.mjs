@@ -70,8 +70,6 @@ function talkPage(t) {
   };
 
   const facts = [
-    ['Date', displayDate(t)],
-    ['Venue', t.venue],
     ['Event', EVENT[t.event_type] || t.event_type],
     ...(t.coauthors?.length ? [['With', t.coauthors.join(', ')]] : []),
     ...(t.slides ? [['Slides', String(t.slides)]] : []),
@@ -205,7 +203,7 @@ for (const p of papers) {
   if (hasPdf) actions.push(`<a class="primary" href="${pdf}">Download PDF</a>`);
   if (p.doi) actions.push(`<a href="https://doi.org/${esc(p.doi)}">Publisher version (DOI)</a>`);
   let body = '```{=html}\n';
-  body += `<dl class="talk-facts"><dt>Authors</dt><dd>${esc(p.authors.join(', '))}</dd><dt>Year</dt><dd>${esc(p.year)}</dd>${p.venue ? `<dt>Published in</dt><dd>${esc(p.venue)}</dd>` : ''}<dt>Version</dt><dd>${esc((p.version || '').replace(/-/g, ' '))}</dd></dl>\n`;
+  body += `<dl class="talk-facts">${p.venue ? `<dt>Published in</dt><dd>${esc(p.venue)}</dd>` : ''}<dt>Version</dt><dd>${esc((p.version || '').replace(/-/g, ' '))}</dd></dl>\n`;
   body += `<ul class="talk-actions">${actions.map((a) => `<li>${a}</li>`).join('')}</ul>\n\`\`\`\n\n`;
   if (p.version_note) body += `::: {.callout-note appearance="minimal"}\n${p.version_note}\n:::\n\n`;
   if (p.abstract) body += `## Abstract\n\n${p.abstract}\n\n`;

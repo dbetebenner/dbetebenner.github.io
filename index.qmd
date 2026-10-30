@@ -19,7 +19,7 @@ listing:
 
 ```{=html}
 <section class="hero" aria-labelledby="hero-name">
-  <img src="public/dbetebenner.png" alt="Portrait of Damian Betebenner">
+  <img src="public/dbetebenner.webp" width="460" height="460" alt="Portrait of Damian Betebenner">
   <div>
     <p id="hero-name" class="hero-name" role="heading" aria-level="1">Damian Betebenner</p>
     <p class="hero-role">Senior Associate, Center for Assessment</p>

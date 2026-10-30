@@ -28,6 +28,8 @@ website:
     type: overlay
   navbar:
     title: Damian Betebenner
+    logo: public/avatar-96.webp
+    logo-alt: Home
     left:
       - href: talks/index.qmd
         text: Talks
