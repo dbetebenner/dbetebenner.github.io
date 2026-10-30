@@ -13,3 +13,5 @@ node_modules/
 /listings/
 /talks/*/
 /papers/*/index.qmd
+# Private repo names (some are hashed Pages URLs) stay local.
+/catalog/repos.private.yml

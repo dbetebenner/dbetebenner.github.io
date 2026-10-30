@@ -22,7 +22,16 @@ const LOCAL = opt('--local', '/Users/conet/GitHub/DBetebenner');
 const CONFIG = path.resolve('catalog/repos.yml');
 const OUT = path.resolve('catalog/generated/repos.yml');
 
+const PRIVATE_CONFIG = path.resolve('catalog/repos.private.yml');
+
 const config = yaml.load(fs.readFileSync(CONFIG, 'utf8'), { schema: yaml.CORE_SCHEMA });
+// Private repos (hashed names among them) are listed in a gitignored overlay so their names never reach the public repo.
+if (fs.existsSync(PRIVATE_CONFIG)) {
+  const extra = yaml.load(fs.readFileSync(PRIVATE_CONFIG, 'utf8'), { schema: yaml.CORE_SCHEMA }) || {};
+  for (const key of ['talks', 'sites', 'packages', 'experiments', 'exclude']) {
+    if (extra[key]?.length) config[key] = [...(config[key] || []), ...extra[key]];
+  }
+}
 
 function gh(args) {
   try {
