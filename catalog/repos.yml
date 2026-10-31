@@ -352,7 +352,7 @@ exclude:
   - { repo: Xaringan_Test_Site, reason: test repo }
   - { repo: packageSkeleton, reason: template }
   - { repo: packageSkeleton-nextjs, reason: template }
-  - { repo: NCIEA_Presentation_Template, reason: deck template (home of the shared deck theme) }
+  - { repo: Quarto_Presentation_Template, reason: deck template (home of the shared deck theme) }
   - { repo: GitPitch_TEST, reason: test repo }
   - { repo: Observable_Test, reason: test repo }
   - { repo: TEST_CFA_LANDING_PAGE, reason: test repo }

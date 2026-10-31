@@ -2,7 +2,7 @@
 
 Read-only audit of the 2026 Quarto/RevealJS decks published under `dbetebenner.github.io`, run 2026-10-30. Nothing in any deck repo was changed.
 
-**Method.** Published HTML was fetched with curl. Theme sources were diffed against `NCIEA_Presentation_Template/master/styles/presentation-theme.scss` (the baseline, 588 lines). Contrast uses the WCAG 2.x relative-luminance formula. Links were checked with `curl -sIL`, falling back to GET, with a 15 s timeout. axe-core 4.14 (`@axe-core/cli`) ran against each published URL. The cached ChromeDriver (152) did not match Chrome 156, so a matching ChromeDriver was fetched into `/tmp`.
+**Method.** Published HTML was fetched with curl. Theme sources were diffed against `Quarto_Presentation_Template/main/styles/presentation-theme.scss` (the baseline, 588 lines). Contrast uses the WCAG 2.x relative-luminance formula. Links were checked with `curl -sIL`, falling back to GET, with a 15 s timeout. axe-core 4.14 (`@axe-core/cli`) ran against each published URL. The cached ChromeDriver (152) did not match Chrome 156, so a matching ChromeDriver was fetched into `/tmp`.
 
 **axe caveat.** Reveal.js hides every slide except the current one, so axe only sees the title slide and the deck chrome. Interior slides (figures, links, callouts) are covered by the static checks below, not by axe.
 
@@ -40,7 +40,7 @@ These recur in nearly every deck. Each deck section refers to them by code (F1â€
 - **F5. No description or social metadata.** No deck emits `<meta name="description">`, Open Graph, or Twitter card tags. Every deck has a `<title>`. Michigan emits only `og:title` and `og:site_name`.
 - **README backlink.** No README links to the hub (`https://dbetebenner.github.io/`).
 - **Slide numbers and PDF export.** Slide numbers are on in every deck. Every reveal deck ships the pdf-export plugin (`?print-pdf` or the E key works), but only IEA and the AIME panel publish a slide PDF.
-- **Extension state.** The `dataimago-deck-extension` branch of NCIEA_Presentation_Template contains only its initial commit, so every [extension] fix below assumes work that has not been built yet.
+- **Extension state.** The `dataimago-deck-extension` branch of Quarto_Presentation_Template contains only its initial commit, so every [extension] fix below assumes work that has not been built yet.
 
 ---
 
