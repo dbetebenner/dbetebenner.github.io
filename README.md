@@ -56,7 +56,7 @@ tools/shards/publish.sh talks-archive-2010-2014   # check assets, render, push, 
 
 ## Deck theme
 
-All decks use the `deck` Quarto extension from [NCIEA_Presentation_Template](https://github.com/dbetebenner/NCIEA_Presentation_Template) (format `deck-revealjs`), vendored here in `_extensions/deck/` and in each archive repo. Update it there first, then copy it into this repo and the four archive repos.
+All decks use the `deck` Quarto extension from [Quarto_Presentation_Template](https://github.com/dbetebenner/Quarto_Presentation_Template) (format `deck-revealjs`), vendored here in `_extensions/deck/` and in each archive repo. Update it there first, then copy it into this repo and the four archive repos.
 
 ## Checks
 
