@@ -1,6 +1,6 @@
 # Hex logos
 
-`make-hex.mjs` draws the hex logos of the Center for Assessment R packages (SGP, SGPdata, SGPstateData, toOrdinal, randomNames). They share one grid, a copper ring around an ink hexagon, and each carries a small piece of art for what the package does. The text is outlined from Josefin Sans, so the SVGs have no font dependency.
+`make-hex.mjs` draws the hex logos of the Center for Assessment R packages (SGP, SGPdata, SGPstateData, toOrdinal, randomNames) and sgpFlow. They share one grid, a copper ring around an ink hexagon, and each carries a small piece of art for what the package does. The text is outlined from Josefin Sans, so the SVGs have no font dependency.
 
 ```sh
 cd tools/hex
