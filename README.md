@@ -1,6 +1,6 @@
 # dbetebenner.github.io
 
-Source for <https://dbetebenner.github.io>: Damian Betebenner's talks (2005–2026) and selected papers, styled with the [dataimago](https://github.com/dataimago) design tokens.
+Source for <https://dbetebenner.github.io>: my talks (2005–2026) and selected papers, styled with the [dataimago](https://github.com/dataimago) design tokens.
 
 ## What lives where
 
