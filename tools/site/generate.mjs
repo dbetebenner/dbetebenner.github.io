@@ -47,7 +47,12 @@ function formatOf(t) {
 }
 
 const converted = (t) => t.delivery === 'convert' && t.converted?.status === 'ok';
-const thumbOf = (t) => (converted(t) ? `${t.deck_url}slides/01.webp` : null);
+const thumbOf = (t) =>
+  converted(t)
+    ? `${t.deck_url}slides/01.webp`
+    : fs.existsSync(`public/thumbs/${t.slug}.webp`)
+      ? `/public/thumbs/${t.slug}.webp`
+      : null;
 const pagePath = (t) => `talks/${t.slug}/index.qmd`;
 
 function slideText(t) {

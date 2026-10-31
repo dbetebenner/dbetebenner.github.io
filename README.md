@@ -38,6 +38,8 @@ pnpm site:preview
 
 `pnpm design:check` verifies that the vendored dataimago theme in `_extensions/dbetebenner/dataimago/` matches the pinned `@dataimago/css` release.
 
+Talks whose deck lives at its own address (a repo's Pages site) get their card image from `public/thumbs/<slug>.webp`. `node tools/site/thumbs.mjs` screenshots the title slide of each such deck that has no thumbnail yet; `--force` retakes them all and `--only <slug>` retakes one. Converted archive decks use their first slide image instead.
+
 ### Legacy decks
 
 ```sh
