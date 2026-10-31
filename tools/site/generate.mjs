@@ -232,10 +232,10 @@ for (const p of papers) {
 write('listings/papers.yml', dump(paperItems));
 
 // ── Code, sites, experiments ────────────────────────────────────────────
-write(
-  'listings/packages.yml',
-  dump((catalog.packages || []).map((p) => ({ title: p.title, path: p.url || p.github?.repo_url, description: p.summary || p.github?.description || '' }))),
-);
+const pkgItem = (p) => ({ title: p.title, path: p.url || p.github?.repo_url, description: p.summary || p.github?.description || '', hex: p.hex });
+const hexPackages = (catalog.packages || []).filter((p) => p.hex);
+write('listings/packages.yml', dump(hexPackages.map(pkgItem)));
+write('listings/packages-other.yml', dump((catalog.packages || []).filter((p) => !p.hex).map(pkgItem)));
 write(
   'listings/sites.yml',
   dump((catalog.sites || []).map((s) => ({ title: s.title, path: s.url, description: s.summary || s.github?.description || '', date: s.date }))),

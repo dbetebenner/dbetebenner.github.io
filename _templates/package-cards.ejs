@@ -1,0 +1,13 @@
+```{=html}
+<ul class="package-cards">
+<% for (const item of items) { %>
+<li class="package-card">
+<img class="hex" src="<%- item.hex %>" alt="" width="96" height="111" loading="lazy">
+<span class="body">
+<a class="stretched" href="<%- item.path %>"><%= item.title %></a>
+<% if (item.description) { %><span class="desc"><%= item.description %></span><% } %>
+</span>
+</li>
+<% } %>
+</ul>
+```

@@ -324,15 +324,17 @@ sites:
     summary: Propensity-score weighting and multiple-imputation studies by Allie Cooperman.
     date: 2021-06-17
 
+# url: the package's canonical documentation site (wins over this fork's Pages URL).
+# hex: hex logo shown on the home and Code pages (tools/hex/make-hex.mjs makes them).
 packages:
-  - { repo: SGP, title: SGP, summary: Student Growth Percentiles & Percentile Growth Projections/Trajectories. }
-  - { repo: SGPdata, title: SGPdata, summary: Exemplar data sets for the SGP package. }
+  - { repo: SGP, title: SGP, summary: Student Growth Percentiles & Percentile Growth Projections/Trajectories., url: https://sgp.io/, hex: /public/hex/SGP.svg }
+  - { repo: SGPdata, title: SGPdata, summary: Exemplar data sets for the SGP package., url: https://centerforassessment.github.io/SGPdata/, hex: /public/hex/SGPdata.svg }
   - { repo: SGPmatrices, title: SGPmatrices, summary: Coefficient matrices for SGP baseline analyses. }
-  - { repo: SGPstateData, title: SGPstateData, summary: State-level metadata used by the SGP package. }
+  - { repo: SGPstateData, title: SGPstateData, summary: State-level metadata used by the SGP package., url: https://centerforassessment.github.io/SGPstateData/, hex: /public/hex/SGPstateData.svg }
   - { repo: sgpFlow, title: sgpFlow, summary: Growth trajectories and student flow from SGP coefficient matrices. }
   - { repo: sgpFlowMatrices, title: sgpFlowMatrices, summary: Matrices supporting sgpFlow. }
-  - { repo: randomNames, title: randomNames, summary: Generate random gender- and ethnicity-specific names. }
-  - { repo: toOrdinal, title: toOrdinal, summary: Ordinal numbers in several languages. }
+  - { repo: randomNames, title: randomNames, summary: Generate random gender- and ethnicity-specific names., url: https://centerforassessment.github.io/randomNames/, hex: /public/hex/randomNames.svg }
+  - { repo: toOrdinal, title: toOrdinal, summary: Ordinal numbers in several languages., url: https://centerforassessment.github.io/toOrdinal/, hex: /public/hex/toOrdinal.svg }
   - { repo: cfaTools, title: cfaTools, summary: Center for Assessment analysis utilities. }
   - { repo: Literasee, title: Literasee, summary: Assessment-literacy content development via R. }
   - { repo: Modelling_Heteroskedasticity, title: Modelling Heteroskedasticity, summary: "Modelling non-linear, heteroskedastic data using R." }

@@ -122,7 +122,8 @@ packages:
         bind together student growth plots into school catalogs.
       repo_url: https://github.com/dbetebenner/SGP
       pages_url: https://dbetebenner.github.io/SGP/
-    url: https://dbetebenner.github.io/SGP/
+    url: https://sgp.io/
+    hex: /public/hex/SGP.svg
     http: 200
   - repo: SGPdata
     title: SGPdata
@@ -136,7 +137,8 @@ packages:
         analyses.
       repo_url: https://github.com/dbetebenner/SGPdata
       pages_url: https://dbetebenner.github.io/SGPdata/
-    url: https://dbetebenner.github.io/SGPdata/
+    url: https://centerforassessment.github.io/SGPdata/
+    hex: /public/hex/SGPdata.svg
     http: 200
   - repo: SGPmatrices
     title: SGPmatrices
@@ -160,7 +162,8 @@ packages:
       description: State/Nation specific meta data used within SGP analyses and the SGP package with the object SGPstateData
       repo_url: https://github.com/dbetebenner/SGPstateData
       pages_url: https://dbetebenner.github.io/SGPstateData/
-    url: https://dbetebenner.github.io/SGPstateData/
+    url: https://centerforassessment.github.io/SGPstateData/
+    hex: /public/hex/SGPstateData.svg
     http: 200
   - repo: sgpFlow
     title: sgpFlow
@@ -198,7 +201,8 @@ packages:
         probability of appearing in a large scale data base of real names.
       repo_url: https://github.com/dbetebenner/randomNames
       pages_url: https://dbetebenner.github.io/randomNames/
-    url: https://dbetebenner.github.io/randomNames/
+    url: https://centerforassessment.github.io/randomNames/
+    hex: /public/hex/randomNames.svg
     http: 200
   - repo: toOrdinal
     title: toOrdinal
@@ -210,7 +214,8 @@ packages:
       description: R package to convert cardinal to ordinal number equivalent
       repo_url: https://github.com/dbetebenner/toOrdinal
       pages_url: https://dbetebenner.github.io/toOrdinal/
-    url: https://dbetebenner.github.io/toOrdinal/
+    url: https://centerforassessment.github.io/toOrdinal/
+    hex: /public/hex/toOrdinal.svg
     http: 200
   - repo: cfaTools
     title: cfaTools
