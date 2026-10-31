@@ -123,7 +123,9 @@ for (const s of config.sites || []) {
 const packages = [];
 for (const p of config.packages || []) {
   const info = repoInfo(p.repo);
-  packages.push({ ...p, github: info, url: info.pages_url || info.repo_url, http: await status(info.pages_url) });
+  // A curated `url` (the package's canonical site, e.g. the CenterForAssessment Pages site) wins over this fork's Pages URL.
+  const url = p.url || info.pages_url || info.repo_url;
+  packages.push({ ...p, github: info, url, http: await status(p.url || info.pages_url) });
 }
 
 const experiments = [];

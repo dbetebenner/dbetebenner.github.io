@@ -11,6 +11,10 @@ listing:
     contents: listings/featured.yml
     template: _templates/talk-cards.ejs
     sort: false
+  - id: packages
+    contents: listings/packages.yml
+    template: _templates/package-cards.ejs
+    sort: false
   - id: papers
     contents: listings/papers.yml
     template: _templates/paper-list.ejs
@@ -57,4 +61,11 @@ Papers
 :::
 
 ::: {#papers}
+:::
+
+::: {.kicker}
+Packages
+:::
+
+::: {#packages}
 :::

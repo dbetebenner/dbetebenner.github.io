@@ -4,6 +4,10 @@ description: Open-source R packages for student growth percentiles and related a
 listing:
   - id: packages
     contents: listings/packages.yml
+    template: _templates/package-cards.ejs
+    sort: false
+  - id: other-packages
+    contents: listings/packages-other.yml
     template: _templates/link-list.ejs
     sort: false
   - id: sites
@@ -15,6 +19,13 @@ listing:
 The analyses in the talks run on these packages. Each links to its own documentation site.
 
 ::: {#packages}
+:::
+
+::: {.kicker}
+Other packages
+:::
+
+::: {#other-packages}
 :::
 
 ::: {.kicker}
