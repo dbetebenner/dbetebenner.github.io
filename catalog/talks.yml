@@ -177,6 +177,7 @@ packages:
       pages_url: null
     url: https://github.com/dbetebenner/sgpFlow
     http: null
+    hex: /public/hex/sgpFlow.svg
   - repo: sgpFlowMatrices
     title: sgpFlowMatrices
     summary: Matrices supporting sgpFlow.

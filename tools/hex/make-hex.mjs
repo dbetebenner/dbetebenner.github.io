@@ -152,10 +152,47 @@ function artRandomNames() {
   ].join("");
 }
 
+// sgpFlow: students flowing between achievement levels from one year to the next.
+function artSgpFlow() {
+  // F[i][j]: students moving from level i to level j (0 = lowest, rose; 3 = highest, blue)
+  const F = [[6, 4, 1, 0], [2, 8, 5, 1], [0, 2, 9, 5], [0, 0, 2, 8]];
+  const cols = [C.rose, C.copper, C.sage, C.blue];
+  const xa = 44, xb = 156, bar = 9, top = 40, gap = 5;
+  const total = F.flat().reduce((a, b) => a + b, 0);
+  const k = (106 - 3 * gap) / total;
+  const stack = (sizes) => {
+    let y = top;
+    const at = [];
+    for (let i = 3; i >= 0; i--) { at[i] = y; y += sizes[i] * k + gap; }
+    return at;
+  };
+  const left = F.map((r) => r.reduce((a, b) => a + b, 0));
+  const right = [0, 1, 2, 3].map((j) => F.reduce((a, r) => a + r[j], 0));
+  const la = stack(left), ra = stack(right);
+  const lnext = [...la], rnext = [...ra];
+  const out = [];
+  for (let i = 3; i >= 0; i--) {
+    for (let j = 3; j >= 0; j--) {
+      const h = F[i][j] * k;
+      if (!h) continue;
+      const y0 = lnext[i], y1 = rnext[j];
+      lnext[i] += h; rnext[j] += h;
+      const x0 = xa + bar, x1 = xb - bar, m = (x0 + x1) / 2;
+      out.push(`<path d="M${f2(x0)} ${f2(y0)} C ${f2(m)} ${f2(y0)}, ${f2(m)} ${f2(y1)}, ${f2(x1)} ${f2(y1)} L ${f2(x1)} ${f2(y1 + h)} C ${f2(m)} ${f2(y1 + h)}, ${f2(m)} ${f2(y0 + h)}, ${f2(x0)} ${f2(y0 + h)} Z" fill="${cols[i]}" opacity="${i === j ? 0.5 : 0.78}"/>`);
+    }
+  }
+  for (let i = 0; i < 4; i++) {
+    out.push(`<rect x="${xa}" y="${f2(la[i])}" width="${bar}" height="${f2(left[i] * k)}" rx="2" fill="${cols[i]}"/>`);
+    out.push(`<rect x="${xb - bar}" y="${f2(ra[i])}" width="${bar}" height="${f2(right[i] * k)}" rx="2" fill="${cols[i]}"/>`);
+  }
+  return out.join("");
+}
+
 const grp = (art, s, cy) => () => `<g transform="translate(100 94) scale(${s}) translate(-100 ${-cy})">${art()}</g>`;
 const PKGS = {
   SGP: grp(artSGP, 1.08, 96), SGPdata: grp(artSGPdata, 1.1, 89), SGPstateData: grp(artSGPstateData, 1.15, 86),
   toOrdinal: grp(artToOrdinal, 1.05, 90), randomNames: grp(artRandomNames, 1.1, 88),
+  sgpFlow: grp(artSgpFlow, 1.0, 93),
 };
 
 function hexSvg(name) {

@@ -331,7 +331,7 @@ packages:
   - { repo: SGPdata, title: SGPdata, summary: Exemplar data sets for the SGP package., url: https://centerforassessment.github.io/SGPdata/, hex: /public/hex/SGPdata.svg }
   - { repo: SGPmatrices, title: SGPmatrices, summary: Coefficient matrices for SGP baseline analyses. }
   - { repo: SGPstateData, title: SGPstateData, summary: State-level metadata used by the SGP package., url: https://centerforassessment.github.io/SGPstateData/, hex: /public/hex/SGPstateData.svg }
-  - { repo: sgpFlow, title: sgpFlow, summary: Growth trajectories and student flow from SGP coefficient matrices. }
+  - { repo: sgpFlow, title: sgpFlow, summary: Growth trajectories and student flow from SGP coefficient matrices., hex: /public/hex/sgpFlow.svg }
   - { repo: sgpFlowMatrices, title: sgpFlowMatrices, summary: Matrices supporting sgpFlow. }
   - { repo: randomNames, title: randomNames, summary: Generate random gender- and ethnicity-specific names., url: https://centerforassessment.github.io/randomNames/, hex: /public/hex/randomNames.svg }
   - { repo: toOrdinal, title: toOrdinal, summary: Ordinal numbers in several languages., url: https://centerforassessment.github.io/toOrdinal/, hex: /public/hex/toOrdinal.svg }
